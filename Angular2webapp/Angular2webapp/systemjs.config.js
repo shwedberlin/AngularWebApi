@@ -24,8 +24,10 @@
             '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
             // other libraries
-            'rxjs': 'npm:rxjs',
-            'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+            'bootstrap': 'npm:bootstrap/dist/js/bootstrap.min.js',
+            'bootstrapcss': 'npm:bootstrap/dist/css/bootstrap.min.css',
+            'jquery': 'npm:jquery/dist/jquery.min.js',
+            'rxjs': 'npm:rxjs'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {

@@ -88,7 +88,6 @@
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="styles.css" />
-    <Content Include="systemjs.config.extras.js" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -111,6 +110,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\components\" />
+    <Folder Include="app\core\" />
+    <Folder Include="app\shared\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
