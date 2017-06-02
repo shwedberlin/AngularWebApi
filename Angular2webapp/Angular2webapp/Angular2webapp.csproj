@@ -85,11 +85,20 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
+    <Content Include="app\dist\app.js" />
+    <Content Include="app\dist\index.html" />
+    <Content Include="app\dist\index1.html" />
+    <Content Include="app\dist\polyfills.js" />
+    <Content Include="app\dist\vendor.js" />
+    <Content Include="app\indextemplate.html" />
+    <Content Include="config\helpers.js" />
+    <Content Include="config\webpack.common.js" />
+    <Content Include="config\webpack.prod.js" />
     <Content Include="Global.asax" />
-    <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
+    <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -102,6 +111,7 @@
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
+    <Content Include="config\webpack.dev.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -110,6 +120,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\assets\" />
     <Folder Include="app\components\" />
     <Folder Include="app\core\" />
     <Folder Include="app\shared\" />
@@ -124,6 +135,8 @@
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\polyfills.ts" />
+    <TypeScriptCompile Include="app\vendor.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
