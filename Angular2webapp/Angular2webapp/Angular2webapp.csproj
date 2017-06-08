@@ -119,7 +119,6 @@
   <ItemGroup>
     <Folder Include="app\assets\" />
     <Folder Include="app\components\" />
-    <Folder Include="app\core\" />
     <Folder Include="app\shared\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
@@ -130,6 +129,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\core\core.module.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />
     <TypeScriptCompile Include="app\vendor.ts" />

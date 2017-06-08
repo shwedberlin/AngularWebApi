@@ -150,12 +150,12 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 93);
+/******/ 	return __webpack_require__(__webpack_require__.s = 96);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 35:
+/***/ 36:
 /***/ (function(module, exports) {
 
 var g;
@@ -183,7 +183,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 89:
+/***/ 92:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -2538,21 +2538,21 @@ Zone.__load_patch('util', function (global, Zone, api) {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(35)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
 
 /***/ }),
 
-/***/ 93:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // referenced directly in index.html
 // works w/o any exceptions in IE11+ 
-// either in browser.console, nor in VS Console
+// neither in browser.console nor in VS Console
 //import 'core-js/client/shim.js';
 Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(89);
+__webpack_require__(92);
 //if (process.env.ENV === 'production') {
 //    // Production
 //} else {
