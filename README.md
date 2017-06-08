@@ -3,12 +3,18 @@ Angular (v4) FrontEnd + .Net WebApi BackEnd
 
 Based on: https://github.com/Burgyn/Angular2VisualStudioTemplate
 
+Tested in IE11 (with core-js shim): no errors neither in Browser Console nor in VS2017 Console. 
+
+Also tested with local IIS (Project switched back to use IISExpress)
+
 # Upcoming Features:
 
-- **Switch to Webpack from systemjs: build, bundle, referencing**
+- Optimize Webpack: automate builds, AoT
 - Add Bootstrap + jQuery
 - Add angular modules, components, services
 - Add angular routing
-- Add WebApi dummy Controller for data-fetching
+- (Implement Windows Authentification with AD)
 - (Connect to existing WCF)
-- ~~Upgrade to Angular4~~
+- ~~Upgrade to Angular4 (4.1.3)~~
+- ~~Switched to webpack from systemjs~~
+- ~~Add WebApi dummy Controller for data-fetching~~

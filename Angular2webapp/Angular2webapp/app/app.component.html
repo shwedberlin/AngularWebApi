@@ -12,6 +12,21 @@
 
       
         <br />
+        <p *ngIf="!ctrlData"><em>Fetching WebApi...</em></p>
+        <table class='table' *ngIf="ctrlData">
+            <thead>
+                <tr>
+                    <th>Client</th>
+                    <th>Server</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dummydata of ctrlData">
+                    <td>{{ dummydata.clientData }}</td>
+                    <td>{{ dummydata.serverData }}</td>
+                </tr>
+            </tbody>
+        </table>
         <br />
         <p>{{timestamp}}</p>
     </div>

@@ -1,5 +1,5 @@
 ﻿var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+//var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
@@ -35,7 +35,7 @@ module.exports = {
                 use: [{
                     loader: 'html-loader',
                     options: {
-                        minimize: true,
+                        minimize: false,
                         removeComments: false,
                         collapseWhitespace: false
                     }
@@ -48,7 +48,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: helpers.root('app'),
-                loader: ExtractTextPlugin.extract({ fallbackLoader: 'style-loader', loader: 'css-loader?sourceMap' })
+                loader: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader?sourceMap'
+                })
             },
             {
                 test: /\.css$/,
@@ -59,20 +62,19 @@ module.exports = {
     },
 
     plugins: [
-        // Workaround for angular/angular#11580
+        // Workaround for angular/angular#11580 for angular v4
         new webpack.ContextReplacementPlugin(
-            // The (\\|\/) piece accounts for path separators in *nix and Windows
-            /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
+            /angular(\\|\/)core(\\|\/)@angular/,
             helpers.root('./app'), // location of your src
             {} // a map of your routes
         ),
 
         new webpack.optimize.CommonsChunkPlugin({
+            //order is important: 
+            //The CommonsChunkPlugin identifies the hierarchy among three chunks: app -> vendor -> polyfills. 
+            //Where Webpack finds that app has shared dependencies with vendor, it removes them from app. 
+            //It would remove polyfills from vendor if they shared dependencies, which they don't.
             name: ['app', 'vendor', 'polyfills']
         }),
-
-        new HtmlWebpackPlugin({
-            template: 'app/indextemplate.html'
-        })
     ]
 };

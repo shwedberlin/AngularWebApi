@@ -85,16 +85,11 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
-    <Content Include="app\dist\app.js" />
-    <Content Include="app\dist\index.html" />
-    <Content Include="app\dist\index1.html" />
-    <Content Include="app\dist\polyfills.js" />
-    <Content Include="app\dist\vendor.js" />
-    <Content Include="app\indextemplate.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
     <Content Include="Global.asax" />
+    <Content Include="index.html" />
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
@@ -102,6 +97,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DummierController.cs" />
+    <Compile Include="Controllers\DummyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -125,7 +122,6 @@
     <Folder Include="app\core\" />
     <Folder Include="app\shared\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
