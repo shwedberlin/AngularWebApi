@@ -9,7 +9,7 @@ namespace Angular2webapp.Controllers
 {
     public class DummierController : ApiController
     {
-        // GET: api/Dummier
+        // GET: api/Dummier/Get
         public IEnumerable<DummyData> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new DummyData
@@ -18,6 +18,14 @@ namespace Angular2webapp.Controllers
                 serverData = DateTime.Now.AddDays(index).ToString("d")
             });
         }
+
+        // GET: api/Dummier/GetVersion
+        public string GetVersion()
+        {
+            return "v.0.0.1";
+        }
+
+
 
         //// GET: api/Dummier/5
         //public string Get(int id)

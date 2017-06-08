@@ -2,9 +2,10 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-//import { AffirmationComponent } from './affirmation/affirmation.component';
+import { HeaderComponent } from './header/header.component';
+import { ActionMenuComponent } from './action-menu/action-menu.component';
 //import { UserService } from './user/user.service';
-//import { ApiService } from './api.service';
+import { ApiService } from './api.service';
 //import { TestService } from './test.service';
 //import { TestProviderService } from './test-provider.service';
 
@@ -13,8 +14,8 @@ import { FormsModule } from '@angular/forms';
         CommonModule, // we use ngFor & ngIf
         FormsModule   // we use ngModel
     ],
-    exports: [],
-    declarations: [],
-    providers: [],
+    exports: [HeaderComponent, ActionMenuComponent],
+    declarations: [HeaderComponent, ActionMenuComponent],
+    providers: [ApiService]
 })
 export class CoreModule { }

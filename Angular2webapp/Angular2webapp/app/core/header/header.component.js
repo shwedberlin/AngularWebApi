@@ -10,33 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var api_service_1 = require("./core/api.service");
-var AppComponent = (function () {
-    //constructor(http: Http) {
-    //    //http.get('/api/Dummier/Get').subscribe(result => {
-    //    //    this.ctrlData = result.json() as DummyData[];
-    //    //});
-    //    http.get('/api/Dummier/Get').subscribe(value => {
-    //        this.ctrlData = <DummyData[]>value.json();
-    //    });
-    //}
-    function AppComponent(apiService) {
+var api_service_1 = require("../api.service");
+var HeaderComponent = (function () {
+    function HeaderComponent(apiService) {
         var _this = this;
         this.name = 'Angular 4 (webpack)';
-        this.timestamp = 'dummy'; //(new Date()).toString();
-        apiService.get('/Dummier/Get').subscribe(function (result) {
-            _this.ctrlData = result;
+        this.version = "n.a.";
+        apiService.get('/Dummier/GetVersion').subscribe(function (result) {
+            _this.version = result;
         });
     }
-    return AppComponent;
+    return HeaderComponent;
 }());
-AppComponent = __decorate([
+HeaderComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: './app.component.html',
-        styleUrls: ['./app.component.css']
+        selector: 'hpc-header',
+        templateUrl: './header.component.html'
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], HeaderComponent);
+exports.HeaderComponent = HeaderComponent;
+//# sourceMappingURL=header.component.js.map

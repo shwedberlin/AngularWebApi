@@ -150,12 +150,35 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 96);
+/******/ 	return __webpack_require__(__webpack_require__.s = 104);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 36:
+/***/ 104:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// referenced directly in index.html
+// works w/o any exceptions in IE11+ 
+// neither in browser.console nor in VS Console
+//import 'core-js/client/shim.js';
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(96);
+//if (process.env.ENV === 'production') {
+//    // Production
+//} else {
+//    // Development and test, uncomment after zone.js new version arrives (0.8.12+) --> 0.8.12 seems still not working
+//    //Error['stackTraceLimit'] = Infinity;  either
+//    Error.stackTraceLimit = Infinity;     //or
+//    require('zone.js/dist/long-stack-trace-zone');    
+//} 
+
+
+/***/ }),
+
+/***/ 37:
 /***/ (function(module, exports) {
 
 var g;
@@ -183,7 +206,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 92:
+/***/ 96:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -2538,30 +2561,7 @@ Zone.__load_patch('util', function (global, Zone, api) {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(36)))
-
-/***/ }),
-
-/***/ 96:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// referenced directly in index.html
-// works w/o any exceptions in IE11+ 
-// neither in browser.console nor in VS Console
-//import 'core-js/client/shim.js';
-Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(92);
-//if (process.env.ENV === 'production') {
-//    // Production
-//} else {
-//    // Development and test, uncomment after zone.js new version arrives (0.8.12+) --> 0.8.12 seems still not working
-//    //Error['stackTraceLimit'] = Infinity;  either
-//    Error.stackTraceLimit = Infinity;     //or
-//    require('zone.js/dist/long-stack-trace-zone');    
-//} 
-
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
 
 /***/ })
 

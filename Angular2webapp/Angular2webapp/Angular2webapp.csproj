@@ -85,6 +85,8 @@
   <ItemGroup>
     <Content Include="app\app.component.css" />
     <Content Include="app\app.component.html" />
+    <Content Include="app\core\action-menu\action-menu.component.html" />
+    <Content Include="app\core\header\header.component.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
@@ -129,7 +131,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="app\app.component.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
+    <TypeScriptCompile Include="app\core\action-menu\action-menu.component.ts" />
+    <TypeScriptCompile Include="app\core\api.service.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
+    <TypeScriptCompile Include="app\core\header\header.component.ts" />
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />
     <TypeScriptCompile Include="app\vendor.ts" />
