@@ -5,28 +5,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var api_service_1 = require("./core/api.service");
 var AppComponent = (function () {
-    //constructor(http: Http) {
-    //    //http.get('/api/Dummier/Get').subscribe(result => {
-    //    //    this.ctrlData = result.json() as DummyData[];
-    //    //});
-    //    http.get('/api/Dummier/Get').subscribe(value => {
-    //        this.ctrlData = <DummyData[]>value.json();
-    //    });
-    //}
-    function AppComponent(apiService) {
-        var _this = this;
+    function AppComponent() {
         this.name = 'Angular 4 (webpack)';
-        this.timestamp = 'dummy'; //(new Date()).toString();
-        apiService.get('/Dummier/Get').subscribe(function (result) {
-            _this.ctrlData = result;
-        });
+        this.timestamp = Date.now();
     }
     return AppComponent;
 }());
@@ -35,8 +19,7 @@ AppComponent = __decorate([
         selector: 'my-app',
         templateUrl: './app.component.html',
         styleUrls: ['./app.component.css']
-    }),
-    __metadata("design:paramtypes", [api_service_1.ApiService])
+    })
 ], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

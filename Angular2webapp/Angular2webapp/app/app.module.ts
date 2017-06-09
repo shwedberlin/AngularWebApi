@@ -6,8 +6,12 @@ import { CommonModule } from '@angular/common';
 /* App Root*/
 import { AppComponent } from './app.component';
 
+/* Routing Module*/
+import { AppRoutingModule } from './app.routing.module';
+
 /* Feature Modules*/
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     imports: [
@@ -15,6 +19,8 @@ import { CoreModule } from './core/core.module';
         HttpModule,
         JsonpModule,
         CommonModule,
+        AppRoutingModule,
+        SharedModule,
         CoreModule
     ],
     declarations: [ AppComponent ],

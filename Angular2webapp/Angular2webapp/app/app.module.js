@@ -12,8 +12,11 @@ var http_1 = require("@angular/http");
 var common_1 = require("@angular/common");
 /* App Root*/
 var app_component_1 = require("./app.component");
+/* Routing Module*/
+var app_routing_module_1 = require("./app.routing.module");
 /* Feature Modules*/
 var core_module_1 = require("./core/core.module");
+var shared_module_1 = require("./shared/shared.module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,6 +29,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             http_1.JsonpModule,
             common_1.CommonModule,
+            app_routing_module_1.AppRoutingModule,
+            shared_module_1.SharedModule,
             core_module_1.CoreModule
         ],
         declarations: [app_component_1.AppComponent],

@@ -83,10 +83,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css" />
+    <Content Include="app\app.component.css">
+      <DependentUpon>app.component.html</DependentUpon>
+    </Content>
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
     <Content Include="app\core\header\header.component.html" />
+    <Content Include="app\area1-site\area1-site.component.html" />
+    <Content Include="app\home-site\home-site.component.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
@@ -121,7 +125,6 @@
   <ItemGroup>
     <Folder Include="app\assets\" />
     <Folder Include="app\components\" />
-    <Folder Include="app\shared\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -129,14 +132,41 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app\app.component.ts" />
+    <TypeScriptCompile Include="app\app.component.ts">
+      <DependentUpon>app.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\app.module.ts" />
-    <TypeScriptCompile Include="app\core\action-menu\action-menu.component.ts" />
+    <TypeScriptCompile Include="app\app.routing.module.ts">
+      <SubType>Code</SubType>
+      <DependentUpon>app.module.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\area1-site\area1-site.component.ts">
+      <DependentUpon>area1-site.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\area1-site\area1-site.routing.module.ts">
+      <DependentUpon>area1-site.module.ts</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\action-menu\action-menu.component.ts">
+      <DependentUpon>action-menu.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\core\api.service.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
-    <TypeScriptCompile Include="app\core\header\header.component.ts" />
+    <TypeScriptCompile Include="app\core\header\header.component.ts">
+      <DependentUpon>header.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\area1-site\area1-site.module.ts" />
+    <TypeScriptCompile Include="app\home-site\home-site.component.ts">
+      <DependentUpon>home-site.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\home-site\home-site.module.ts" />
+    <TypeScriptCompile Include="app\home-site\home-site.routing.module.ts">
+      <SubType>Code</SubType>
+      <DependentUpon>home-site.module.ts</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />
+    <TypeScriptCompile Include="app\shared\datex.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\shared.module.ts" />
     <TypeScriptCompile Include="app\vendor.ts" />
   </ItemGroup>
   <PropertyGroup>

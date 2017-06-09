@@ -150,63 +150,12 @@
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 104);
+/******/ 	return __webpack_require__(__webpack_require__.s = 228);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 104:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// referenced directly in index.html
-// works w/o any exceptions in IE11+ 
-// neither in browser.console nor in VS Console
-//import 'core-js/client/shim.js';
-Object.defineProperty(exports, "__esModule", { value: true });
-__webpack_require__(96);
-//if (process.env.ENV === 'production') {
-//    // Production
-//} else {
-//    // Development and test, uncomment after zone.js new version arrives (0.8.12+) --> 0.8.12 seems still not working
-//    //Error['stackTraceLimit'] = Infinity;  either
-//    Error.stackTraceLimit = Infinity;     //or
-//    require('zone.js/dist/long-stack-trace-zone');    
-//} 
-
-
-/***/ }),
-
-/***/ 37:
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 96:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/**
@@ -2561,7 +2510,58 @@ Zone.__load_patch('util', function (global, Zone, api) {
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(37)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(38)))
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+// referenced directly in index.html
+// works w/o any exceptions in IE11+ 
+// neither in browser.console nor in VS Console
+//import 'core-js/client/shim.js';
+Object.defineProperty(exports, "__esModule", { value: true });
+__webpack_require__(215);
+//if (process.env.ENV === 'production') {
+//    // Production
+//} else {
+//    // Development and test, uncomment after zone.js new version arrives (0.8.12+) --> 0.8.12 seems still not working
+//    //Error['stackTraceLimit'] = Infinity;  either
+//    Error.stackTraceLimit = Infinity;     //or
+//    require('zone.js/dist/long-stack-trace-zone');    
+//} 
+
+
+/***/ }),
+
+/***/ 38:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ })
 

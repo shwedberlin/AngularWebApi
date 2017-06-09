@@ -24,7 +24,7 @@ var HeaderComponent = (function () {
 }());
 HeaderComponent = __decorate([
     core_1.Component({
-        selector: 'hpc-header',
+        selector: 'abc-header',
         templateUrl: './header.component.html'
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])

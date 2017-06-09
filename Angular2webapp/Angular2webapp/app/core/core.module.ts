@@ -1,6 +1,7 @@
 ﻿import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
 import { ActionMenuComponent } from './action-menu/action-menu.component';
@@ -12,7 +13,8 @@ import { ApiService } from './api.service';
 @NgModule({
     imports: [
         CommonModule, // we use ngFor & ngIf
-        FormsModule   // we use ngModel
+        FormsModule,  // we use ngModel
+        RouterModule
     ],
     exports: [HeaderComponent, ActionMenuComponent],
     declarations: [HeaderComponent, ActionMenuComponent],

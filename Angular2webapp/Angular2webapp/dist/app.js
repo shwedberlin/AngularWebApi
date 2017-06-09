@@ -1,41 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 100:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var api_service_1 = __webpack_require__(27);
-var ActionMenuComponent = (function () {
-    function ActionMenuComponent(apiService) {
-        this.currentHOE = 'CurrentHOE';
-    }
-    return ActionMenuComponent;
-}());
-ActionMenuComponent = __decorate([
-    core_1.Component({
-        selector: 'hpc-actionmenu',
-        template: __webpack_require__(119)
-    }),
-    __metadata("design:paramtypes", [api_service_1.ApiService])
-], ActionMenuComponent);
-exports.ActionMenuComponent = ActionMenuComponent;
-
-
-/***/ }),
-
-/***/ 101:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47,195 +12,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var common_1 = __webpack_require__(17);
-var forms_1 = __webpack_require__(98);
-var header_component_1 = __webpack_require__(102);
-var action_menu_component_1 = __webpack_require__(100);
-//import { UserService } from './user/user.service';
-var api_service_1 = __webpack_require__(27);
-//import { TestService } from './test.service';
-//import { TestProviderService } from './test-provider.service';
-var CoreModule = (function () {
-    function CoreModule() {
-    }
-    return CoreModule;
-}());
-CoreModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            forms_1.FormsModule // we use ngModel
-        ],
-        exports: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
-        declarations: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
-        providers: [api_service_1.ApiService]
-    })
-], CoreModule);
-exports.CoreModule = CoreModule;
-
-
-/***/ }),
-
-/***/ 102:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var api_service_1 = __webpack_require__(27);
-var HeaderComponent = (function () {
-    function HeaderComponent(apiService) {
-        var _this = this;
-        this.name = 'Angular 4 (webpack)';
-        this.version = "n.a.";
-        apiService.get('/Dummier/GetVersion').subscribe(function (result) {
-            _this.version = result;
-        });
-    }
-    return HeaderComponent;
-}());
-HeaderComponent = __decorate([
-    core_1.Component({
-        selector: 'hpc-header',
-        template: __webpack_require__(120)
-    }),
-    __metadata("design:paramtypes", [api_service_1.ApiService])
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
-
-
-/***/ }),
-
-/***/ 103:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(39);
-__webpack_require__(40);
-var app_module_1 = __webpack_require__(94);
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
-
-
-/***/ }),
-
-/***/ 118:
-/***/ (function(module, exports) {
-
-module.exports = "<div class='container-fluid'>\r\n    <hpc-header></hpc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <hpc-actionmenu></hpc-actionmenu>\r\n        </div>\r\n        <article>\r\n            This template holds the TypeScript source code of the angular.io quickstart\r\n        </article>\r\n        <br />\r\n\r\n\r\n      \r\n        <br />\r\n        <p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n        <table class='table' *ngIf=\"ctrlData\">\r\n            <thead>\r\n                <tr>\r\n                    <th>Client</th>\r\n                    <th>Server</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr *ngFor=\"let dummydata of ctrlData\">\r\n                    <td>{{ dummydata.clientData }}</td>\r\n                    <td>{{ dummydata.serverData }}</td>\r\n                </tr>\r\n            </tbody>\r\n        </table>\r\n        <br />\r\n        <p>{{timestamp}}</p>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 119:
-/***/ (function(module, exports) {
-
-module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <a class=\"navbar-brand\" href=\"#\">{{currentHOE}}</a>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li class=\"active\"><a href=\"#\">Home</a></li>\r\n        <li><a href=\"#\">Page 1</a></li>\r\n        <li><a href=\"#\">Page 2</a></li>\r\n        <li><a href=\"#\">Page 3</a></li>\r\n    </ul>\r\n</nav>";
-
-/***/ }),
-
-/***/ 120:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
-
-/***/ }),
-
-/***/ 122:
-/***/ (function(module, exports) {
-
-module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
-
-/***/ }),
-
-/***/ 27:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var http_1 = __webpack_require__(38);
-var Rx_1 = __webpack_require__(50);
-__webpack_require__(55);
-__webpack_require__(54);
-//TODO maybe add JwtService later
-//import { JwtService } from './jwt.service';
-var ApiService = (function () {
-    function ApiService(http) {
-        this.http = http;
-        this.apiUrl = "/api";
-    }
-    ApiService.prototype.setHeaders = function () {
-        var headersConfig = {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        };
-        //if (this.jwtService.getToken()) {
-        //    headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
-        //}
-        return new http_1.Headers(headersConfig);
-    };
-    ApiService.prototype.formatErrors = function (error) {
-        return Rx_1.Observable.throw(error.json());
-    };
-    ApiService.prototype.get = function (path, params) {
-        if (params === void 0) { params = new http_1.URLSearchParams(); }
-        return this.http.get("" + this.apiUrl + path, { headers: this.setHeaders(), search: params })
-            .catch(this.formatErrors)
-            .map(function (res) { return res.json(); });
-    };
-    return ApiService;
-}());
-ApiService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], ApiService);
-exports.ApiService = ApiService;
-
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var platform_browser_1 = __webpack_require__(18);
-var http_1 = __webpack_require__(38);
-var common_1 = __webpack_require__(17);
+var core_1 = __webpack_require__(5);
+var platform_browser_1 = __webpack_require__(19);
+var http_1 = __webpack_require__(39);
+var common_1 = __webpack_require__(16);
 /* App Root*/
-var app_component_1 = __webpack_require__(99);
+var app_component_1 = __webpack_require__(218);
+/* Routing Module*/
+var app_routing_module_1 = __webpack_require__(219);
 /* Feature Modules*/
-var core_module_1 = __webpack_require__(101);
+var core_module_1 = __webpack_require__(223);
+var shared_module_1 = __webpack_require__(43);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -248,6 +35,8 @@ AppModule = __decorate([
             http_1.HttpModule,
             http_1.JsonpModule,
             common_1.CommonModule,
+            app_routing_module_1.AppRoutingModule,
+            shared_module_1.SharedModule,
             core_module_1.CoreModule
         ],
         declarations: [app_component_1.AppComponent],
@@ -259,7 +48,7 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 98:
+/***/ 217:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -335,14 +124,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵu", function() { return MIN_LENGTH_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return PATTERN_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(180);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(19);
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -6341,7 +6130,220 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 99:
+/***/ 218:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var AppComponent = (function () {
+    function AppComponent() {
+        this.name = 'Angular 4 (webpack)';
+        this.timestamp = Date.now();
+    }
+    return AppComponent;
+}());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        template: __webpack_require__(243),
+        styles: [__webpack_require__(250)]
+    })
+], AppComponent);
+exports.AppComponent = AppComponent;
+
+
+/***/ }),
+
+/***/ 219:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(20);
+var home_site_module_1 = __webpack_require__(225);
+var area1_site_module_1 = __webpack_require__(220);
+var routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
+    { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } } //,
+    //{ path: '**', redirectTo: 'home' } // <-- maybe use later to redirect to PageNotFoundComponent (with link to home)
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
+    }
+    return AppRoutingModule;
+}());
+AppRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forRoot(routes)],
+        exports: [router_1.RouterModule],
+    })
+], AppRoutingModule);
+exports.AppRoutingModule = AppRoutingModule;
+
+
+/***/ }),
+
+/***/ 220:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var shared_module_1 = __webpack_require__(43);
+var area1_site_component_1 = __webpack_require__(55);
+var area1_site_routing_module_1 = __webpack_require__(221);
+var Area1SiteModule = (function () {
+    function Area1SiteModule() {
+    }
+    return Area1SiteModule;
+}());
+Area1SiteModule = __decorate([
+    core_1.NgModule({
+        imports: [shared_module_1.SharedModule, area1_site_routing_module_1.Area1SiteRoutingModule],
+        exports: [area1_site_component_1.Area1SiteComponent],
+        declarations: [area1_site_component_1.Area1SiteComponent],
+        providers: [],
+    })
+], Area1SiteModule);
+exports.Area1SiteModule = Area1SiteModule;
+
+
+/***/ }),
+
+/***/ 221:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(20);
+var area1_site_component_1 = __webpack_require__(55);
+var routes = [
+    { path: '', component: area1_site_component_1.Area1SiteComponent },
+];
+var Area1SiteRoutingModule = (function () {
+    function Area1SiteRoutingModule() {
+    }
+    return Area1SiteRoutingModule;
+}());
+Area1SiteRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forChild(routes)],
+        exports: [router_1.RouterModule],
+    })
+], Area1SiteRoutingModule);
+exports.Area1SiteRoutingModule = Area1SiteRoutingModule;
+exports.routedComponents = [area1_site_component_1.Area1SiteComponent];
+
+
+/***/ }),
+
+/***/ 222:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var ActionMenuComponent = (function () {
+    function ActionMenuComponent() {
+        this.menutitle = 'Menu Component';
+    }
+    return ActionMenuComponent;
+}());
+ActionMenuComponent = __decorate([
+    core_1.Component({
+        selector: 'abc-actionmenu',
+        template: __webpack_require__(245)
+    })
+], ActionMenuComponent);
+exports.ActionMenuComponent = ActionMenuComponent;
+
+
+/***/ }),
+
+/***/ 223:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var common_1 = __webpack_require__(16);
+var forms_1 = __webpack_require__(217);
+var router_1 = __webpack_require__(20);
+var header_component_1 = __webpack_require__(224);
+var action_menu_component_1 = __webpack_require__(222);
+//import { UserService } from './user/user.service';
+var api_service_1 = __webpack_require__(42);
+//import { TestService } from './test.service';
+//import { TestProviderService } from './test-provider.service';
+var CoreModule = (function () {
+    function CoreModule() {
+    }
+    return CoreModule;
+}());
+CoreModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule,
+            router_1.RouterModule
+        ],
+        exports: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
+        declarations: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
+        providers: [api_service_1.ApiService]
+    })
+], CoreModule);
+exports.CoreModule = CoreModule;
+
+
+/***/ }),
+
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6356,9 +6358,331 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(9);
-var api_service_1 = __webpack_require__(27);
-var AppComponent = (function () {
+var core_1 = __webpack_require__(5);
+var api_service_1 = __webpack_require__(42);
+var HeaderComponent = (function () {
+    function HeaderComponent(apiService) {
+        var _this = this;
+        this.name = 'Angular 4 (webpack)';
+        this.version = "n.a.";
+        apiService.get('/Dummier/GetVersion').subscribe(function (result) {
+            _this.version = result;
+        });
+    }
+    return HeaderComponent;
+}());
+HeaderComponent = __decorate([
+    core_1.Component({
+        selector: 'abc-header',
+        template: __webpack_require__(246)
+    }),
+    __metadata("design:paramtypes", [api_service_1.ApiService])
+], HeaderComponent);
+exports.HeaderComponent = HeaderComponent;
+
+
+/***/ }),
+
+/***/ 225:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var common_1 = __webpack_require__(16);
+var shared_module_1 = __webpack_require__(43);
+var home_site_component_1 = __webpack_require__(56);
+var home_site_routing_module_1 = __webpack_require__(226);
+var HomeSiteModule = (function () {
+    function HomeSiteModule() {
+    }
+    return HomeSiteModule;
+}());
+HomeSiteModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule, shared_module_1.SharedModule, home_site_routing_module_1.HomeSiteRoutingModule],
+        exports: [home_site_component_1.HomeSiteComponent],
+        declarations: [home_site_component_1.HomeSiteComponent],
+        providers: [],
+    })
+], HomeSiteModule);
+exports.HomeSiteModule = HomeSiteModule;
+
+
+/***/ }),
+
+/***/ 226:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var router_1 = __webpack_require__(20);
+var home_site_component_1 = __webpack_require__(56);
+var routes = [
+    { path: '', component: home_site_component_1.HomeSiteComponent },
+];
+var HomeSiteRoutingModule = (function () {
+    function HomeSiteRoutingModule() {
+    }
+    return HomeSiteRoutingModule;
+}());
+HomeSiteRoutingModule = __decorate([
+    core_1.NgModule({
+        imports: [router_1.RouterModule.forChild(routes)],
+        exports: [router_1.RouterModule],
+    })
+], HomeSiteRoutingModule);
+exports.HomeSiteRoutingModule = HomeSiteRoutingModule;
+exports.routedComponents = [home_site_component_1.HomeSiteComponent];
+
+
+/***/ }),
+
+/***/ 227:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_dynamic_1 = __webpack_require__(40);
+__webpack_require__(41);
+var app_module_1 = __webpack_require__(213);
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
+
+
+/***/ }),
+
+/***/ 229:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var moment = __webpack_require__(1);
+var DatexPipe = (function () {
+    function DatexPipe() {
+    }
+    DatexPipe.prototype.transform = function (value, format) {
+        if (format === void 0) { format = ""; }
+        if (!value || value === "")
+            return "";
+        return moment(value).format(format);
+    };
+    return DatexPipe;
+}());
+DatexPipe = __decorate([
+    core_1.Pipe({
+        name: 'datex'
+    })
+], DatexPipe);
+exports.DatexPipe = DatexPipe;
+
+
+/***/ }),
+
+/***/ 243:
+/***/ (function(module, exports) {
+
+module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 244:
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>";
+
+/***/ }),
+
+/***/ 245:
+/***/ (function(module, exports) {
+
+module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li [routerLinkActive]=\"['link-active']\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li [routerLinkActive]=\"['link-active']\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
+
+/***/ }),
+
+/***/ 246:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
+
+/***/ }),
+
+/***/ 247:
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
+
+/***/ }),
+
+/***/ 250:
+/***/ (function(module, exports) {
+
+module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
+
+/***/ }),
+
+/***/ 42:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var http_1 = __webpack_require__(39);
+var Rx_1 = __webpack_require__(53);
+__webpack_require__(175);
+__webpack_require__(174);
+//TODO maybe add JwtService later
+//import { JwtService } from './jwt.service';
+var ApiService = (function () {
+    function ApiService(http) {
+        this.http = http;
+        this.apiUrl = "/api";
+    }
+    ApiService.prototype.setHeaders = function () {
+        var headersConfig = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        };
+        //if (this.jwtService.getToken()) {
+        //    headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
+        //}
+        return new http_1.Headers(headersConfig);
+    };
+    ApiService.prototype.formatErrors = function (error) {
+        return Rx_1.Observable.throw(error.json());
+    };
+    ApiService.prototype.get = function (path, params) {
+        if (params === void 0) { params = new http_1.URLSearchParams(); }
+        return this.http.get("" + this.apiUrl + path, { headers: this.setHeaders(), search: params })
+            .catch(this.formatErrors)
+            .map(function (res) { return res.json(); });
+    };
+    return ApiService;
+}());
+ApiService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], ApiService);
+exports.ApiService = ApiService;
+
+
+/***/ }),
+
+/***/ 43:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var common_1 = __webpack_require__(16);
+var datex_pipe_1 = __webpack_require__(229);
+var SharedModule = (function () {
+    function SharedModule() {
+    }
+    return SharedModule;
+}());
+SharedModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule],
+        exports: [common_1.CommonModule, datex_pipe_1.DatexPipe],
+        declarations: [datex_pipe_1.DatexPipe],
+        providers: [],
+    })
+], SharedModule);
+exports.SharedModule = SharedModule;
+
+
+/***/ }),
+
+/***/ 55:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var Area1SiteComponent = (function () {
+    function Area1SiteComponent() {
+        this.title = "I'm Area1 site component. Absolutely dummy.";
+        this.timestamp = new Date();
+    }
+    return Area1SiteComponent;
+}());
+Area1SiteComponent = __decorate([
+    core_1.Component({
+        selector: 'abc-area1',
+        template: __webpack_require__(244)
+    })
+], Area1SiteComponent);
+exports.Area1SiteComponent = Area1SiteComponent;
+
+
+/***/ }),
+
+/***/ 56:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var api_service_1 = __webpack_require__(42);
+var HomeSiteComponent = (function () {
     //constructor(http: Http) {
     //    //http.get('/api/Dummier/Get').subscribe(result => {
     //    //    this.ctrlData = result.json() as DummyData[];
@@ -6367,28 +6691,27 @@ var AppComponent = (function () {
     //        this.ctrlData = <DummyData[]>value.json();
     //    });
     //}
-    function AppComponent(apiService) {
+    function HomeSiteComponent(apiService) {
         var _this = this;
-        this.name = 'Angular 4 (webpack)';
-        this.timestamp = 'dummy'; //(new Date()).toString();
+        this.title = "I'm home-site component with WebApi data fetching";
+        this.timestamp = (new Date()).toString();
         apiService.get('/Dummier/Get').subscribe(function (result) {
             _this.ctrlData = result;
         });
     }
-    return AppComponent;
+    return HomeSiteComponent;
 }());
-AppComponent = __decorate([
+HomeSiteComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        template: __webpack_require__(118),
-        styles: [__webpack_require__(122)]
+        selector: 'abc-home',
+        template: __webpack_require__(247)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
-], AppComponent);
-exports.AppComponent = AppComponent;
+], HomeSiteComponent);
+exports.HomeSiteComponent = HomeSiteComponent;
 
 
 /***/ })
 
-},[103]);
+},[227]);
 //# sourceMappingURL=app.js.map

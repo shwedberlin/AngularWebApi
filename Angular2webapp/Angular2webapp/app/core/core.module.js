@@ -9,6 +9,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
+var router_1 = require("@angular/router");
 var header_component_1 = require("./header/header.component");
 var action_menu_component_1 = require("./action-menu/action-menu.component");
 //import { UserService } from './user/user.service';
@@ -24,7 +25,8 @@ CoreModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            forms_1.FormsModule // we use ngModel
+            forms_1.FormsModule,
+            router_1.RouterModule
         ],
         exports: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
         declarations: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],

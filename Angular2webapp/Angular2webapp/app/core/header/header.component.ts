@@ -3,7 +3,7 @@
 import { ApiService } from '../api.service';
 
 @Component({
-    selector: 'hpc-header',
+    selector: 'abc-header',
     templateUrl: './header.component.html'
 })
 export class HeaderComponent {

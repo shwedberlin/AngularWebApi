@@ -14,4 +14,5 @@ require("rxjs");
 require("bootstrap");
 require("bootstrap/dist/css/bootstrap.css");
 require("jquery");
+require("moment");
 //# sourceMappingURL=vendor.js.map
