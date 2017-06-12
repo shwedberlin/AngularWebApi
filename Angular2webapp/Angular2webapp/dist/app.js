@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 213:
+/***/ 215:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,12 +17,13 @@ var platform_browser_1 = __webpack_require__(19);
 var http_1 = __webpack_require__(39);
 var common_1 = __webpack_require__(16);
 /* App Root*/
-var app_component_1 = __webpack_require__(218);
+var app_component_1 = __webpack_require__(220);
 /* Routing Module*/
-var app_routing_module_1 = __webpack_require__(219);
+var app_routing_module_1 = __webpack_require__(221);
 /* Feature Modules*/
-var core_module_1 = __webpack_require__(223);
+var core_module_1 = __webpack_require__(225);
 var shared_module_1 = __webpack_require__(43);
+var action_menu_component_1 = __webpack_require__(224);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -39,7 +40,7 @@ AppModule = __decorate([
             shared_module_1.SharedModule,
             core_module_1.CoreModule
         ],
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, action_menu_component_1.ActionMenuComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
@@ -48,7 +49,7 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 217:
+/***/ 219:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -125,11 +126,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return PATTERN_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(182);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(19);
 var __extends = (this && this.__extends) || function (d, b) {
@@ -6130,7 +6131,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 218:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6153,8 +6154,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(243),
-        styles: [__webpack_require__(250)]
+        template: __webpack_require__(245),
+        styles: [__webpack_require__(253)]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6162,7 +6163,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 219:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6175,14 +6176,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var router_1 = __webpack_require__(20);
-var home_site_module_1 = __webpack_require__(225);
-var area1_site_module_1 = __webpack_require__(220);
+var router_1 = __webpack_require__(28);
+var home_site_module_1 = __webpack_require__(227);
+var area1_site_module_1 = __webpack_require__(222);
+var page_not_found_component_1 = __webpack_require__(56);
+var welcome_component_1 = __webpack_require__(57);
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
-    { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } } //,
-    //{ path: '**', redirectTo: 'home' } // <-- maybe use later to redirect to PageNotFoundComponent (with link to home)
+    { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -6200,7 +6204,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 220:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6215,7 +6219,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var shared_module_1 = __webpack_require__(43);
 var area1_site_component_1 = __webpack_require__(55);
-var area1_site_routing_module_1 = __webpack_require__(221);
+var area1_site_routing_module_1 = __webpack_require__(223);
 var Area1SiteModule = (function () {
     function Area1SiteModule() {
     }
@@ -6234,7 +6238,7 @@ exports.Area1SiteModule = Area1SiteModule;
 
 /***/ }),
 
-/***/ 221:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6247,7 +6251,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var router_1 = __webpack_require__(20);
+var router_1 = __webpack_require__(28);
 var area1_site_component_1 = __webpack_require__(55);
 var routes = [
     { path: '', component: area1_site_component_1.Area1SiteComponent },
@@ -6269,7 +6273,7 @@ exports.routedComponents = [area1_site_component_1.Area1SiteComponent];
 
 /***/ }),
 
-/***/ 222:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6291,7 +6295,7 @@ var ActionMenuComponent = (function () {
 ActionMenuComponent = __decorate([
     core_1.Component({
         selector: 'abc-actionmenu',
-        template: __webpack_require__(245)
+        template: __webpack_require__(247)
     })
 ], ActionMenuComponent);
 exports.ActionMenuComponent = ActionMenuComponent;
@@ -6299,7 +6303,7 @@ exports.ActionMenuComponent = ActionMenuComponent;
 
 /***/ }),
 
-/***/ 223:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6313,14 +6317,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var forms_1 = __webpack_require__(217);
-var router_1 = __webpack_require__(20);
-var header_component_1 = __webpack_require__(224);
-var action_menu_component_1 = __webpack_require__(222);
-//import { UserService } from './user/user.service';
+var forms_1 = __webpack_require__(219);
+var header_component_1 = __webpack_require__(226);
+var page_not_found_component_1 = __webpack_require__(56);
+var welcome_component_1 = __webpack_require__(57);
 var api_service_1 = __webpack_require__(42);
-//import { TestService } from './test.service';
-//import { TestProviderService } from './test-provider.service';
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -6330,11 +6331,10 @@ CoreModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            forms_1.FormsModule,
-            router_1.RouterModule
+            forms_1.FormsModule //,  // we use ngModel
         ],
-        exports: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
-        declarations: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
+        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
+        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
         providers: [api_service_1.ApiService]
     })
 ], CoreModule);
@@ -6343,7 +6343,7 @@ exports.CoreModule = CoreModule;
 
 /***/ }),
 
-/***/ 224:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6374,7 +6374,7 @@ var HeaderComponent = (function () {
 HeaderComponent = __decorate([
     core_1.Component({
         selector: 'abc-header',
-        template: __webpack_require__(246)
+        template: __webpack_require__(248)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], HeaderComponent);
@@ -6383,7 +6383,7 @@ exports.HeaderComponent = HeaderComponent;
 
 /***/ }),
 
-/***/ 225:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6398,8 +6398,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
 var shared_module_1 = __webpack_require__(43);
-var home_site_component_1 = __webpack_require__(56);
-var home_site_routing_module_1 = __webpack_require__(226);
+var home_site_component_1 = __webpack_require__(58);
+var home_site_routing_module_1 = __webpack_require__(228);
 var HomeSiteModule = (function () {
     function HomeSiteModule() {
     }
@@ -6418,7 +6418,7 @@ exports.HomeSiteModule = HomeSiteModule;
 
 /***/ }),
 
-/***/ 226:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6431,8 +6431,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var router_1 = __webpack_require__(20);
-var home_site_component_1 = __webpack_require__(56);
+var router_1 = __webpack_require__(28);
+var home_site_component_1 = __webpack_require__(58);
 var routes = [
     { path: '', component: home_site_component_1.HomeSiteComponent },
 ];
@@ -6453,7 +6453,7 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 
 /***/ }),
 
-/***/ 227:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6461,13 +6461,13 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 Object.defineProperty(exports, "__esModule", { value: true });
 var platform_browser_dynamic_1 = __webpack_require__(40);
 __webpack_require__(41);
-var app_module_1 = __webpack_require__(213);
+var app_module_1 = __webpack_require__(215);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ }),
 
-/***/ 229:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6502,42 +6502,49 @@ exports.DatexPipe = DatexPipe;
 
 /***/ }),
 
-/***/ 243:
+/***/ 245:
 /***/ (function(module, exports) {
 
 module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
-/***/ 244:
+/***/ 246:
 /***/ (function(module, exports) {
 
 module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>";
 
 /***/ }),
 
-/***/ 245:
+/***/ 247:
 /***/ (function(module, exports) {
 
-module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li [routerLinkActive]=\"['link-active']\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li [routerLinkActive]=\"['link-active']\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
+module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
 
 /***/ }),
 
-/***/ 246:
+/***/ 248:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
 
 /***/ }),
 
-/***/ 247:
+/***/ 249:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 250:
 /***/ (function(module, exports) {
 
 module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
 
 /***/ }),
 
-/***/ 250:
+/***/ 253:
 /***/ (function(module, exports) {
 
 module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
@@ -6562,8 +6569,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var http_1 = __webpack_require__(39);
 var Rx_1 = __webpack_require__(53);
-__webpack_require__(175);
-__webpack_require__(174);
+__webpack_require__(177);
+__webpack_require__(176);
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
 var ApiService = (function () {
@@ -6615,7 +6622,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var datex_pipe_1 = __webpack_require__(229);
+var datex_pipe_1 = __webpack_require__(231);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -6656,8 +6663,7 @@ var Area1SiteComponent = (function () {
 }());
 Area1SiteComponent = __decorate([
     core_1.Component({
-        selector: 'abc-area1',
-        template: __webpack_require__(244)
+        template: __webpack_require__(246)
     })
 ], Area1SiteComponent);
 exports.Area1SiteComponent = Area1SiteComponent;
@@ -6676,21 +6682,70 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var PageNotFoundComponent = (function () {
+    function PageNotFoundComponent() {
+    }
+    return PageNotFoundComponent;
+}());
+PageNotFoundComponent = __decorate([
+    core_1.Component({
+        template: "\n                <h1>404</h1>\n                <h2> This is not the page you were looking for!</h2>                \n            "
+    })
+], PageNotFoundComponent);
+exports.PageNotFoundComponent = PageNotFoundComponent;
+
+
+/***/ }),
+
+/***/ 57:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var WelcomeComponent = (function () {
+    function WelcomeComponent() {
+        this.pageTitle = 'Welcome to Site';
+    }
+    return WelcomeComponent;
+}());
+WelcomeComponent = __decorate([
+    core_1.Component({
+        template: __webpack_require__(249)
+    })
+], WelcomeComponent);
+exports.WelcomeComponent = WelcomeComponent;
+
+
+/***/ }),
+
+/***/ 58:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var api_service_1 = __webpack_require__(42);
+var api_service_1 = __webpack_require__(42); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
 var HomeSiteComponent = (function () {
-    //constructor(http: Http) {
-    //    //http.get('/api/Dummier/Get').subscribe(result => {
-    //    //    this.ctrlData = result.json() as DummyData[];
-    //    //});
-    //    http.get('/api/Dummier/Get').subscribe(value => {
-    //        this.ctrlData = <DummyData[]>value.json();
-    //    });
-    //}
     function HomeSiteComponent(apiService) {
         var _this = this;
         this.title = "I'm home-site component with WebApi data fetching";
@@ -6703,8 +6758,7 @@ var HomeSiteComponent = (function () {
 }());
 HomeSiteComponent = __decorate([
     core_1.Component({
-        selector: 'abc-home',
-        template: __webpack_require__(247)
+        template: __webpack_require__(250)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], HomeSiteComponent);
@@ -6713,5 +6767,5 @@ exports.HomeSiteComponent = HomeSiteComponent;
 
 /***/ })
 
-},[227]);
+},[229]);
 //# sourceMappingURL=app.js.map

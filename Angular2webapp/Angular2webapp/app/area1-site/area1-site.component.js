@@ -16,7 +16,6 @@ var Area1SiteComponent = (function () {
 }());
 Area1SiteComponent = __decorate([
     core_1.Component({
-        selector: 'abc-area1',
         templateUrl: './area1-site.component.html'
     })
 ], Area1SiteComponent);

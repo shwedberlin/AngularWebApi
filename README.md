@@ -5,14 +5,14 @@ Based on: https://github.com/Burgyn/Angular2VisualStudioTemplate
 
 Tested in IE11 (with core-js shim): no errors neither in Browser Console nor in VS2017 Console. Also tested with local IIS (Project switched back to use IISExpress)
 
-Several Modules added: Shared, Core Module with services, pipes and components. Angular (= client side) routing is configured, server side routing (after F5/refresh) is corrupt. IIS rewrite rules wrong?
+Several Modules added: Shared, Core Module with services, pipes and components. Angular routing is configured with IIS Express Url Rewrite rules: dealing fine with browser refresh/back, 404 Page, in-app and url routing. Local IIS not tested yet - URL Rewrite module required.
 
 # Upcoming Features:
 
 - Optimize Webpack: automate builds, speedup, AoT
-- Add angular + WebApi routing dealing fine with browser F5/Back
 - (Implement Windows Authentification with AD)
 - (Connect to existing WCF)
+- ~~Add angular + WebApi routing dealing fine with browser F5/Back~~
 - ~~Upgrade to Angular4 (4.1.3)~~
 - ~~Switched to webpack from systemjs~~
 - ~~Add WebApi dummy Controller for data-fetching~~
@@ -22,4 +22,5 @@ Several Modules added: Shared, Core Module with services, pipes and components. 
 # Last fixes:
  
 - Bootstrap assets referencing in webpack corrected
-- Added shared (shared components, pipes) and core (services and singletons) modules 
+- Added shared (shared components, pipes) and core (services and singletons) modules
+- Index.html base href and some RouterModule fixes. 

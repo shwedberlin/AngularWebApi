@@ -10,11 +10,14 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var home_site_module_1 = require("./home-site/home-site.module");
 var area1_site_module_1 = require("./area1-site/area1-site.module");
+var page_not_found_component_1 = require("./core/page-not-found/page-not-found.component");
+var welcome_component_1 = require("./core/welcome/welcome.component");
 var routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
-    { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } } //,
-    //{ path: '**', redirectTo: 'home' } // <-- maybe use later to redirect to PageNotFoundComponent (with link to home)
+    { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

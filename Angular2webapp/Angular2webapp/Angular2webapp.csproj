@@ -90,6 +90,7 @@
     <Content Include="app\core\action-menu\action-menu.component.html" />
     <Content Include="app\core\header\header.component.html" />
     <Content Include="app\area1-site\area1-site.component.html" />
+    <Content Include="app\core\welcome\welcome.component.html" />
     <Content Include="app\home-site\home-site.component.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.common.js" />
@@ -155,6 +156,10 @@
       <DependentUpon>header.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\area1-site\area1-site.module.ts" />
+    <TypeScriptCompile Include="app\core\page-not-found\page-not-found.component.ts" />
+    <TypeScriptCompile Include="app\core\welcome\welcome.component.ts">
+      <DependentUpon>welcome.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\home-site\home-site.component.ts">
       <DependentUpon>home-site.component.html</DependentUpon>
     </TypeScriptCompile>

@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app.routing.module';
 /* Feature Modules*/
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { ActionMenuComponent } from './core/action-menu/action-menu.component';
 
 @NgModule({
     imports: [
@@ -23,7 +24,7 @@ import { SharedModule } from './shared/shared.module';
         SharedModule,
         CoreModule
     ],
-    declarations: [ AppComponent ],
+    declarations: [ AppComponent, ActionMenuComponent ],
     bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

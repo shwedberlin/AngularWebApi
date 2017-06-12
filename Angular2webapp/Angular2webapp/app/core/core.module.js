@@ -9,13 +9,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
-var router_1 = require("@angular/router");
 var header_component_1 = require("./header/header.component");
-var action_menu_component_1 = require("./action-menu/action-menu.component");
-//import { UserService } from './user/user.service';
+var page_not_found_component_1 = require("./page-not-found/page-not-found.component");
+var welcome_component_1 = require("./welcome/welcome.component");
 var api_service_1 = require("./api.service");
-//import { TestService } from './test.service';
-//import { TestProviderService } from './test-provider.service';
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -25,11 +22,10 @@ CoreModule = __decorate([
     core_1.NgModule({
         imports: [
             common_1.CommonModule,
-            forms_1.FormsModule,
-            router_1.RouterModule
+            forms_1.FormsModule //,  // we use ngModel
         ],
-        exports: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
-        declarations: [header_component_1.HeaderComponent, action_menu_component_1.ActionMenuComponent],
+        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
+        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
         providers: [api_service_1.ApiService]
     })
 ], CoreModule);

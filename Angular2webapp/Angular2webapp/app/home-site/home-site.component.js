@@ -10,16 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var api_service_1 = require("../core/api.service");
+var api_service_1 = require("../core/api.service"); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
 var HomeSiteComponent = (function () {
-    //constructor(http: Http) {
-    //    //http.get('/api/Dummier/Get').subscribe(result => {
-    //    //    this.ctrlData = result.json() as DummyData[];
-    //    //});
-    //    http.get('/api/Dummier/Get').subscribe(value => {
-    //        this.ctrlData = <DummyData[]>value.json();
-    //    });
-    //}
     function HomeSiteComponent(apiService) {
         var _this = this;
         this.title = "I'm home-site component with WebApi data fetching";
@@ -32,7 +24,6 @@ var HomeSiteComponent = (function () {
 }());
 HomeSiteComponent = __decorate([
     core_1.Component({
-        selector: 'abc-home',
         templateUrl: './home-site.component.html'
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])

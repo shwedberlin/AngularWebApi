@@ -17,6 +17,7 @@ var app_routing_module_1 = require("./app.routing.module");
 /* Feature Modules*/
 var core_module_1 = require("./core/core.module");
 var shared_module_1 = require("./shared/shared.module");
+var action_menu_component_1 = require("./core/action-menu/action-menu.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +34,7 @@ AppModule = __decorate([
             shared_module_1.SharedModule,
             core_module_1.CoreModule
         ],
-        declarations: [app_component_1.AppComponent],
+        declarations: [app_component_1.AppComponent, action_menu_component_1.ActionMenuComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
