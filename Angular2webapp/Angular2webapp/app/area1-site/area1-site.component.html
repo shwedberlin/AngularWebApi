@@ -1,4 +1,28 @@
-﻿<div>
-    <h3>{{title}}</h3>
-    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
+﻿<div class="panel panel-primary">
+    <div class="panel-heading">
+        {{title}}
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <tree-component [tree]="tree" (selectedChange)="treeSelect($event)" [(selected)]="selectedTreeElement"></tree-component>
+            </div>
+            <div class="col-md-4">
+                <member-component [members]="members" [treeElement]="selectedTreeElement" (selectedChange)="memberSelect($event)" [(selected)]="selectedMember"></member-component>
+            </div>
+            <div class="col-md-4">
+                <div *ngIf="!alreadySelectedMembers || alreadySelectedMembers.length == 0" class="panel-heading">
+                    <h3 class="panel-title">Nothing selected yet!</h3>
+                </div>
+                <ul class="list-group" *ngIf="alreadySelectedMembers">
+                    <li *ngFor="let selMember of alreadySelectedMembers">
+                        <p>{{selMember.name}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

@@ -1,0 +1,12 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Tree Structure</h3>
+    </div>
+    <ul class="nav nav-pills nav-stacked">
+        <li *ngFor="let element of tree"
+            role="presentation"
+            [class.active]="selected == element">
+            <a (click)="selectedChange.next(element)">{{element.name}}</a>
+        </li>
+    </ul>
+</div>

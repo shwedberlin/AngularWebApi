@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var datex_pipe_1 = require("./datex.pipe");
+var tree_component_1 = require("./tree/tree.component");
+var member_component_1 = require("./member/member.component");
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -17,8 +19,8 @@ var SharedModule = (function () {
 SharedModule = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule],
-        exports: [common_1.CommonModule, datex_pipe_1.DatexPipe],
-        declarations: [datex_pipe_1.DatexPipe],
+        exports: [common_1.CommonModule, datex_pipe_1.DatexPipe, tree_component_1.TreeComponent, member_component_1.MemberComponent],
+        declarations: [datex_pipe_1.DatexPipe, tree_component_1.TreeComponent, member_component_1.MemberComponent],
         providers: [],
     })
 ], SharedModule);

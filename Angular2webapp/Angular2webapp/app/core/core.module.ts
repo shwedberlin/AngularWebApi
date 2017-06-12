@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ApiService } from './api.service';
+import { TestService } from './test.service';
 
 @NgModule({
     imports: [
@@ -14,6 +15,6 @@ import { ApiService } from './api.service';
     ],
     exports: [ HeaderComponent, PageNotFoundComponent, WelcomeComponent],
     declarations: [HeaderComponent, PageNotFoundComponent, WelcomeComponent],
-    providers: [ApiService]
+    providers: [ApiService, TestService]
 })
 export class CoreModule { }

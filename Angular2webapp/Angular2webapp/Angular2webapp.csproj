@@ -92,6 +92,8 @@
     <Content Include="app\area1-site\area1-site.component.html" />
     <Content Include="app\core\welcome\welcome.component.html" />
     <Content Include="app\home-site\home-site.component.html" />
+    <Content Include="app\shared\member\member.component.html" />
+    <Content Include="app\shared\tree\tree.component.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
@@ -157,6 +159,7 @@
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\area1-site\area1-site.module.ts" />
     <TypeScriptCompile Include="app\core\page-not-found\page-not-found.component.ts" />
+    <TypeScriptCompile Include="app\core\test.service.ts" />
     <TypeScriptCompile Include="app\core\welcome\welcome.component.ts">
       <DependentUpon>welcome.component.html</DependentUpon>
     </TypeScriptCompile>
@@ -171,7 +174,13 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />
     <TypeScriptCompile Include="app\shared\datex.pipe.ts" />
+    <TypeScriptCompile Include="app\shared\member\member.component.ts">
+      <DependentUpon>member.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="app\shared\tree\tree.component.ts">
+      <DependentUpon>tree.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\vendor.ts" />
   </ItemGroup>
   <PropertyGroup>

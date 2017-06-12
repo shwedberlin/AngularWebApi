@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 215:
+/***/ 216:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -14,16 +14,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var platform_browser_1 = __webpack_require__(19);
-var http_1 = __webpack_require__(39);
+var http_1 = __webpack_require__(40);
 var common_1 = __webpack_require__(16);
 /* App Root*/
-var app_component_1 = __webpack_require__(220);
+var app_component_1 = __webpack_require__(221);
 /* Routing Module*/
-var app_routing_module_1 = __webpack_require__(221);
+var app_routing_module_1 = __webpack_require__(222);
 /* Feature Modules*/
-var core_module_1 = __webpack_require__(225);
-var shared_module_1 = __webpack_require__(43);
-var action_menu_component_1 = __webpack_require__(224);
+var core_module_1 = __webpack_require__(226);
+var shared_module_1 = __webpack_require__(44);
+var action_menu_component_1 = __webpack_require__(225);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -49,7 +49,7 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -126,9 +126,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return PATTERN_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(182);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(183);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -6131,7 +6131,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6154,8 +6154,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(245),
-        styles: [__webpack_require__(253)]
+        template: __webpack_require__(248),
+        styles: [__webpack_require__(258)]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6163,7 +6163,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 221:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6177,10 +6177,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_module_1 = __webpack_require__(227);
-var area1_site_module_1 = __webpack_require__(222);
-var page_not_found_component_1 = __webpack_require__(56);
-var welcome_component_1 = __webpack_require__(57);
+var home_site_module_1 = __webpack_require__(228);
+var area1_site_module_1 = __webpack_require__(223);
+var page_not_found_component_1 = __webpack_require__(57);
+var welcome_component_1 = __webpack_require__(58);
 var routes = [
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
@@ -6204,7 +6204,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 222:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6217,9 +6217,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var shared_module_1 = __webpack_require__(43);
-var area1_site_component_1 = __webpack_require__(55);
-var area1_site_routing_module_1 = __webpack_require__(223);
+var shared_module_1 = __webpack_require__(44);
+var area1_site_component_1 = __webpack_require__(56);
+var area1_site_routing_module_1 = __webpack_require__(224);
 var Area1SiteModule = (function () {
     function Area1SiteModule() {
     }
@@ -6238,7 +6238,7 @@ exports.Area1SiteModule = Area1SiteModule;
 
 /***/ }),
 
-/***/ 223:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6252,7 +6252,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var area1_site_component_1 = __webpack_require__(55);
+var area1_site_component_1 = __webpack_require__(56);
 var routes = [
     { path: '', component: area1_site_component_1.Area1SiteComponent },
 ];
@@ -6273,7 +6273,7 @@ exports.routedComponents = [area1_site_component_1.Area1SiteComponent];
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6295,50 +6295,10 @@ var ActionMenuComponent = (function () {
 ActionMenuComponent = __decorate([
     core_1.Component({
         selector: 'abc-actionmenu',
-        template: __webpack_require__(247)
+        template: __webpack_require__(250)
     })
 ], ActionMenuComponent);
 exports.ActionMenuComponent = ActionMenuComponent;
-
-
-/***/ }),
-
-/***/ 225:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__(5);
-var common_1 = __webpack_require__(16);
-var forms_1 = __webpack_require__(219);
-var header_component_1 = __webpack_require__(226);
-var page_not_found_component_1 = __webpack_require__(56);
-var welcome_component_1 = __webpack_require__(57);
-var api_service_1 = __webpack_require__(42);
-var CoreModule = (function () {
-    function CoreModule() {
-    }
-    return CoreModule;
-}());
-CoreModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            common_1.CommonModule,
-            forms_1.FormsModule //,  // we use ngModel
-        ],
-        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService]
-    })
-], CoreModule);
-exports.CoreModule = CoreModule;
 
 
 /***/ }),
@@ -6354,31 +6314,32 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var api_service_1 = __webpack_require__(42);
-var HeaderComponent = (function () {
-    function HeaderComponent(apiService) {
-        var _this = this;
-        this.name = 'Angular 4 (webpack)';
-        this.version = "n.a.";
-        apiService.get('/Dummier/GetVersion').subscribe(function (result) {
-            _this.version = result;
-        });
+var common_1 = __webpack_require__(16);
+var forms_1 = __webpack_require__(220);
+var header_component_1 = __webpack_require__(227);
+var page_not_found_component_1 = __webpack_require__(57);
+var welcome_component_1 = __webpack_require__(58);
+var api_service_1 = __webpack_require__(43);
+var test_service_1 = __webpack_require__(29);
+var CoreModule = (function () {
+    function CoreModule() {
     }
-    return HeaderComponent;
+    return CoreModule;
 }());
-HeaderComponent = __decorate([
-    core_1.Component({
-        selector: 'abc-header',
-        template: __webpack_require__(248)
-    }),
-    __metadata("design:paramtypes", [api_service_1.ApiService])
-], HeaderComponent);
-exports.HeaderComponent = HeaderComponent;
+CoreModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            common_1.CommonModule,
+            forms_1.FormsModule //,  // we use ngModel
+        ],
+        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
+        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
+        providers: [api_service_1.ApiService, test_service_1.TestService]
+    })
+], CoreModule);
+exports.CoreModule = CoreModule;
 
 
 /***/ }),
@@ -6394,12 +6355,52 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var api_service_1 = __webpack_require__(43);
+var HeaderComponent = (function () {
+    function HeaderComponent(apiService) {
+        var _this = this;
+        this.name = 'Angular 4 (webpack)';
+        this.version = "n.a.";
+        apiService.get('/Dummier/GetVersion').subscribe(function (result) {
+            _this.version = result;
+        });
+    }
+    return HeaderComponent;
+}());
+HeaderComponent = __decorate([
+    core_1.Component({
+        selector: 'abc-header',
+        template: __webpack_require__(251)
+    }),
+    __metadata("design:paramtypes", [api_service_1.ApiService])
+], HeaderComponent);
+exports.HeaderComponent = HeaderComponent;
+
+
+/***/ }),
+
+/***/ 228:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var shared_module_1 = __webpack_require__(43);
-var home_site_component_1 = __webpack_require__(58);
-var home_site_routing_module_1 = __webpack_require__(228);
+var shared_module_1 = __webpack_require__(44);
+var home_site_component_1 = __webpack_require__(59);
+var home_site_routing_module_1 = __webpack_require__(229);
 var HomeSiteModule = (function () {
     function HomeSiteModule() {
     }
@@ -6418,7 +6419,7 @@ exports.HomeSiteModule = HomeSiteModule;
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6432,7 +6433,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_component_1 = __webpack_require__(58);
+var home_site_component_1 = __webpack_require__(59);
 var routes = [
     { path: '', component: home_site_component_1.HomeSiteComponent },
 ];
@@ -6453,21 +6454,21 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(40);
-__webpack_require__(41);
-var app_module_1 = __webpack_require__(215);
+var platform_browser_dynamic_1 = __webpack_require__(41);
+__webpack_require__(42);
+var app_module_1 = __webpack_require__(216);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6502,56 +6503,7 @@ exports.DatexPipe = DatexPipe;
 
 /***/ }),
 
-/***/ 245:
-/***/ (function(module, exports) {
-
-module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 246:
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>";
-
-/***/ }),
-
-/***/ 247:
-/***/ (function(module, exports) {
-
-module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
-
-/***/ }),
-
-/***/ 248:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
-
-/***/ }),
-
-/***/ 249:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 250:
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
-
-/***/ }),
-
-/***/ 253:
-/***/ (function(module, exports) {
-
-module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
-
-/***/ }),
-
-/***/ 42:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6567,10 +6519,236 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var http_1 = __webpack_require__(39);
-var Rx_1 = __webpack_require__(53);
+var test_service_1 = __webpack_require__(29);
+var MemberComponent = (function () {
+    function MemberComponent() {
+        this.selectedChange = new core_1.EventEmitter();
+    }
+    return MemberComponent;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], MemberComponent.prototype, "members", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", test_service_1.TreeElement)
+], MemberComponent.prototype, "treeElement", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", test_service_1.Member)
+], MemberComponent.prototype, "selected", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], MemberComponent.prototype, "selectedChange", void 0);
+MemberComponent = __decorate([
+    core_1.Component({
+        selector: 'member-component',
+        template: __webpack_require__(254)
+    }),
+    __metadata("design:paramtypes", [])
+], MemberComponent);
+exports.MemberComponent = MemberComponent;
+
+
+/***/ }),
+
+/***/ 234:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var test_service_1 = __webpack_require__(29);
+var TreeComponent = (function () {
+    function TreeComponent() {
+        this.selectedChange = new core_1.EventEmitter();
+    }
+    return TreeComponent;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Array)
+], TreeComponent.prototype, "tree", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", test_service_1.TreeElement)
+], TreeComponent.prototype, "selected", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], TreeComponent.prototype, "selectedChange", void 0);
+TreeComponent = __decorate([
+    core_1.Component({
+        selector: 'tree-component',
+        template: __webpack_require__(255)
+    }),
+    __metadata("design:paramtypes", [])
+], TreeComponent);
+exports.TreeComponent = TreeComponent;
+
+
+/***/ }),
+
+/***/ 248:
+/***/ (function(module, exports) {
+
+module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 249:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{title}}\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n            <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4\">\r\n                <tree-component [tree]=\"tree\" (selectedChange)=\"treeSelect($event)\" [(selected)]=\"selectedTreeElement\"></tree-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <member-component [members]=\"members\" [treeElement]=\"selectedTreeElement\" (selectedChange)=\"memberSelect($event)\" [(selected)]=\"selectedMember\"></member-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div *ngIf=\"!alreadySelectedMembers || alreadySelectedMembers.length == 0\" class=\"panel-heading\">\r\n                    <h3 class=\"panel-title\">Nothing selected yet!</h3>\r\n                </div>\r\n                <ul class=\"list-group\" *ngIf=\"alreadySelectedMembers\">\r\n                    <li *ngFor=\"let selMember of alreadySelectedMembers\">\r\n                        <p>{{selMember.name}}</p>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 250:
+/***/ (function(module, exports) {
+
+module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
+
+/***/ }),
+
+/***/ 251:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
+
+/***/ }),
+
+/***/ 252:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 253:
+/***/ (function(module, exports) {
+
+module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
+
+/***/ }),
+
+/***/ 254:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">{{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+
+/***/ }),
+
+/***/ 255:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">Tree Structure</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+
+/***/ }),
+
+/***/ 258:
+/***/ (function(module, exports) {
+
+module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
+
+/***/ }),
+
+/***/ 29:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var TestService = (function () {
+    function TestService() {
+        this.tree = new Array();
+        this.tree.push(new TreeElement(1, "A", "first"));
+        this.tree.push(new TreeElement(2, "B", "first"));
+        this.tree.push(new TreeElement(3, "C", "first"));
+        this.tree.push(new TreeElement(4, "D", "first"));
+        this.tree.push(new TreeElement(5, "E", "first"));
+        this.tree.push(new TreeElement(6, "F", "first"));
+    }
+    TestService.prototype.getCurrentTree = function () {
+        return this.tree;
+    };
+    TestService.prototype.getMembers = function (treeElement) {
+        var members = new Array();
+        members.push(new Member(1, treeElement.name + ".Meber1", "first"));
+        members.push(new Member(2, treeElement.name + ".Meber2", "first"));
+        members.push(new Member(3, treeElement.name + ".Meber3", "first"));
+        return members;
+    };
+    return TestService;
+}());
+TestService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], TestService);
+exports.TestService = TestService;
+var TreeElement = (function () {
+    function TreeElement(id, name, email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+    }
+    return TreeElement;
+}());
+exports.TreeElement = TreeElement;
+var Member = (function () {
+    function Member(id, name, organisation) {
+        this.id = id;
+        this.name = name;
+        this.organisation = organisation;
+    }
+    return Member;
+}());
+exports.Member = Member;
+
+
+/***/ }),
+
+/***/ 43:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var http_1 = __webpack_require__(40);
+var Rx_1 = __webpack_require__(54);
+__webpack_require__(178);
 __webpack_require__(177);
-__webpack_require__(176);
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
 var ApiService = (function () {
@@ -6608,7 +6786,7 @@ exports.ApiService = ApiService;
 
 /***/ }),
 
-/***/ 43:
+/***/ 44:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6622,7 +6800,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var datex_pipe_1 = __webpack_require__(231);
+var datex_pipe_1 = __webpack_require__(232);
+var tree_component_1 = __webpack_require__(234);
+var member_component_1 = __webpack_require__(233);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -6631,8 +6811,8 @@ var SharedModule = (function () {
 SharedModule = __decorate([
     core_1.NgModule({
         imports: [common_1.CommonModule],
-        exports: [common_1.CommonModule, datex_pipe_1.DatexPipe],
-        declarations: [datex_pipe_1.DatexPipe],
+        exports: [common_1.CommonModule, datex_pipe_1.DatexPipe, tree_component_1.TreeComponent, member_component_1.MemberComponent],
+        declarations: [datex_pipe_1.DatexPipe, tree_component_1.TreeComponent, member_component_1.MemberComponent],
         providers: [],
     })
 ], SharedModule);
@@ -6641,7 +6821,7 @@ exports.SharedModule = SharedModule;
 
 /***/ }),
 
-/***/ 55:
+/***/ 56:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6652,26 +6832,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
+var test_service_1 = __webpack_require__(29);
 var Area1SiteComponent = (function () {
-    function Area1SiteComponent() {
+    function Area1SiteComponent(testService) {
+        this.testService = testService;
         this.title = "I'm Area1 site component. Absolutely dummy.";
         this.timestamp = new Date();
+        this.tree = testService.getCurrentTree();
+        this.alreadySelectedMembers = new Array();
     }
+    Area1SiteComponent.prototype.treeSelect = function (value) {
+        this.members = this.testService.getMembers(value);
+    };
+    Area1SiteComponent.prototype.memberSelect = function (value) {
+        this.alreadySelectedMembers.push(value);
+    };
     return Area1SiteComponent;
 }());
 Area1SiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(246)
-    })
+        template: __webpack_require__(249)
+    }),
+    __metadata("design:paramtypes", [test_service_1.TestService])
 ], Area1SiteComponent);
 exports.Area1SiteComponent = Area1SiteComponent;
 
 
 /***/ }),
 
-/***/ 56:
+/***/ 57:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6699,7 +6893,7 @@ exports.PageNotFoundComponent = PageNotFoundComponent;
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6720,7 +6914,7 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(249)
+        template: __webpack_require__(252)
     })
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
@@ -6728,7 +6922,7 @@ exports.WelcomeComponent = WelcomeComponent;
 
 /***/ }),
 
-/***/ 58:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6744,7 +6938,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var api_service_1 = __webpack_require__(42); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
+var api_service_1 = __webpack_require__(43); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
 var HomeSiteComponent = (function () {
     function HomeSiteComponent(apiService) {
         var _this = this;
@@ -6758,7 +6952,7 @@ var HomeSiteComponent = (function () {
 }());
 HomeSiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(250)
+        template: __webpack_require__(253)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], HomeSiteComponent);
@@ -6767,5 +6961,5 @@ exports.HomeSiteComponent = HomeSiteComponent;
 
 /***/ })
 
-},[229]);
+},[230]);
 //# sourceMappingURL=app.js.map
