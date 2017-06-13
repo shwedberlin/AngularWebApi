@@ -17,7 +17,7 @@ var routes = [
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
     { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
+    { path: '**', component: page_not_found_component_1.PageNotFoundComponent } //"404" Route
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

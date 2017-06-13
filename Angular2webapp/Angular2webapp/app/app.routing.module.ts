@@ -7,11 +7,11 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { WelcomeComponent } from './core/welcome/welcome.component';
 
 const routes: Routes = [    
-    { path: 'welcome', component: WelcomeComponent },
-    { path: 'home', loadChildren: () => HomeSiteModule },
-    { path: 'area1', loadChildren: () => Area1SiteModule },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent }
+    { path: 'welcome', component: WelcomeComponent },       //Component w/o Menu item
+    { path: 'home', loadChildren: () => HomeSiteModule },   //Feature Modul with own Routing
+    { path: 'area1', loadChildren: () => Area1SiteModule }, //Feature Modul with own Routing
+    { path: '', redirectTo: 'home', pathMatch: 'full' },    //Empty Route
+    { path: '**', component: PageNotFoundComponent }        //"404" Route
 ];
 
 @NgModule({

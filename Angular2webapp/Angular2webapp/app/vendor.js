@@ -1,3 +1,5 @@
+// Polyfills
+//import 'zone.js/dist/zone';
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 // Angular

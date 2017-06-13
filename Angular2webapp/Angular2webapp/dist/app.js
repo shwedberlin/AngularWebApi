@@ -6186,7 +6186,7 @@ var routes = [
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
     { path: 'area1', loadChildren: function () { return area1_site_module_1.Area1SiteModule; } },
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
+    { path: '**', component: page_not_found_component_1.PageNotFoundComponent } //"404" Route
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {
@@ -6646,14 +6646,14 @@ module.exports = "<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp:
 /***/ 254:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">{{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component. Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component: {{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 
 /***/ 255:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">Tree Structure</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">First Shared Component</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 

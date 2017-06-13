@@ -1,4 +1,7 @@
-﻿// Angular
+﻿// Polyfills
+//import 'zone.js/dist/zone';
+
+// Angular
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/core';

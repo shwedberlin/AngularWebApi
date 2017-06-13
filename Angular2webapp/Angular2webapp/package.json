@@ -5,6 +5,7 @@
   "scripts": {
     "build:prod": "webpack --config config/webpack.prod.js --colors --progress",
     "build": "webpack --colors",
+    "build:vendor": "webpack --config config/webpack.vendor.ts --colors",
     "typings": "typings install"
   },
   "keywords": [],

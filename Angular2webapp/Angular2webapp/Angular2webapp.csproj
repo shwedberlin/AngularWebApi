@@ -95,6 +95,7 @@
     <Content Include="app\shared\member\member.component.html" />
     <Content Include="app\shared\tree\tree.component.html" />
     <Content Include="config\helpers.js" />
+    <Content Include="config\webpack.vendor.common.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
     <Content Include="Global.asax" />
@@ -102,6 +103,7 @@
     <Content Include="styles.css" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />
+    <Content Include="webpack.vendor.config.js" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -127,7 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\assets\" />
-    <Folder Include="app\components\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -182,6 +183,7 @@
       <DependentUpon>tree.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\vendor.ts" />
+    <TypeScriptCompile Include="config\webpack.vendor.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

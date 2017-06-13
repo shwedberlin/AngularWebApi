@@ -1,9 +1,9 @@
 ﻿<div class="panel panel-default">
     <div *ngIf="!members" class="panel-heading">
-        <h3 class="panel-title">Select an element</h3>
+        <h3 class="panel-title">2nd Shared Component. Select an element</h3>
     </div>
     <div *ngIf="members" class="panel-heading">
-        <h3 class="panel-title">{{treeElement.name}} Members</h3>
+        <h3 class="panel-title">2nd Shared Component: {{treeElement.name}} Members</h3>
     </div>
     <ul class="list-group" *ngIf="members">
         <li *ngFor="let member of members"
