@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ActionMenuComponent } from './core/action-menu/action-menu.component';
+import { LoggerService } from './core/logger.service'
 
 @NgModule({
     imports: [
@@ -27,4 +28,8 @@ import { ActionMenuComponent } from './core/action-menu/action-menu.component';
     declarations: [ AppComponent, ActionMenuComponent ],
     bootstrap:    [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(private logger: LoggerService) {
+        this.logger.info('App Modul initialized');
+    }
+}

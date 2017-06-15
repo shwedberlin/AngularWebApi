@@ -62,7 +62,7 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery' }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
+        new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', JL: 'jsnlog' }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
         // Workaround for angular/angular#11580 for angular v4
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)@angular/,

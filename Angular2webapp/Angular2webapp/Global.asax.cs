@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JSNLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,14 @@ namespace Angular2webapp
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            JavascriptLogging.OnLogging += LoggingHandler;
+        }
+    
+        private void LoggingHandler(LoggingEventArgs e)
+        {
+            var currReqId = JavascriptLogging.RequestId();
+            NLog.MappedDiagnosticsContext.Set("requestId", currReqId);         
         }
     }
 }

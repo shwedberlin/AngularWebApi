@@ -14,6 +14,8 @@ var page_not_found_component_1 = require("./page-not-found/page-not-found.compon
 var welcome_component_1 = require("./welcome/welcome.component");
 var api_service_1 = require("./api.service");
 var test_service_1 = require("./test.service");
+var user_service_1 = require("./user.service");
+var logger_service_1 = require("./logger.service");
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -27,7 +29,7 @@ CoreModule = __decorate([
         ],
         exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
         declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService, test_service_1.TestService]
+        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService]
     })
 ], CoreModule);
 exports.CoreModule = CoreModule;

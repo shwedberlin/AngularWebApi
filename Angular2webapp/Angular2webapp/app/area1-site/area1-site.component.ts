@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 import { TreeElement, Member, TestService } from '../core/test.service';
+import { LoggerService } from '../core/logger.service';
 
 @Component({
     templateUrl: './area1-site.component.html'
@@ -14,41 +15,19 @@ export class Area1SiteComponent {
     selectedMember: Member;
     alreadySelectedMembers: Member[];
 
-    constructor(private testService: TestService) {
+    constructor(private testService: TestService, private logger: LoggerService) {
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
+
+        logger.info('Area 1 component initialized');
     }
 
     treeSelect(value: TreeElement) {
         this.members = this.testService.getMembers(value);
+        this.logger.info('TreeElement selected: ' + value.name);
     }
     memberSelect(value: Member) {
         this.alreadySelectedMembers.push(value)
+        this.logger.info('Member selected: ' + value.name);
     }
-
-    //affirm(message: string) {
-    //    this.affirmBase(message, false, () => alert("Bestätigt"), () => alert("Abgebrochen"));
-    //}
-
-    //affirmWCaptcha(message: string) {
-    //    this.affirmBase(message, true, () => alert("Bestätigt"), () => alert("Abgebrochen"));
-    //}
-
-    //private affirmBase(message: string, useCaptcha: boolean, okFunc: () => void, errFunc: () => void) {
-    //    this.confirmProvider.affirm(message, useCaptcha)
-    //        .then((result) => {
-    //            switch (result) {
-    //                case AffirmationResult.Confirmed:
-    //                    okFunc();
-    //                    break;
-    //                case AffirmationResult.Declined:
-    //                    errFunc();
-    //                    break;
-    //                default:
-    //                    alert("Funkt nicht :(");
-    //                    errFunc();
-    //                    break;
-    //            }
-    //        });
-    //}
 }

@@ -11,19 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var test_service_1 = require("../core/test.service");
+var logger_service_1 = require("../core/logger.service");
 var Area1SiteComponent = (function () {
-    function Area1SiteComponent(testService) {
+    function Area1SiteComponent(testService, logger) {
         this.testService = testService;
+        this.logger = logger;
         this.title = "I'm Area1 site component. Absolutely dummy.";
         this.timestamp = new Date();
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
+        logger.info('Area 1 component initialized');
     }
     Area1SiteComponent.prototype.treeSelect = function (value) {
         this.members = this.testService.getMembers(value);
+        this.logger.info('TreeElement selected: ' + value.name);
     };
     Area1SiteComponent.prototype.memberSelect = function (value) {
         this.alreadySelectedMembers.push(value);
+        this.logger.info('Member selected: ' + value.name);
     };
     return Area1SiteComponent;
 }());
@@ -31,7 +36,7 @@ Area1SiteComponent = __decorate([
     core_1.Component({
         templateUrl: './area1-site.component.html'
     }),
-    __metadata("design:paramtypes", [test_service_1.TestService])
+    __metadata("design:paramtypes", [test_service_1.TestService, logger_service_1.LoggerService])
 ], Area1SiteComponent);
 exports.Area1SiteComponent = Area1SiteComponent;
 //# sourceMappingURL=area1-site.component.js.map
