@@ -9,7 +9,7 @@ Several Modules added: Shared, Core Module with services, pipes and components. 
 
 Windows Authentication added to web.config. (For IISExpress: changes in applicationhost.config needed)
 
-Server side Logging with RequestId added (NLog + JSNLog). Adding RequestId to WebApi calls needed. 
+Added server side logging from cleint side with RequestId (NLog + JSNLog). Adding RequestId to WebApi calls needed. 
 
 # Upcoming Features:
 
