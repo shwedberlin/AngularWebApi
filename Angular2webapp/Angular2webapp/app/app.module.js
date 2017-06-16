@@ -22,9 +22,12 @@ var core_module_1 = require("./core/core.module");
 var shared_module_1 = require("./shared/shared.module");
 var action_menu_component_1 = require("./core/action-menu/action-menu.component");
 var logger_service_1 = require("./core/logger.service");
+var app_storage_1 = require("./core/app.storage");
 var AppModule = (function () {
-    function AppModule(logger) {
+    function AppModule(appStorage, logger) {
+        this.appStorage = appStorage;
         this.logger = logger;
+        this.appStorage.setInstaceId(Guid.newGuid());
         this.logger.info('App Modul initialized');
     }
     return AppModule;
@@ -43,7 +46,19 @@ AppModule = __decorate([
         declarations: [app_component_1.AppComponent, action_menu_component_1.ActionMenuComponent],
         bootstrap: [app_component_1.AppComponent]
     }),
-    __metadata("design:paramtypes", [logger_service_1.LoggerService])
+    __metadata("design:paramtypes", [app_storage_1.AppStorage, logger_service_1.LoggerService])
 ], AppModule);
 exports.AppModule = AppModule;
+//temporary solution at this place
+var Guid = (function () {
+    function Guid() {
+    }
+    Guid.newGuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+    return Guid;
+}());
 //# sourceMappingURL=app.module.js.map

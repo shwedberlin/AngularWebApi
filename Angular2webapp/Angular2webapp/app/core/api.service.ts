@@ -4,15 +4,18 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
+import { AppStorage } from './app.storage';
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
 
 @Injectable()
 export class ApiService {
     private apiUrl: string;
+    private requestId: string;
 
-    constructor(private http: Http) {
+    constructor(private http: Http, private appStorgage: AppStorage) {
         this.apiUrl = "/api";
+        this.requestId = appStorgage.getInstanceId();
     }
 
     private setHeaders(): Headers {
@@ -20,6 +23,8 @@ export class ApiService {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         };
+
+        headersConfig['RequestId'] = this.requestId;
 
         //if (this.jwtService.getToken()) {
         //    headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;

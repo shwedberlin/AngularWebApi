@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var jsnlog_1 = require("jsnlog");
+var app_storage_1 = require("./app.storage");
 var LoggerService = (function () {
-    function LoggerService() {
-        jsnlog_1.JL.setOptions({ "requestId": "ANGLR" });
+    function LoggerService(appStorage) {
+        this.appStorage = appStorage;
+        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
         var ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
         var consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
         jsnlog_1.JL("AppLogger").setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [ajaxAppender, consoleAppender] });
@@ -27,7 +29,7 @@ var LoggerService = (function () {
 }());
 LoggerService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_storage_1.AppStorage])
 ], LoggerService);
 exports.LoggerService = LoggerService;
 //# sourceMappingURL=logger.service.js.map

@@ -14,6 +14,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { ActionMenuComponent } from './core/action-menu/action-menu.component';
 import { LoggerService } from './core/logger.service'
+import { AppStorage } from './core/app.storage';
 
 @NgModule({
     imports: [
@@ -29,7 +30,18 @@ import { LoggerService } from './core/logger.service'
     bootstrap:    [ AppComponent ]
 })
 export class AppModule {
-    constructor(private logger: LoggerService) {
-        this.logger.info('App Modul initialized');
+    constructor(private appStorage: AppStorage, private logger: LoggerService) {
+        this.appStorage.setInstaceId(Guid.newGuid());
+        this.logger.info('App Modul initialized');        
+    }
+}
+
+//temporary solution at this place
+class Guid {
+    static newGuid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
     }
 }

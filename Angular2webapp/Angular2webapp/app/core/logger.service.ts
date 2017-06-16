@@ -2,13 +2,15 @@
 
 import { JL } from 'jsnlog';
 
+import { AppStorage } from './app.storage';
+
 
 @Injectable()
 export class LoggerService {
     private innerLogger: JL.JSNLog;
 
-    constructor() {
-        JL.setOptions({ "requestId": "ANGLR" });
+    constructor(private appStorage: AppStorage) {
+        JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
         var ajaxAppender = JL.createAjaxAppender('ajaxAppender');
         var consoleAppender = JL.createConsoleAppender('consoleAppender');
         JL("AppLogger").setOptions({ "level": JL.getAllLevel(), "appenders": [ajaxAppender, consoleAppender] });

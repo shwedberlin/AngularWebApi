@@ -14,18 +14,22 @@ var http_1 = require("@angular/http");
 var Rx_1 = require("rxjs/Rx");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
+var app_storage_1 = require("./app.storage");
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
 var ApiService = (function () {
-    function ApiService(http) {
+    function ApiService(http, appStorgage) {
         this.http = http;
+        this.appStorgage = appStorgage;
         this.apiUrl = "/api";
+        this.requestId = appStorgage.getInstanceId();
     }
     ApiService.prototype.setHeaders = function () {
         var headersConfig = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         };
+        headersConfig['RequestId'] = this.requestId;
         //if (this.jwtService.getToken()) {
         //    headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
         //}
@@ -44,7 +48,7 @@ var ApiService = (function () {
 }());
 ApiService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, app_storage_1.AppStorage])
 ], ApiService);
 exports.ApiService = ApiService;
 //# sourceMappingURL=api.service.js.map

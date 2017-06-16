@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 219:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,20 +17,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var platform_browser_1 = __webpack_require__(19);
-var http_1 = __webpack_require__(42);
+var http_1 = __webpack_require__(43);
 var common_1 = __webpack_require__(16);
 /* App Root*/
-var app_component_1 = __webpack_require__(224);
+var app_component_1 = __webpack_require__(225);
 /* Routing Module*/
-var app_routing_module_1 = __webpack_require__(225);
+var app_routing_module_1 = __webpack_require__(226);
 /* Feature Modules*/
-var core_module_1 = __webpack_require__(229);
-var shared_module_1 = __webpack_require__(45);
-var action_menu_component_1 = __webpack_require__(228);
-var logger_service_1 = __webpack_require__(30);
+var core_module_1 = __webpack_require__(230);
+var shared_module_1 = __webpack_require__(46);
+var action_menu_component_1 = __webpack_require__(229);
+var logger_service_1 = __webpack_require__(31);
+var app_storage_1 = __webpack_require__(30);
 var AppModule = (function () {
-    function AppModule(logger) {
+    function AppModule(appStorage, logger) {
+        this.appStorage = appStorage;
         this.logger = logger;
+        this.appStorage.setInstaceId(Guid.newGuid());
         this.logger.info('App Modul initialized');
     }
     return AppModule;
@@ -49,14 +52,25 @@ AppModule = __decorate([
         declarations: [app_component_1.AppComponent, action_menu_component_1.ActionMenuComponent],
         bootstrap: [app_component_1.AppComponent]
     }),
-    __metadata("design:paramtypes", [logger_service_1.LoggerService])
+    __metadata("design:paramtypes", [app_storage_1.AppStorage, logger_service_1.LoggerService])
 ], AppModule);
 exports.AppModule = AppModule;
+var Guid = (function () {
+    function Guid() {
+    }
+    Guid.newGuid = function () {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+            var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    };
+    return Guid;
+}());
 
 
 /***/ }),
 
-/***/ 223:
+/***/ 224:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,9 +147,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return PATTERN_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(186);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -6138,7 +6152,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6161,8 +6175,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(251),
-        styles: [__webpack_require__(261)]
+        template: __webpack_require__(252),
+        styles: [__webpack_require__(262)]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6170,7 +6184,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6184,10 +6198,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_module_1 = __webpack_require__(231);
-var area1_site_module_1 = __webpack_require__(226);
-var page_not_found_component_1 = __webpack_require__(61);
-var welcome_component_1 = __webpack_require__(63);
+var home_site_module_1 = __webpack_require__(232);
+var area1_site_module_1 = __webpack_require__(227);
+var page_not_found_component_1 = __webpack_require__(62);
+var welcome_component_1 = __webpack_require__(64);
 var routes = [
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
@@ -6211,7 +6225,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6224,9 +6238,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var shared_module_1 = __webpack_require__(45);
-var area1_site_component_1 = __webpack_require__(60);
-var area1_site_routing_module_1 = __webpack_require__(227);
+var shared_module_1 = __webpack_require__(46);
+var area1_site_component_1 = __webpack_require__(61);
+var area1_site_routing_module_1 = __webpack_require__(228);
 var Area1SiteModule = (function () {
     function Area1SiteModule() {
     }
@@ -6245,7 +6259,7 @@ exports.Area1SiteModule = Area1SiteModule;
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6259,7 +6273,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var area1_site_component_1 = __webpack_require__(60);
+var area1_site_component_1 = __webpack_require__(61);
 var routes = [
     { path: '', component: area1_site_component_1.Area1SiteComponent },
 ];
@@ -6280,7 +6294,7 @@ exports.routedComponents = [area1_site_component_1.Area1SiteComponent];
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6302,7 +6316,7 @@ var ActionMenuComponent = (function () {
 ActionMenuComponent = __decorate([
     core_1.Component({
         selector: 'abc-actionmenu',
-        template: __webpack_require__(253)
+        template: __webpack_require__(254)
     })
 ], ActionMenuComponent);
 exports.ActionMenuComponent = ActionMenuComponent;
@@ -6310,7 +6324,7 @@ exports.ActionMenuComponent = ActionMenuComponent;
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6324,14 +6338,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var forms_1 = __webpack_require__(223);
-var header_component_1 = __webpack_require__(230);
-var page_not_found_component_1 = __webpack_require__(61);
-var welcome_component_1 = __webpack_require__(63);
+var forms_1 = __webpack_require__(224);
+var header_component_1 = __webpack_require__(231);
+var page_not_found_component_1 = __webpack_require__(62);
+var welcome_component_1 = __webpack_require__(64);
 var api_service_1 = __webpack_require__(29);
-var test_service_1 = __webpack_require__(31);
-var user_service_1 = __webpack_require__(62);
-var logger_service_1 = __webpack_require__(30);
+var test_service_1 = __webpack_require__(32);
+var user_service_1 = __webpack_require__(63);
+var logger_service_1 = __webpack_require__(31);
+var app_storage_1 = __webpack_require__(30);
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -6345,7 +6360,7 @@ CoreModule = __decorate([
         ],
         exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
         declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService]
+        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService, app_storage_1.AppStorage]
     })
 ], CoreModule);
 exports.CoreModule = CoreModule;
@@ -6353,7 +6368,7 @@ exports.CoreModule = CoreModule;
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6384,7 +6399,7 @@ var HeaderComponent = (function () {
 HeaderComponent = __decorate([
     core_1.Component({
         selector: 'abc-header',
-        template: __webpack_require__(254)
+        template: __webpack_require__(255)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], HeaderComponent);
@@ -6393,7 +6408,7 @@ exports.HeaderComponent = HeaderComponent;
 
 /***/ }),
 
-/***/ 231:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6407,9 +6422,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var shared_module_1 = __webpack_require__(45);
-var home_site_component_1 = __webpack_require__(64);
-var home_site_routing_module_1 = __webpack_require__(232);
+var shared_module_1 = __webpack_require__(46);
+var home_site_component_1 = __webpack_require__(65);
+var home_site_routing_module_1 = __webpack_require__(233);
 var HomeSiteModule = (function () {
     function HomeSiteModule() {
     }
@@ -6428,7 +6443,7 @@ exports.HomeSiteModule = HomeSiteModule;
 
 /***/ }),
 
-/***/ 232:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6442,7 +6457,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_component_1 = __webpack_require__(64);
+var home_site_component_1 = __webpack_require__(65);
 var routes = [
     { path: '', component: home_site_component_1.HomeSiteComponent },
 ];
@@ -6463,21 +6478,21 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 
 /***/ }),
 
-/***/ 233:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(43);
-__webpack_require__(44);
-var app_module_1 = __webpack_require__(219);
+var platform_browser_dynamic_1 = __webpack_require__(44);
+__webpack_require__(45);
+var app_module_1 = __webpack_require__(220);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6512,7 +6527,7 @@ exports.DatexPipe = DatexPipe;
 
 /***/ }),
 
-/***/ 236:
+/***/ 237:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6528,7 +6543,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var test_service_1 = __webpack_require__(31);
+var test_service_1 = __webpack_require__(32);
 var MemberComponent = (function () {
     function MemberComponent() {
         this.selectedChange = new core_1.EventEmitter();
@@ -6554,7 +6569,7 @@ __decorate([
 MemberComponent = __decorate([
     core_1.Component({
         selector: 'member-component',
-        template: __webpack_require__(257)
+        template: __webpack_require__(258)
     }),
     __metadata("design:paramtypes", [])
 ], MemberComponent);
@@ -6563,7 +6578,7 @@ exports.MemberComponent = MemberComponent;
 
 /***/ }),
 
-/***/ 237:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6579,7 +6594,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var test_service_1 = __webpack_require__(31);
+var test_service_1 = __webpack_require__(32);
 var TreeComponent = (function () {
     function TreeComponent() {
         this.selectedChange = new core_1.EventEmitter();
@@ -6601,7 +6616,7 @@ __decorate([
 TreeComponent = __decorate([
     core_1.Component({
         selector: 'tree-component',
-        template: __webpack_require__(258)
+        template: __webpack_require__(259)
     }),
     __metadata("design:paramtypes", [])
 ], TreeComponent);
@@ -6610,63 +6625,63 @@ exports.TreeComponent = TreeComponent;
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, exports) {
 
 module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{title}}\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n            <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4\">\r\n                <tree-component [tree]=\"tree\" (selectedChange)=\"treeSelect($event)\" [(selected)]=\"selectedTreeElement\"></tree-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <member-component [members]=\"members\" [treeElement]=\"selectedTreeElement\" (selectedChange)=\"memberSelect($event)\" [(selected)]=\"selectedMember\"></member-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div *ngIf=\"!alreadySelectedMembers || alreadySelectedMembers.length == 0\" class=\"panel-heading\">\r\n                    <h3 class=\"panel-title\">Nothing selected yet!</h3>\r\n                </div>\r\n                <ul class=\"list-group\" *ngIf=\"alreadySelectedMembers\">\r\n                    <li *ngFor=\"let selMember of alreadySelectedMembers\">\r\n                        <p>{{selMember.name}}</p>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, exports) {
 
 module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"row\">\r\n    <div class=\"panel panel-default\">\r\n        <div class=\"panel-heading\">\r\n            <h3 class=\"panel-title\">User</h3>\r\n        </div>\r\n        <p>{{currUser.name}}</p>\r\n        <p>{{currUser.role}}</p>\r\n    </div>\r\n</div>\r\n<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component. Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component: {{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">First Shared Component</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, exports) {
 
 module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
@@ -6689,22 +6704,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var http_1 = __webpack_require__(42);
-var Rx_1 = __webpack_require__(58);
+var http_1 = __webpack_require__(43);
+var Rx_1 = __webpack_require__(59);
+__webpack_require__(49);
 __webpack_require__(48);
-__webpack_require__(47);
+var app_storage_1 = __webpack_require__(30);
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
 var ApiService = (function () {
-    function ApiService(http) {
+    function ApiService(http, appStorgage) {
         this.http = http;
+        this.appStorgage = appStorgage;
         this.apiUrl = "/api";
+        this.requestId = appStorgage.getInstanceId();
     }
     ApiService.prototype.setHeaders = function () {
         var headersConfig = {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         };
+        headersConfig['RequestId'] = this.requestId;
         //if (this.jwtService.getToken()) {
         //    headersConfig['Authorization'] = `Token ${this.jwtService.getToken()}`;
         //}
@@ -6723,7 +6742,7 @@ var ApiService = (function () {
 }());
 ApiService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
+    __metadata("design:paramtypes", [http_1.Http, app_storage_1.AppStorage])
 ], ApiService);
 exports.ApiService = ApiService;
 
@@ -6746,10 +6765,50 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var jsnlog_1 = __webpack_require__(57);
+var AppStorage = (function () {
+    function AppStorage() {
+    }
+    AppStorage.prototype.setInstaceId = function (instanceId) {
+        this.instanceId = instanceId;
+    };
+    AppStorage.prototype.getInstanceId = function () {
+        if (!this.instanceId)
+            return "- undef -";
+        return this.instanceId;
+    };
+    return AppStorage;
+}());
+AppStorage = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], AppStorage);
+exports.AppStorage = AppStorage;
+
+
+/***/ }),
+
+/***/ 31:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var jsnlog_1 = __webpack_require__(58);
+var app_storage_1 = __webpack_require__(30);
 var LoggerService = (function () {
-    function LoggerService() {
-        jsnlog_1.JL.setOptions({ "requestId": "ANGLR" });
+    function LoggerService(appStorage) {
+        this.appStorage = appStorage;
+        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
         var ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
         var consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
         jsnlog_1.JL("AppLogger").setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [ajaxAppender, consoleAppender] });
@@ -6763,14 +6822,14 @@ var LoggerService = (function () {
 }());
 LoggerService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [app_storage_1.AppStorage])
 ], LoggerService);
 exports.LoggerService = LoggerService;
 
 
 /***/ }),
 
-/***/ 31:
+/***/ 32:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6835,7 +6894,7 @@ exports.Member = Member;
 
 /***/ }),
 
-/***/ 45:
+/***/ 46:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6849,9 +6908,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var datex_pipe_1 = __webpack_require__(235);
-var tree_component_1 = __webpack_require__(237);
-var member_component_1 = __webpack_require__(236);
+var datex_pipe_1 = __webpack_require__(236);
+var tree_component_1 = __webpack_require__(238);
+var member_component_1 = __webpack_require__(237);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -6870,7 +6929,7 @@ exports.SharedModule = SharedModule;
 
 /***/ }),
 
-/***/ 60:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6886,8 +6945,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var test_service_1 = __webpack_require__(31);
-var logger_service_1 = __webpack_require__(30);
+var test_service_1 = __webpack_require__(32);
+var logger_service_1 = __webpack_require__(31);
 var Area1SiteComponent = (function () {
     function Area1SiteComponent(testService, logger) {
         this.testService = testService;
@@ -6910,7 +6969,7 @@ var Area1SiteComponent = (function () {
 }());
 Area1SiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(252)
+        template: __webpack_require__(253)
     }),
     __metadata("design:paramtypes", [test_service_1.TestService, logger_service_1.LoggerService])
 ], Area1SiteComponent);
@@ -6919,7 +6978,7 @@ exports.Area1SiteComponent = Area1SiteComponent;
 
 /***/ }),
 
-/***/ 61:
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6947,7 +7006,7 @@ exports.PageNotFoundComponent = PageNotFoundComponent;
 
 /***/ }),
 
-/***/ 62:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6963,8 +7022,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
+__webpack_require__(49);
 __webpack_require__(48);
-__webpack_require__(47);
 var api_service_1 = __webpack_require__(29);
 var UserService = (function () {
     function UserService(apiService) {
@@ -6992,7 +7051,7 @@ exports.User = User;
 
 /***/ }),
 
-/***/ 63:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7013,7 +7072,7 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(255)
+        template: __webpack_require__(256)
     })
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
@@ -7021,7 +7080,7 @@ exports.WelcomeComponent = WelcomeComponent;
 
 /***/ }),
 
-/***/ 64:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7038,8 +7097,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var api_service_1 = __webpack_require__(29); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
-var user_service_1 = __webpack_require__(62);
-var logger_service_1 = __webpack_require__(30);
+var user_service_1 = __webpack_require__(63);
+var logger_service_1 = __webpack_require__(31);
 var HomeSiteComponent = (function () {
     function HomeSiteComponent(apiService, userService, logger) {
         var _this = this;
@@ -7060,7 +7119,7 @@ var HomeSiteComponent = (function () {
 }());
 HomeSiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(256)
+        template: __webpack_require__(257)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService, user_service_1.UserService, logger_service_1.LoggerService])
 ], HomeSiteComponent);
@@ -7069,5 +7128,5 @@ exports.HomeSiteComponent = HomeSiteComponent;
 
 /***/ })
 
-},[233]);
+},[234]);
 //# sourceMappingURL=app.js.map

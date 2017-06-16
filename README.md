@@ -13,8 +13,7 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 
 # Upcoming Features:
 
-- Optimize Webpack: automate builds, speedup, AoT
-- Add RequestId to WebApi calls
+- Optimize Webpack: automate builds, speedup, AoT(?)
 - (Connect to existing WCF)
 - ~~Add angular + WebApi routing dealing fine with browser F5/Back~~
 - ~~Upgrade to Angular4 (4.1.3)~~
@@ -24,9 +23,11 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 - ~~Add angular modules, components, services, pipes~~
 - ~~Server side Logging~~
 - ~~Implement Windows Authentification with AD~~
+- ~~Add RequestId to WebApi calls~~
 
 # Last fixes:
  
 - Bootstrap assets referencing in webpack corrected
 - Added shared (shared components, pipes) and core (services and singletons) modules
 - Index.html base href and some RouterModule fixes. 
+- Serverside logging optimized. Common.Logging used instead of NLog directly. NLog Configuration splitted as example to client and server logs. RequestId transferred to server in header.

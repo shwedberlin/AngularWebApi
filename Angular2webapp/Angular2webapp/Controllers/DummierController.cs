@@ -1,5 +1,5 @@
-﻿using NLog;
-using System;
+﻿using System;
+using Common.Logging;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,11 +10,21 @@ namespace Angular2webapp.Controllers
 {
     public class DummierController : ApiController
     {
-        private static Logger logger = LogManager.GetCurrentClassLogger();
+        private static ILog logger = LogManager.GetLogger("ApiLogger");
 
         // GET: api/Dummier/Get
         public IEnumerable<DummyData> Get()
         {
+            var re = Request;
+            var headers = re.Headers;
+
+            if (headers.Contains("RequestId"))
+            {
+                string reqToken = headers.GetValues("RequestId").First();
+
+                logger.Info(msg => msg("[{0,-36}] FETCHING", reqToken));
+            }
+
             return Enumerable.Range(1, 5).Select(index => new DummyData
             {
                 clientData = string.Empty,
@@ -25,13 +35,32 @@ namespace Angular2webapp.Controllers
         // GET: api/Dummier/GetVersion
         public string GetVersion()
         {
+            var re = Request;
+            var headers = re.Headers;
+
+            if (headers.Contains("RequestId"))
+            {
+                string reqToken = headers.GetValues("RequestId").First();
+
+                logger.Info(msg => msg("[{0,-36}] Get Version", reqToken));
+            }
+
             return "v.0.0.1";
         }
 
         // GET: api/Dummier/Authenticate
         public UserData GetAuthenticate()
         {
-            logger.Log(LogLevel.Info, "Authenticate: "+ User.Identity.Name);
+            var re = Request;
+            var headers = re.Headers;
+
+            if (headers.Contains("RequestId"))
+            {
+                string reqToken = headers.GetValues("RequestId").First();
+
+                logger.Info(msg => msg("[{0,-36}] Authenticate: {1}", reqToken, User.Identity.Name));
+            }
+
             if (User.Identity.IsAuthenticated)
             {
                 return new UserData { name = User.Identity.Name, role = "Admin" };

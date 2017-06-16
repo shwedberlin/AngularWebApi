@@ -16,6 +16,7 @@ var api_service_1 = require("./api.service");
 var test_service_1 = require("./test.service");
 var user_service_1 = require("./user.service");
 var logger_service_1 = require("./logger.service");
+var app_storage_1 = require("./app.storage");
 var CoreModule = (function () {
     function CoreModule() {
     }
@@ -29,7 +30,7 @@ CoreModule = __decorate([
         ],
         exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
         declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService]
+        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService, app_storage_1.AppStorage]
     })
 ], CoreModule);
 exports.CoreModule = CoreModule;

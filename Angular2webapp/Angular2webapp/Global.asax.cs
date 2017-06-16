@@ -1,10 +1,6 @@
 ﻿using JSNLog;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
-using System.Web.Routing;
 
 namespace Angular2webapp
 {
@@ -20,7 +16,7 @@ namespace Angular2webapp
         private void LoggingHandler(LoggingEventArgs e)
         {
             var currReqId = JavascriptLogging.RequestId();
-            NLog.MappedDiagnosticsContext.Set("requestId", currReqId);         
+            e.FinalMessage = String.Format("[{0,-36}] {1}", currReqId, e.FinalMessage);      
         }
     }
 }

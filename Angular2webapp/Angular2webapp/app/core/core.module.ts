@@ -9,6 +9,7 @@ import { ApiService } from './api.service';
 import { TestService } from './test.service';
 import { UserService } from './user.service';
 import { LoggerService } from './logger.service';
+import { AppStorage } from './app.storage';
 
 @NgModule({
     imports: [
@@ -17,6 +18,6 @@ import { LoggerService } from './logger.service';
     ],
     exports: [ HeaderComponent, PageNotFoundComponent, WelcomeComponent],
     declarations: [HeaderComponent, PageNotFoundComponent, WelcomeComponent],
-    providers: [ApiService, TestService, UserService, LoggerService]
+    providers: [ApiService, TestService, UserService, LoggerService, AppStorage]
 })
 export class CoreModule { }
