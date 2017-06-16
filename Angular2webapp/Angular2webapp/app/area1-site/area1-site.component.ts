@@ -7,6 +7,8 @@ import { LoggerService } from '../core/logger.service';
     templateUrl: './area1-site.component.html'
 })
 export class Area1SiteComponent {
+    private loggerName: string = "NG_Area1";
+
     title = "I'm Area1 site component. Absolutely dummy.";
     timestamp = new Date();
     tree: TreeElement[];
@@ -19,15 +21,15 @@ export class Area1SiteComponent {
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
 
-        logger.info('Area 1 component initialized');
+        this.logger.GetLogger(this.loggerName).info('Area 1 component initialized');
     }
 
     treeSelect(value: TreeElement) {
         this.members = this.testService.getMembers(value);
-        this.logger.info('TreeElement selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('TreeElement selected: ' + value.name);
     }
     memberSelect(value: Member) {
         this.alreadySelectedMembers.push(value)
-        this.logger.info('Member selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
     }
 }

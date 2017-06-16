@@ -8,6 +8,8 @@ import { LoggerService } from '../core/logger.service';
     templateUrl: './home-site.component.html'
 })
 export class HomeSiteComponent {
+    private loggerName: string = "NG_Home";
+
     title = "I'm home-site component with WebApi data fetching";
     public ctrlData: DummyData[];
     timestamp = (new Date()).toString();
@@ -21,8 +23,8 @@ export class HomeSiteComponent {
         userService.getUser().subscribe(result => {
             this.currUser = result as User;
         });
-        
-        this.logger.info("!!! CLIENT LOG !!! ---->  from HomeSiteComponent");
+
+        this.logger.GetLogger(this.loggerName).info("HomeSiteComponent");
     }
 }
 

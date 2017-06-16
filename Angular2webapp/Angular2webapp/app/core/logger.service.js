@@ -15,15 +15,40 @@ var app_storage_1 = require("./app.storage");
 var LoggerService = (function () {
     function LoggerService(appStorage) {
         this.appStorage = appStorage;
-        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
-        var ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
-        var consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
-        jsnlog_1.JL("AppLogger").setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [ajaxAppender, consoleAppender] });
-        this.innerLogger = jsnlog_1.JL;
-        this.innerLogger("AppLogger").debug("Client Side Logger initialized");
+        this.defaultName = "ANGLR";
+        //JL Logger adapters
+        this.ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
+        this.consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
+        this.configuredLoggers = new Array();
+        this.GetLogger(this.defaultName).info("Default Client Side Logger initialized");
     }
-    LoggerService.prototype.info = function (message) {
-        this.innerLogger("AppLogger").info("Client Side: " + message);
+    //remove logger from array if exists.
+    //next time this logger will be configured again
+    LoggerService.prototype.ResetLogger = function (name) {
+        var logger = this.configuredLoggers.indexOf(name);
+        if (logger > -1) {
+            this.configuredLoggers.splice(logger, 1);
+            return true;
+        }
+        return false;
+    };
+    //returns logger object
+    LoggerService.prototype.GetLogger = function (name) {
+        if (name === undefined) {
+            name = this.defaultName;
+        }
+        var logger = this.configuredLoggers.indexOf(name);
+        if (logger === -1) {
+            this.ConfigureLogger(name);
+        }
+        return jsnlog_1.JL(name);
+    };
+    //all loggers configured with "All" level
+    //further configuration is done at server side
+    LoggerService.prototype.ConfigureLogger = function (name) {
+        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
+        jsnlog_1.JL(name).setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [this.ajaxAppender, this.consoleAppender] });
+        this.configuredLoggers.push(name);
     };
     return LoggerService;
 }());

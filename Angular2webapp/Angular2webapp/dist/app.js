@@ -19,22 +19,40 @@ var core_1 = __webpack_require__(5);
 var platform_browser_1 = __webpack_require__(19);
 var http_1 = __webpack_require__(43);
 var common_1 = __webpack_require__(16);
+var core_2 = __webpack_require__(5);
+var jsnlog_1 = __webpack_require__(44);
 /* App Root*/
 var app_component_1 = __webpack_require__(225);
 /* Routing Module*/
 var app_routing_module_1 = __webpack_require__(226);
 /* Feature Modules*/
 var core_module_1 = __webpack_require__(230);
-var shared_module_1 = __webpack_require__(46);
+var shared_module_1 = __webpack_require__(47);
 var action_menu_component_1 = __webpack_require__(229);
 var logger_service_1 = __webpack_require__(31);
 var app_storage_1 = __webpack_require__(30);
+var UncaughtExceptionHandler = (function () {
+    function UncaughtExceptionHandler() {
+    }
+    UncaughtExceptionHandler.prototype.handleError = function (error) {
+        jsnlog_1.JL().fatalException('Uncaught Exception', error);
+    };
+    return UncaughtExceptionHandler;
+}());
+exports.UncaughtExceptionHandler = UncaughtExceptionHandler;
 var AppModule = (function () {
     function AppModule(appStorage, logger) {
         this.appStorage = appStorage;
         this.logger = logger;
+        this.loggerName = "NG_App";
         this.appStorage.setInstaceId(Guid.newGuid());
-        this.logger.info('App Modul initialized');
+        this.logger.GetLogger(this.loggerName).info('App Modul initialized');
+        this.logger.GetLogger(this.loggerName).trace('App: Test [Trace] 1000');
+        this.logger.GetLogger(this.loggerName).debug('App: Test [Debug] 2000');
+        this.logger.GetLogger(this.loggerName).info('App: Test [Info] 3000');
+        this.logger.GetLogger(this.loggerName).warn('App: Test [Warning] 4000');
+        this.logger.GetLogger(this.loggerName).error('App: Test [Error] 5000');
+        this.logger.GetLogger(this.loggerName).fatal('App: Test [Fatal] 6000');
     }
     return AppModule;
 }());
@@ -50,11 +68,13 @@ AppModule = __decorate([
             core_module_1.CoreModule
         ],
         declarations: [app_component_1.AppComponent, action_menu_component_1.ActionMenuComponent],
-        bootstrap: [app_component_1.AppComponent]
+        bootstrap: [app_component_1.AppComponent],
+        providers: [{ provide: core_2.ErrorHandler, useClass: UncaughtExceptionHandler }]
     }),
     __metadata("design:paramtypes", [app_storage_1.AppStorage, logger_service_1.LoggerService])
 ], AppModule);
 exports.AppModule = AppModule;
+//temporary solution at this place
 var Guid = (function () {
     function Guid() {
     }
@@ -149,7 +169,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(187);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -6238,7 +6258,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var shared_module_1 = __webpack_require__(46);
+var shared_module_1 = __webpack_require__(47);
 var area1_site_component_1 = __webpack_require__(61);
 var area1_site_routing_module_1 = __webpack_require__(228);
 var Area1SiteModule = (function () {
@@ -6422,7 +6442,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var shared_module_1 = __webpack_require__(46);
+var shared_module_1 = __webpack_require__(47);
 var home_site_component_1 = __webpack_require__(65);
 var home_site_routing_module_1 = __webpack_require__(233);
 var HomeSiteModule = (function () {
@@ -6484,8 +6504,8 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(44);
-__webpack_require__(45);
+var platform_browser_dynamic_1 = __webpack_require__(45);
+__webpack_require__(46);
 var app_module_1 = __webpack_require__(220);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
@@ -6706,8 +6726,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var http_1 = __webpack_require__(43);
 var Rx_1 = __webpack_require__(59);
+__webpack_require__(50);
 __webpack_require__(49);
-__webpack_require__(48);
 var app_storage_1 = __webpack_require__(30);
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
@@ -6803,20 +6823,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var jsnlog_1 = __webpack_require__(58);
+var jsnlog_1 = __webpack_require__(44);
 var app_storage_1 = __webpack_require__(30);
 var LoggerService = (function () {
     function LoggerService(appStorage) {
         this.appStorage = appStorage;
-        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
-        var ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
-        var consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
-        jsnlog_1.JL("AppLogger").setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [ajaxAppender, consoleAppender] });
-        this.innerLogger = jsnlog_1.JL;
-        this.innerLogger("AppLogger").debug("Client Side Logger initialized");
+        this.defaultName = "ANGLR";
+        //JL Logger adapters
+        this.ajaxAppender = jsnlog_1.JL.createAjaxAppender('ajaxAppender');
+        this.consoleAppender = jsnlog_1.JL.createConsoleAppender('consoleAppender');
+        this.configuredLoggers = new Array();
+        this.GetLogger(this.defaultName).info("Default Client Side Logger initialized");
     }
-    LoggerService.prototype.info = function (message) {
-        this.innerLogger("AppLogger").info("Client Side: " + message);
+    //remove logger from array if exists.
+    //next time this logger will be configured again
+    LoggerService.prototype.ResetLogger = function (name) {
+        var logger = this.configuredLoggers.indexOf(name);
+        if (logger > -1) {
+            this.configuredLoggers.splice(logger, 1);
+            return true;
+        }
+        return false;
+    };
+    //returns logger object
+    LoggerService.prototype.GetLogger = function (name) {
+        if (name === undefined) {
+            name = this.defaultName;
+        }
+        var logger = this.configuredLoggers.indexOf(name);
+        if (logger === -1) {
+            this.ConfigureLogger(name);
+        }
+        return jsnlog_1.JL(name);
+    };
+    //all loggers configured with "All" level
+    //further configuration is done at server side
+    LoggerService.prototype.ConfigureLogger = function (name) {
+        jsnlog_1.JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
+        jsnlog_1.JL(name).setOptions({ "level": jsnlog_1.JL.getAllLevel(), "appenders": [this.ajaxAppender, this.consoleAppender] });
+        this.configuredLoggers.push(name);
     };
     return LoggerService;
 }());
@@ -6894,7 +6939,7 @@ exports.Member = Member;
 
 /***/ }),
 
-/***/ 46:
+/***/ 47:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6951,19 +6996,20 @@ var Area1SiteComponent = (function () {
     function Area1SiteComponent(testService, logger) {
         this.testService = testService;
         this.logger = logger;
+        this.loggerName = "NG_Area1";
         this.title = "I'm Area1 site component. Absolutely dummy.";
         this.timestamp = new Date();
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
-        logger.info('Area 1 component initialized');
+        this.logger.GetLogger(this.loggerName).info('Area 1 component initialized');
     }
     Area1SiteComponent.prototype.treeSelect = function (value) {
         this.members = this.testService.getMembers(value);
-        this.logger.info('TreeElement selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('TreeElement selected: ' + value.name);
     };
     Area1SiteComponent.prototype.memberSelect = function (value) {
         this.alreadySelectedMembers.push(value);
-        this.logger.info('Member selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
     };
     return Area1SiteComponent;
 }());
@@ -7022,8 +7068,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
+__webpack_require__(50);
 __webpack_require__(49);
-__webpack_require__(48);
 var api_service_1 = __webpack_require__(29);
 var UserService = (function () {
     function UserService(apiService) {
@@ -7104,6 +7150,7 @@ var HomeSiteComponent = (function () {
         var _this = this;
         this.userService = userService;
         this.logger = logger;
+        this.loggerName = "NG_Home";
         this.title = "I'm home-site component with WebApi data fetching";
         this.timestamp = (new Date()).toString();
         this.currUser = new user_service_1.User('undef', 'undef');
@@ -7113,7 +7160,7 @@ var HomeSiteComponent = (function () {
         userService.getUser().subscribe(function (result) {
             _this.currUser = result;
         });
-        this.logger.info("!!! CLIENT LOG !!! ---->  from HomeSiteComponent");
+        this.logger.GetLogger(this.loggerName).info("HomeSiteComponent");
     }
     return HomeSiteComponent;
 }());

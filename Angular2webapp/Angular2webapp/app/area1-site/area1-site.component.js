@@ -16,19 +16,20 @@ var Area1SiteComponent = (function () {
     function Area1SiteComponent(testService, logger) {
         this.testService = testService;
         this.logger = logger;
+        this.loggerName = "NG_Area1";
         this.title = "I'm Area1 site component. Absolutely dummy.";
         this.timestamp = new Date();
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
-        logger.info('Area 1 component initialized');
+        this.logger.GetLogger(this.loggerName).info('Area 1 component initialized');
     }
     Area1SiteComponent.prototype.treeSelect = function (value) {
         this.members = this.testService.getMembers(value);
-        this.logger.info('TreeElement selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('TreeElement selected: ' + value.name);
     };
     Area1SiteComponent.prototype.memberSelect = function (value) {
         this.alreadySelectedMembers.push(value);
-        this.logger.info('Member selected: ' + value.name);
+        this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
     };
     return Area1SiteComponent;
 }());

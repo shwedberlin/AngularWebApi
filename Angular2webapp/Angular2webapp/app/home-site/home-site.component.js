@@ -18,6 +18,7 @@ var HomeSiteComponent = (function () {
         var _this = this;
         this.userService = userService;
         this.logger = logger;
+        this.loggerName = "NG_Home";
         this.title = "I'm home-site component with WebApi data fetching";
         this.timestamp = (new Date()).toString();
         this.currUser = new user_service_1.User('undef', 'undef');
@@ -27,7 +28,7 @@ var HomeSiteComponent = (function () {
         userService.getUser().subscribe(function (result) {
             _this.currUser = result;
         });
-        this.logger.info("!!! CLIENT LOG !!! ---->  from HomeSiteComponent");
+        this.logger.GetLogger(this.loggerName).info("HomeSiteComponent");
     }
     return HomeSiteComponent;
 }());
