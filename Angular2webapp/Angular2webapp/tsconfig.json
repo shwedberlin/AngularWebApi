@@ -10,6 +10,7 @@
     "experimentalDecorators": true,
     "lib": [ "es5", "es2015", "dom", "es2015.promise" ],
     "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": true
+    "suppressImplicitAnyIndexErrors": true,
+    "compileOnSave": false
   }
 }
