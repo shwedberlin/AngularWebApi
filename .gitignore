@@ -195,7 +195,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 [Ss]cripts/
-[Ll]cripts/
+[Ll]ogs/
 orleans.codegen.cs
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
