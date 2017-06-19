@@ -11,8 +11,10 @@ var common_1 = require("@angular/common");
 var forms_1 = require("@angular/forms");
 var header_component_1 = require("./header/header.component");
 var page_not_found_component_1 = require("./page-not-found/page-not-found.component");
+var affirmation_component_1 = require("./affirmation/affirmation.component");
 var welcome_component_1 = require("./welcome/welcome.component");
 var api_service_1 = require("./api.service");
+var affirmation_provider_service_1 = require("./affirmation.provider.service");
 var test_service_1 = require("./test.service");
 var user_service_1 = require("./user.service");
 var logger_service_1 = require("./logger.service");
@@ -28,9 +30,26 @@ CoreModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule //,  // we use ngModel
         ],
-        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService, app_storage_1.AppStorage]
+        exports: [
+            header_component_1.HeaderComponent,
+            page_not_found_component_1.PageNotFoundComponent,
+            welcome_component_1.WelcomeComponent,
+            affirmation_component_1.AffirmationComponent
+        ],
+        declarations: [
+            header_component_1.HeaderComponent,
+            page_not_found_component_1.PageNotFoundComponent,
+            welcome_component_1.WelcomeComponent,
+            affirmation_component_1.AffirmationComponent
+        ],
+        providers: [
+            api_service_1.ApiService,
+            test_service_1.TestService,
+            user_service_1.UserService,
+            logger_service_1.LoggerService,
+            app_storage_1.AppStorage,
+            affirmation_provider_service_1.AffirmationProviderService
+        ]
     })
 ], CoreModule);
 exports.CoreModule = CoreModule;

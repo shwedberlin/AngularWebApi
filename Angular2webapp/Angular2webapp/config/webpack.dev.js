@@ -1,6 +1,5 @@
 ﻿var webpack = require('webpack');
 var webpackMerge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var commonConfig = require('./webpack.common.js');
 var helpers = require('./helpers');
 
@@ -11,22 +10,6 @@ module.exports = webpackMerge(commonConfig, {
       path: helpers.root('dist'),
       publicPath: '/',
     filename: '[name].js',
-    chunkFilename: '[id].chunk.js'//,
-    //library: '[name]_[hash]',
-    //libraryTarget: 'commonjs2'
-  },
-  
-  plugins: [
-      new ExtractTextPlugin('[name].css')//,
-      //new webpack.DllPlugin({
-      //    path: helpers.root('dist', '[name]-manifest.json'),
-      //    name: '[name]_[hash]'
-      //}),
-      //new webpack.DllReferencePlugin({
-      //    context: __dirname,  
-      //    manifest: require('../dist/vendor-manifest.json'),
-      //    sourceType: 'cpmmonjs2',
-      //    name: './vendor'
-      //})
-  ]
+    chunkFilename: '[id].chunk.js'
+  }
 });

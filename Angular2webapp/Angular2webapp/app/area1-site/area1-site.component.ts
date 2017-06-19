@@ -2,6 +2,7 @@
 
 import { TreeElement, Member, TestService } from '../core/test.service';
 import { LoggerService } from '../core/logger.service';
+import { AffirmationProviderService, AffirmationResult } from '../core/affirmation.provider.service';
 
 @Component({
     templateUrl: './area1-site.component.html'
@@ -9,7 +10,7 @@ import { LoggerService } from '../core/logger.service';
 export class Area1SiteComponent {
     private loggerName: string = "NG_Area1";
 
-    title = "I'm Area1 site component. Absolutely dummy.";
+    title = "I'm Area1 site component";
     timestamp = new Date();
     tree: TreeElement[];
     selectedTreeElement: TreeElement
@@ -17,7 +18,7 @@ export class Area1SiteComponent {
     selectedMember: Member;
     alreadySelectedMembers: Member[];
 
-    constructor(private testService: TestService, private logger: LoggerService) {
+    constructor(private testService: TestService, private logger: LoggerService, private confirmProvider: AffirmationProviderService) {
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
 
@@ -29,7 +30,39 @@ export class Area1SiteComponent {
         this.logger.GetLogger(this.loggerName).info('TreeElement selected: ' + value.name);
     }
     memberSelect(value: Member) {
-        this.alreadySelectedMembers.push(value)
-        this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
+        this.affirmBase("Select this member?", false,
+            () => {
+                this.alreadySelectedMembers.push(value);
+                this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
+            },
+            () => {
+                this.logger.GetLogger(this.loggerName).info('Member selection cancelled: ' + value.name);
+            });        
+    }
+
+    affirm(message: string) {
+        this.affirmBase(message, false, () => alert("Bestätigt"), () => alert("Abgebrochen"));
+    }
+
+    affirmWCaptcha(message: string) {
+        this.affirmBase(message, true, () => alert("Bestätigt"), () => alert("Abgebrochen"));
+    }
+
+    private affirmBase(message: string, useCaptcha: boolean, okFunc: () => void, errFunc: () => void) {
+        this.confirmProvider.affirm(message, useCaptcha)
+            .then((result) => {
+                switch (result) {
+                    case AffirmationResult.Confirmed:
+                        okFunc();
+                        break;
+                    case AffirmationResult.Declined:
+                        errFunc();
+                        break;
+                    default:
+                        alert("Funkt nicht :(");
+                        errFunc();
+                        break;
+                }
+            });
     }
 }

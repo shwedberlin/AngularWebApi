@@ -113,11 +113,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.component.css">
-      <DependentUpon>app.component.html</DependentUpon>
-    </Content>
+    <Content Include="app\variables.less" />
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
+    <Content Include="app\app.component.less">
+      <DependentUpon>app.component.html</DependentUpon>
+    </Content>
+    <Content Include="app\core\affirmation\affirmation.component.html" />
     <Content Include="app\core\header\header.component.html" />
     <Content Include="app\area1-site\area1-site.component.html" />
     <Content Include="app\core\welcome\welcome.component.html" />
@@ -159,6 +161,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="app\core\affirmation\affirmation.component.less">
+      <DependentUpon>affirmation.component.html</DependentUpon>
+    </Content>
+    <Content Include="app\vendor\vendor.less" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -196,6 +202,10 @@
     <TypeScriptCompile Include="app\core\action-menu\action-menu.component.ts">
       <DependentUpon>action-menu.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\affirmation.provider.service.ts" />
+    <TypeScriptCompile Include="app\core\affirmation\affirmation.component.ts">
+      <DependentUpon>affirmation.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\core\app.storage.ts" />
     <TypeScriptCompile Include="app\core\logger.service.ts" />
     <TypeScriptCompile Include="app\core\api.service.ts" />
@@ -228,7 +238,7 @@
     <TypeScriptCompile Include="app\shared\tree\tree.component.ts">
       <DependentUpon>tree.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\vendor.ts" />
+    <TypeScriptCompile Include="app\vendor\vendor.ts" />
     <TypeScriptCompile Include="config\webpack.vendor.ts" />
   </ItemGroup>
   <PropertyGroup>

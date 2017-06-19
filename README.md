@@ -24,6 +24,7 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 - ~~Server side Logging~~
 - ~~Implement Windows Authentification with AD~~
 - ~~Add RequestId to WebApi calls~~
+- ~~Switched from css to less styles, overriding some botstrap styles~~
 
 # Last fixes:
  
@@ -31,3 +32,4 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 - Added shared (shared components, pipes) and core (services and singletons) modules
 - Index.html base href and some RouterModule fixes. 
 - Serverside logging optimized. Common.Logging used instead of NLog directly. NLog Configuration splitted as example to client and server logs. RequestId transferred to server in header.
+- Switched to .less styles, splitted to app & vendor styles, overriding some bootstrap colors

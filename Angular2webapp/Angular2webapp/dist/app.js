@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 220:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,18 +17,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var platform_browser_1 = __webpack_require__(19);
-var http_1 = __webpack_require__(43);
+var http_1 = __webpack_require__(44);
 var common_1 = __webpack_require__(16);
 var core_2 = __webpack_require__(5);
-var jsnlog_1 = __webpack_require__(44);
+var jsnlog_1 = __webpack_require__(45);
 /* App Root*/
-var app_component_1 = __webpack_require__(225);
+var app_component_1 = __webpack_require__(226);
 /* Routing Module*/
-var app_routing_module_1 = __webpack_require__(226);
+var app_routing_module_1 = __webpack_require__(227);
 /* Feature Modules*/
-var core_module_1 = __webpack_require__(230);
-var shared_module_1 = __webpack_require__(47);
-var action_menu_component_1 = __webpack_require__(229);
+var core_module_1 = __webpack_require__(232);
+var shared_module_1 = __webpack_require__(49);
+var action_menu_component_1 = __webpack_require__(230);
 var logger_service_1 = __webpack_require__(31);
 var app_storage_1 = __webpack_require__(30);
 var UncaughtExceptionHandler = (function () {
@@ -47,12 +47,12 @@ var AppModule = (function () {
         this.loggerName = "NG_App";
         this.appStorage.setInstaceId(Guid.newGuid());
         this.logger.GetLogger(this.loggerName).info('App Modul initialized');
-        this.logger.GetLogger(this.loggerName).trace('App: Test [Trace] 1000');
-        this.logger.GetLogger(this.loggerName).debug('App: Test [Debug] 2000');
-        this.logger.GetLogger(this.loggerName).info('App: Test [Info] 3000');
-        this.logger.GetLogger(this.loggerName).warn('App: Test [Warning] 4000');
-        this.logger.GetLogger(this.loggerName).error('App: Test [Error] 5000');
-        this.logger.GetLogger(this.loggerName).fatal('App: Test [Fatal] 6000');
+        this.logger.GetLogger(this.loggerName).trace('App: Test LogLevel 1000');
+        this.logger.GetLogger(this.loggerName).debug('App: Test LogLevel 2000');
+        this.logger.GetLogger(this.loggerName).info('App: Test LogLevel 3000');
+        this.logger.GetLogger(this.loggerName).warn('App: Test LogLevel 4000');
+        this.logger.GetLogger(this.loggerName).error('App: Test LogLevel 5000');
+        this.logger.GetLogger(this.loggerName).fatal('App: Test LogLevel 6000');
     }
     return AppModule;
 }());
@@ -90,7 +90,7 @@ var Guid = (function () {
 
 /***/ }),
 
-/***/ 224:
+/***/ 225:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -167,9 +167,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵw", function() { return PATTERN_VALIDATOR; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵr", function() { return REQUIRED_VALIDATOR; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(188);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -6172,7 +6172,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6195,8 +6195,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(252),
-        styles: [__webpack_require__(262)]
+        template: __webpack_require__(257),
+        styles: [__webpack_require__(532)]
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -6204,7 +6204,7 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6218,10 +6218,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_module_1 = __webpack_require__(232);
-var area1_site_module_1 = __webpack_require__(227);
-var page_not_found_component_1 = __webpack_require__(62);
-var welcome_component_1 = __webpack_require__(64);
+var home_site_module_1 = __webpack_require__(234);
+var area1_site_module_1 = __webpack_require__(228);
+var page_not_found_component_1 = __webpack_require__(63);
+var welcome_component_1 = __webpack_require__(65);
 var routes = [
     { path: 'welcome', component: welcome_component_1.WelcomeComponent },
     { path: 'home', loadChildren: function () { return home_site_module_1.HomeSiteModule; } },
@@ -6245,7 +6245,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6258,9 +6258,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var shared_module_1 = __webpack_require__(47);
-var area1_site_component_1 = __webpack_require__(61);
-var area1_site_routing_module_1 = __webpack_require__(228);
+var shared_module_1 = __webpack_require__(49);
+var area1_site_component_1 = __webpack_require__(62);
+var area1_site_routing_module_1 = __webpack_require__(229);
 var Area1SiteModule = (function () {
     function Area1SiteModule() {
     }
@@ -6279,7 +6279,7 @@ exports.Area1SiteModule = Area1SiteModule;
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6293,7 +6293,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var area1_site_component_1 = __webpack_require__(61);
+var area1_site_component_1 = __webpack_require__(62);
 var routes = [
     { path: '', component: area1_site_component_1.Area1SiteComponent },
 ];
@@ -6314,7 +6314,7 @@ exports.routedComponents = [area1_site_component_1.Area1SiteComponent];
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6336,7 +6336,7 @@ var ActionMenuComponent = (function () {
 ActionMenuComponent = __decorate([
     core_1.Component({
         selector: 'abc-actionmenu',
-        template: __webpack_require__(254)
+        template: __webpack_require__(259)
     })
 ], ActionMenuComponent);
 exports.ActionMenuComponent = ActionMenuComponent;
@@ -6344,7 +6344,61 @@ exports.ActionMenuComponent = ActionMenuComponent;
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var affirmation_provider_service_1 = __webpack_require__(48);
+var AffirmationComponent = (function () {
+    function AffirmationComponent(provider) {
+        var _this = this;
+        this.provider = provider;
+        this.captchaProof = "confirm";
+        provider.affirmation$.subscribe(function (affirmationObject) {
+            _this.invokeNewAffirmation(affirmationObject);
+        });
+    }
+    AffirmationComponent.prototype.invokeNewAffirmation = function (affirmationObject) {
+        this.currentAffirmation = affirmationObject;
+    };
+    AffirmationComponent.prototype.confirm = function () {
+        if (this.currentAffirmation.withCaptcha && this.captchaInput !== this.captchaProof)
+            return;
+        this.currentAffirmation.close(affirmation_provider_service_1.AffirmationResult.Confirmed);
+        this.currentAffirmation = null;
+    };
+    AffirmationComponent.prototype.decline = function () {
+        this.currentAffirmation.close(affirmation_provider_service_1.AffirmationResult.Declined);
+        this.currentAffirmation = null;
+    };
+    return AffirmationComponent;
+}());
+AffirmationComponent = __decorate([
+    core_1.Component({
+        selector: 'affirm-component',
+        template: __webpack_require__(260),
+        styles: [__webpack_require__(533)]
+    }),
+    __metadata("design:paramtypes", [affirmation_provider_service_1.AffirmationProviderService])
+], AffirmationComponent);
+exports.AffirmationComponent = AffirmationComponent;
+
+
+/***/ }),
+
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6358,13 +6412,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var forms_1 = __webpack_require__(224);
-var header_component_1 = __webpack_require__(231);
-var page_not_found_component_1 = __webpack_require__(62);
-var welcome_component_1 = __webpack_require__(64);
+var forms_1 = __webpack_require__(225);
+var header_component_1 = __webpack_require__(233);
+var page_not_found_component_1 = __webpack_require__(63);
+var affirmation_component_1 = __webpack_require__(231);
+var welcome_component_1 = __webpack_require__(65);
 var api_service_1 = __webpack_require__(29);
+var affirmation_provider_service_1 = __webpack_require__(48);
 var test_service_1 = __webpack_require__(32);
-var user_service_1 = __webpack_require__(63);
+var user_service_1 = __webpack_require__(64);
 var logger_service_1 = __webpack_require__(31);
 var app_storage_1 = __webpack_require__(30);
 var CoreModule = (function () {
@@ -6378,9 +6434,26 @@ CoreModule = __decorate([
             common_1.CommonModule,
             forms_1.FormsModule //,  // we use ngModel
         ],
-        exports: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        declarations: [header_component_1.HeaderComponent, page_not_found_component_1.PageNotFoundComponent, welcome_component_1.WelcomeComponent],
-        providers: [api_service_1.ApiService, test_service_1.TestService, user_service_1.UserService, logger_service_1.LoggerService, app_storage_1.AppStorage]
+        exports: [
+            header_component_1.HeaderComponent,
+            page_not_found_component_1.PageNotFoundComponent,
+            welcome_component_1.WelcomeComponent,
+            affirmation_component_1.AffirmationComponent
+        ],
+        declarations: [
+            header_component_1.HeaderComponent,
+            page_not_found_component_1.PageNotFoundComponent,
+            welcome_component_1.WelcomeComponent,
+            affirmation_component_1.AffirmationComponent
+        ],
+        providers: [
+            api_service_1.ApiService,
+            test_service_1.TestService,
+            user_service_1.UserService,
+            logger_service_1.LoggerService,
+            app_storage_1.AppStorage,
+            affirmation_provider_service_1.AffirmationProviderService
+        ]
     })
 ], CoreModule);
 exports.CoreModule = CoreModule;
@@ -6388,7 +6461,7 @@ exports.CoreModule = CoreModule;
 
 /***/ }),
 
-/***/ 231:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6419,7 +6492,7 @@ var HeaderComponent = (function () {
 HeaderComponent = __decorate([
     core_1.Component({
         selector: 'abc-header',
-        template: __webpack_require__(255)
+        template: __webpack_require__(261)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService])
 ], HeaderComponent);
@@ -6428,7 +6501,7 @@ exports.HeaderComponent = HeaderComponent;
 
 /***/ }),
 
-/***/ 232:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6442,9 +6515,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var shared_module_1 = __webpack_require__(47);
-var home_site_component_1 = __webpack_require__(65);
-var home_site_routing_module_1 = __webpack_require__(233);
+var shared_module_1 = __webpack_require__(49);
+var home_site_component_1 = __webpack_require__(66);
+var home_site_routing_module_1 = __webpack_require__(235);
 var HomeSiteModule = (function () {
     function HomeSiteModule() {
     }
@@ -6463,7 +6536,7 @@ exports.HomeSiteModule = HomeSiteModule;
 
 /***/ }),
 
-/***/ 233:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6477,7 +6550,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var router_1 = __webpack_require__(28);
-var home_site_component_1 = __webpack_require__(65);
+var home_site_component_1 = __webpack_require__(66);
 var routes = [
     { path: '', component: home_site_component_1.HomeSiteComponent },
 ];
@@ -6498,21 +6571,21 @@ exports.routedComponents = [home_site_component_1.HomeSiteComponent];
 
 /***/ }),
 
-/***/ 234:
+/***/ 236:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(45);
-__webpack_require__(46);
-var app_module_1 = __webpack_require__(220);
+var platform_browser_dynamic_1 = __webpack_require__(46);
+__webpack_require__(47);
+var app_module_1 = __webpack_require__(221);
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 
 
 /***/ }),
 
-/***/ 236:
+/***/ 238:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6547,7 +6620,7 @@ exports.DatexPipe = DatexPipe;
 
 /***/ }),
 
-/***/ 237:
+/***/ 239:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6589,7 +6662,7 @@ __decorate([
 MemberComponent = __decorate([
     core_1.Component({
         selector: 'member-component',
-        template: __webpack_require__(258)
+        template: __webpack_require__(264)
     }),
     __metadata("design:paramtypes", [])
 ], MemberComponent);
@@ -6598,7 +6671,7 @@ exports.MemberComponent = MemberComponent;
 
 /***/ }),
 
-/***/ 238:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6636,7 +6709,7 @@ __decorate([
 TreeComponent = __decorate([
     core_1.Component({
         selector: 'tree-component',
-        template: __webpack_require__(259)
+        template: __webpack_require__(265)
     }),
     __metadata("design:paramtypes", [])
 ], TreeComponent);
@@ -6645,66 +6718,80 @@ exports.TreeComponent = TreeComponent;
 
 /***/ }),
 
-/***/ 252:
-/***/ (function(module, exports) {
-
-module.exports = "<div class='container-fluid'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row\">\r\n            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
-/***/ 253:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{title}}\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n            <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4\">\r\n                <tree-component [tree]=\"tree\" (selectedChange)=\"treeSelect($event)\" [(selected)]=\"selectedTreeElement\"></tree-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <member-component [members]=\"members\" [treeElement]=\"selectedTreeElement\" (selectedChange)=\"memberSelect($event)\" [(selected)]=\"selectedMember\"></member-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div *ngIf=\"!alreadySelectedMembers || alreadySelectedMembers.length == 0\" class=\"panel-heading\">\r\n                    <h3 class=\"panel-title\">Nothing selected yet!</h3>\r\n                </div>\r\n                <ul class=\"list-group\" *ngIf=\"alreadySelectedMembers\">\r\n                    <li *ngFor=\"let selMember of alreadySelectedMembers\">\r\n                        <p>{{selMember.name}}</p>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
-
-/***/ }),
-
 /***/ 254:
 /***/ (function(module, exports) {
 
-module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 255:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
-
-/***/ }),
-
-/***/ 256:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
 /***/ 257:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n    <div class=\"panel panel-default\">\r\n        <div class=\"panel-heading\">\r\n            <h3 class=\"panel-title\">User</h3>\r\n        </div>\r\n        <p>{{currUser.name}}</p>\r\n        <p>{{currUser.role}}</p>\r\n    </div>\r\n</div>\r\n<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
+module.exports = "<div class='container-fluid maincontent'>\r\n    <abc-header></abc-header>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <abc-actionmenu></abc-actionmenu>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n            <router-outlet></router-outlet>\r\n        </div>\r\n\r\n        <div class=\"row class1\">\r\n            <p class=\"class2\">App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n\r\n                   \r\n    </div>\r\n</div>\r\n<affirm-component></affirm-component>";
 
 /***/ }),
 
 /***/ 258:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component. Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component: {{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{title}}\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        <div class=\"row\">\r\n            <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n        </div>\r\n        <div class=\"row\">\r\n            <div class=\"col-md-4\">\r\n                <tree-component [tree]=\"tree\" (selectedChange)=\"treeSelect($event)\" [(selected)]=\"selectedTreeElement\"></tree-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <member-component [members]=\"members\" [treeElement]=\"selectedTreeElement\" (selectedChange)=\"memberSelect($event)\" [(selected)]=\"selectedMember\"></member-component>\r\n            </div>\r\n            <div class=\"col-md-4\">\r\n                <div *ngIf=\"!alreadySelectedMembers || alreadySelectedMembers.length == 0\" class=\"panel-heading\">\r\n                    <h3 class=\"panel-title\">Nothing selected yet!</h3>\r\n                </div>\r\n                <ul class=\"list-group\" *ngIf=\"alreadySelectedMembers\">\r\n                    <li *ngFor=\"let selMember of alreadySelectedMembers\">\r\n                        <p>{{selMember.name}}</p>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        Affirmation tests\r\n    </div>\r\n    <div class=\"panel-body\">\r\n        <button (click)=\"affirm('Something is correct?')\">Affirm</button>\r\n        <button (click)=\"affirmWCaptcha('U Sure?')\">Affirm with Captcha</button>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
 /***/ 259:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">First Shared Component</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+module.exports = "<nav id=\"autocollapse\" class=\"navbar navbar-default\" role=\"navigation\">\r\n    <div class=\"navbar-header\">\r\n        <p class=\"navbar-brand\">{{menutitle}}</p>\r\n    </div>\r\n    <ul class=\"nav navbar-nav\">\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/home']\">\r\n                <span class='glyphicon glyphicon-home'></span> Home\r\n            </a>\r\n        </li>\r\n        <li routerLinkActive=\"active\">\r\n            <a [routerLink]=\"['/area1']\">\r\n                <span class='glyphicon glyphicon-file'></span> Area1\r\n            </a>\r\n        </li>\r\n    </ul>\r\n</nav>";
+
+/***/ }),
+
+/***/ 260:
+/***/ (function(module, exports) {
+
+module.exports = "<div *ngIf=\"currentAffirmation\" id=\"overlay\">\r\n    <div id=\"affirmationDialog\">\r\n        <div id=\"AffirmContent\">\r\n            <h1>{{ currentAffirmation.title }}</h1>\r\n            <p>{{ currentAffirmation.message }}</p>\r\n            <div *ngIf=\"currentAffirmation.withCaptcha\" style=\"background:#b3b7ff;\">\r\n                <p>Enter \"{{captchaProof}}\" here</p>\r\n                <input [(ngModel)]=\"captchaInput\" />\r\n            </div>\r\n\r\n            <button (click)=\"confirm()\">Confirm</button>\r\n            <button (click)=\"decline()\">Decline</button>\r\n        </div>\r\n    </div>\r\n</div>\r\n\r\n";
+
+/***/ }),
+
+/***/ 261:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"jumbotron\">\r\n    <h1>Hello {{name}} <small>I'm Header Component</small></h1>\r\n    <p>Api.GetVersion: {{version}}</p>\r\n</div>";
 
 /***/ }),
 
 /***/ 262:
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\r\n    font-size: 300%;\r\n    color: #34495e;\r\n}\r\n"
+module.exports = "<div class=\"panel panel-primary\">\r\n    <div class=\"panel-heading\">\r\n        {{pageTitle}}\r\n    </div>\r\n    <div class=\"panel-body\">       \r\n        <div class=\"row\">\r\n            <div class=\"text-center\">Welcome component w/o Menu Item</div>     \r\n        </div>\r\n    </div>\r\n</div>";
+
+/***/ }),
+
+/***/ 263:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row\">\r\n    <div class=\"panel panel-default\">\r\n        <div class=\"panel-heading\">\r\n            <h3 class=\"panel-title\">User</h3>\r\n        </div>\r\n        <p>{{currUser.name}}</p>\r\n        <p>{{currUser.role}}</p>\r\n    </div>\r\n</div>\r\n<div>\r\n    <h3>{{title}}</h3>\r\n    <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>\r\n</div>\r\n<p *ngIf=\"!ctrlData\"><em>Fetching WebApi...</em></p>\r\n<table class='table' *ngIf=\"ctrlData\">\r\n    <thead>\r\n        <tr>\r\n            <th>Client</th>\r\n            <th>Server</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let dummydata of ctrlData\">\r\n            <td>{{ dummydata.clientData }}</td>\r\n            <td>{{ dummydata.serverData }}</td>\r\n        </tr>\r\n    </tbody>\r\n</table>";
+
+/***/ }),
+
+/***/ 264:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\r\n    <div *ngIf=\"!members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component. Select an element</h3>\r\n    </div>\r\n    <div *ngIf=\"members\" class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">2nd Shared Component: {{treeElement.name}} Members</h3>\r\n    </div>\r\n    <ul class=\"list-group\" *ngIf=\"members\">\r\n        <li *ngFor=\"let member of members\"\r\n            [class.active]=\"selected == member\">\r\n            <a (click)=\"selectedChange.next(member)\">{{member.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
+
+/***/ }),
+
+/***/ 265:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"panel panel-default\">\r\n    <div class=\"panel-heading\">\r\n        <h3 class=\"panel-title\">First Shared Component</h3>\r\n    </div>\r\n    <ul class=\"nav nav-pills nav-stacked\">\r\n        <li *ngFor=\"let element of tree\"\r\n            role=\"presentation\"\r\n            [class.active]=\"selected == element\">\r\n            <a (click)=\"selectedChange.next(element)\">{{element.name}}</a>\r\n        </li>\r\n    </ul>\r\n</div>";
 
 /***/ }),
 
@@ -6724,10 +6811,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var http_1 = __webpack_require__(43);
-var Rx_1 = __webpack_require__(59);
+var http_1 = __webpack_require__(44);
+var Rx_1 = __webpack_require__(60);
+__webpack_require__(51);
 __webpack_require__(50);
-__webpack_require__(49);
 var app_storage_1 = __webpack_require__(30);
 //TODO maybe add JwtService later
 //import { JwtService } from './jwt.service';
@@ -6823,7 +6910,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
-var jsnlog_1 = __webpack_require__(44);
+var jsnlog_1 = __webpack_require__(45);
 var app_storage_1 = __webpack_require__(30);
 var LoggerService = (function () {
     function LoggerService(appStorage) {
@@ -6939,7 +7026,72 @@ exports.Member = Member;
 
 /***/ }),
 
-/***/ 47:
+/***/ 48:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__(5);
+var Subject_1 = __webpack_require__(6);
+var BehaviorSubject_1 = __webpack_require__(34);
+var AffirmationProviderService = (function () {
+    function AffirmationProviderService() {
+        this._affirmation = new Subject_1.Subject();
+        this.affirmation$ = this._affirmation.asObservable();
+    }
+    AffirmationProviderService.prototype.affirm = function (message, useCaptcha) {
+        if (useCaptcha === void 0) { useCaptcha = false; }
+        var affirmationObject = new Affirmation();
+        affirmationObject.message = message;
+        affirmationObject.withCaptcha = useCaptcha;
+        this._affirmation.next(affirmationObject); // add new AffirmationObject to Observable Subject
+        return new Promise(function (resolve, reject) {
+            affirmationObject.affirmationResult$
+                .subscribe(function (res) {
+                if (res === AffirmationResult.Pending)
+                    return;
+                resolve(res);
+            });
+        });
+    };
+    AffirmationProviderService.prototype.message = function (message) {
+        alert(message);
+    };
+    return AffirmationProviderService;
+}());
+AffirmationProviderService = __decorate([
+    core_1.Injectable()
+], AffirmationProviderService);
+exports.AffirmationProviderService = AffirmationProviderService;
+var Affirmation = (function () {
+    function Affirmation() {
+        this._affirmationResult = new BehaviorSubject_1.BehaviorSubject(AffirmationResult.Pending);
+        this.affirmationResult$ = this._affirmationResult.asObservable();
+    }
+    Affirmation.prototype.close = function (result) {
+        this._affirmationResult.next(result);
+    };
+    return Affirmation;
+}());
+exports.Affirmation = Affirmation;
+var AffirmationResult;
+(function (AffirmationResult) {
+    AffirmationResult[AffirmationResult["Pending"] = 0] = "Pending";
+    AffirmationResult[AffirmationResult["Confirmed"] = 1] = "Confirmed";
+    AffirmationResult[AffirmationResult["Declined"] = 2] = "Declined";
+})(AffirmationResult = exports.AffirmationResult || (exports.AffirmationResult = {}));
+
+
+/***/ }),
+
+/***/ 49:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6953,9 +7105,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var common_1 = __webpack_require__(16);
-var datex_pipe_1 = __webpack_require__(236);
-var tree_component_1 = __webpack_require__(238);
-var member_component_1 = __webpack_require__(237);
+var datex_pipe_1 = __webpack_require__(238);
+var tree_component_1 = __webpack_require__(240);
+var member_component_1 = __webpack_require__(239);
 var SharedModule = (function () {
     function SharedModule() {
     }
@@ -6974,7 +7126,37 @@ exports.SharedModule = SharedModule;
 
 /***/ }),
 
-/***/ 61:
+/***/ 532:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(254);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 533:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(255);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 62:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6992,12 +7174,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var test_service_1 = __webpack_require__(32);
 var logger_service_1 = __webpack_require__(31);
+var affirmation_provider_service_1 = __webpack_require__(48);
 var Area1SiteComponent = (function () {
-    function Area1SiteComponent(testService, logger) {
+    function Area1SiteComponent(testService, logger, confirmProvider) {
         this.testService = testService;
         this.logger = logger;
+        this.confirmProvider = confirmProvider;
         this.loggerName = "NG_Area1";
-        this.title = "I'm Area1 site component. Absolutely dummy.";
+        this.title = "I'm Area1 site component";
         this.timestamp = new Date();
         this.tree = testService.getCurrentTree();
         this.alreadySelectedMembers = new Array();
@@ -7008,23 +7192,51 @@ var Area1SiteComponent = (function () {
         this.logger.GetLogger(this.loggerName).info('TreeElement selected: ' + value.name);
     };
     Area1SiteComponent.prototype.memberSelect = function (value) {
-        this.alreadySelectedMembers.push(value);
-        this.logger.GetLogger(this.loggerName).info('Member selected: ' + value.name);
+        var _this = this;
+        this.affirmBase("Select this member?", false, function () {
+            _this.alreadySelectedMembers.push(value);
+            _this.logger.GetLogger(_this.loggerName).info('Member selected: ' + value.name);
+        }, function () {
+            _this.logger.GetLogger(_this.loggerName).info('Member selection cancelled: ' + value.name);
+        });
+    };
+    Area1SiteComponent.prototype.affirm = function (message) {
+        this.affirmBase(message, false, function () { return alert("Bestätigt"); }, function () { return alert("Abgebrochen"); });
+    };
+    Area1SiteComponent.prototype.affirmWCaptcha = function (message) {
+        this.affirmBase(message, true, function () { return alert("Bestätigt"); }, function () { return alert("Abgebrochen"); });
+    };
+    Area1SiteComponent.prototype.affirmBase = function (message, useCaptcha, okFunc, errFunc) {
+        this.confirmProvider.affirm(message, useCaptcha)
+            .then(function (result) {
+            switch (result) {
+                case affirmation_provider_service_1.AffirmationResult.Confirmed:
+                    okFunc();
+                    break;
+                case affirmation_provider_service_1.AffirmationResult.Declined:
+                    errFunc();
+                    break;
+                default:
+                    alert("Funkt nicht :(");
+                    errFunc();
+                    break;
+            }
+        });
     };
     return Area1SiteComponent;
 }());
 Area1SiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(253)
+        template: __webpack_require__(258)
     }),
-    __metadata("design:paramtypes", [test_service_1.TestService, logger_service_1.LoggerService])
+    __metadata("design:paramtypes", [test_service_1.TestService, logger_service_1.LoggerService, affirmation_provider_service_1.AffirmationProviderService])
 ], Area1SiteComponent);
 exports.Area1SiteComponent = Area1SiteComponent;
 
 
 /***/ }),
 
-/***/ 62:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7052,7 +7264,7 @@ exports.PageNotFoundComponent = PageNotFoundComponent;
 
 /***/ }),
 
-/***/ 63:
+/***/ 64:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7068,8 +7280,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
+__webpack_require__(51);
 __webpack_require__(50);
-__webpack_require__(49);
 var api_service_1 = __webpack_require__(29);
 var UserService = (function () {
     function UserService(apiService) {
@@ -7097,7 +7309,7 @@ exports.User = User;
 
 /***/ }),
 
-/***/ 64:
+/***/ 65:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7118,7 +7330,7 @@ var WelcomeComponent = (function () {
 }());
 WelcomeComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(256)
+        template: __webpack_require__(262)
     })
 ], WelcomeComponent);
 exports.WelcomeComponent = WelcomeComponent;
@@ -7126,7 +7338,7 @@ exports.WelcomeComponent = WelcomeComponent;
 
 /***/ }),
 
-/***/ 65:
+/***/ 66:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7143,7 +7355,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(5);
 var api_service_1 = __webpack_require__(29); // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
-var user_service_1 = __webpack_require__(63);
+var user_service_1 = __webpack_require__(64);
 var logger_service_1 = __webpack_require__(31);
 var HomeSiteComponent = (function () {
     function HomeSiteComponent(apiService, userService, logger) {
@@ -7166,7 +7378,7 @@ var HomeSiteComponent = (function () {
 }());
 HomeSiteComponent = __decorate([
     core_1.Component({
-        template: __webpack_require__(257)
+        template: __webpack_require__(263)
     }),
     __metadata("design:paramtypes", [api_service_1.ApiService, user_service_1.UserService, logger_service_1.LoggerService])
 ], HomeSiteComponent);
@@ -7175,5 +7387,5 @@ exports.HomeSiteComponent = HomeSiteComponent;
 
 /***/ })
 
-},[234]);
+},[236]);
 //# sourceMappingURL=app.js.map

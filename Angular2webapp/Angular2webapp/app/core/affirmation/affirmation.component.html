@@ -1,0 +1,16 @@
+﻿<div *ngIf="currentAffirmation" id="overlay">
+    <div id="affirmationDialog">
+        <div id="AffirmContent">
+            <h1>{{ currentAffirmation.title }}</h1>
+            <p>{{ currentAffirmation.message }}</p>
+            <div *ngIf="currentAffirmation.withCaptcha" style="background:#b3b7ff;">
+                <p>Enter "{{captchaProof}}" here</p>
+                <input [(ngModel)]="captchaInput" />
+            </div>
+
+            <button (click)="confirm()">Confirm</button>
+            <button (click)="decline()">Decline</button>
+        </div>
+    </div>
+</div>
+

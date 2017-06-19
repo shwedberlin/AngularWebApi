@@ -14,8 +14,10 @@ require("rxjs");
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
 require("bootstrap");
-require("bootstrap/dist/css/bootstrap.css");
+//import 'bootstrap/dist/css/bootstrap.css';
 require("jquery");
 require("jsnlog");
 require("moment");
+//import 'bootstrap/less/bootstrap.less';
+require("../vendor.less");
 //# sourceMappingURL=vendor.js.map

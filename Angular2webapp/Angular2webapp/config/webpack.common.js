@@ -1,17 +1,20 @@
 ﻿var webpack = require('webpack');
-//var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+
+const extractLESS = new ExtractTextPlugin('app.less.css');
+const vendorLESS = new ExtractTextPlugin('[name].less.css');
+const extractCSS = new ExtractTextPlugin('[name].css');
 
 module.exports = {
     entry: {
         'polyfills': './app/polyfills.ts',
-        'vendor': './app/vendor.ts',
+        'vendor': './app/vendor/vendor.ts',
         'app': './app/main.ts'
     },
 
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js', '.less']
     },
 
     module: {
@@ -48,20 +51,36 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: helpers.root('app'),
-                loader: ExtractTextPlugin.extract({
+                loader: extractCSS.extract({
                     fallback: 'style-loader',
                     use: 'css-loader?sourceMap'
                 })
             },
-            {
-                test: /\.css$/,
+            //{
+            //    test: /\.css$/,
+            //    include: helpers.root('app'),
+            //    loader: 'raw-loader'
+            //},
+            {// vendor less
+                test: /\.less$/,
+                //exclude: helpers.root('app'),
+                include: helpers.root('app', 'vendor'),
+                use: ['to-string-loader'].concat(vendorLESS.extract(['css-loader', 'less-loader']))
+            },
+            {// app less
+                test: /\.less$/,
                 include: helpers.root('app'),
-                loader: 'raw-loader'
+                exclude: helpers.root('app', 'vendor'),
+                //exclude: helpers.root('node_modules'),
+                use: ['to-string-loader'].concat(extractLESS.extract(['css-loader', 'less-loader']))
             }
         ]
     },
 
     plugins: [
+        extractCSS,
+        vendorLESS,
+        extractLESS,
         new webpack.ProvidePlugin({ $: 'jquery', jQuery: 'jquery', JL: 'jsnlog' }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
         // Workaround for angular/angular#11580 for angular v4
         new webpack.ContextReplacementPlugin(

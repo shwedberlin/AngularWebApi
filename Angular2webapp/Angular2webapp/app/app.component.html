@@ -1,4 +1,4 @@
-﻿<div class='container-fluid'>
+﻿<div class='container-fluid maincontent'>
     <abc-header></abc-header>
     <div class="container">
         <div class="row">
@@ -9,8 +9,11 @@
             <router-outlet></router-outlet>
         </div>
 
-        <div class="row">
-            <p>App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
+        <div class="row class1">
+            <p class="class2">App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
         </div>
+
+                   
     </div>
 </div>
+<affirm-component></affirm-component>
