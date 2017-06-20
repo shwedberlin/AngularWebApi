@@ -4,11 +4,16 @@ import { TreeElement, Member, TestService } from '../core/test.service';
 import { LoggerService } from '../core/logger.service';
 import { AffirmationProviderService, AffirmationResult } from '../core/affirmation.provider.service';
 
+//import logoSrc from "../assets/proj.png";
+
 @Component({
     templateUrl: './area1-site.component.html'
 })
 export class Area1SiteComponent {
     private loggerName: string = "NG_Area1";
+
+    public heroImageUrl = require("../assets/proj.png");
+    public smallImageUrl = require("../assets/small.png");
 
     title = "I'm Area1 site component";
     timestamp = new Date();

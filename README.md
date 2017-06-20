@@ -11,9 +11,11 @@ Windows Authentication added to web.config. (For IISExpress: changes in applicat
 
 Added server side logging from cleint side with RequestId (NLog + JSNLog). Adding RequestId to WebApi calls needed. 
 
+Splitted webpack configuration to vendor (with polyfills) and app code using DllPlugin. Added watch mode to app bundle. Changed mapping tool to 'eval-cheap-module-source-map'. SpeedUp: from 22sec to 12sec + 7sec w/o need to manually build app bundle. (Former config is still there, but references in index.html were changed - polyfills are now part of vendor). Use npm run build:vendor, then npm run build:app.
+
 # Upcoming Features:
 
-- Optimize Webpack: automate builds, speedup, AoT(?)
+- ~~Optimize Webpack: automate builds, speedup, AoT(?)~~
 - (Connect to existing WCF)
 - ~~Add angular + WebApi routing dealing fine with browser F5/Back~~
 - ~~Upgrade to Angular4 (4.1.3)~~

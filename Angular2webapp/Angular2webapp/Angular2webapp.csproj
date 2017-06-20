@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\assets\proj.png" />
+    <Content Include="app\assets\small.png" />
     <Content Include="app\variables.less" />
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
@@ -128,7 +130,8 @@
     <Content Include="app\shared\member\member.component.html" />
     <Content Include="app\shared\tree\tree.component.html" />
     <Content Include="config\helpers.js" />
-    <Content Include="config\webpack.vendor.common.js" />
+    <Content Include="config\webpack.app.js" />
+    <Content Include="config\webpack.vendor.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
     <Content Include="Global.asax" />
@@ -140,7 +143,8 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="webpack.vendor.config.js" />
+    <Content Include="webpack.splitted.app.js" />
+    <Content Include="webpack.splitted.vendor.js" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
@@ -178,7 +182,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\assets\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -240,7 +243,6 @@
       <DependentUpon>tree.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\vendor\vendor.ts" />
-    <TypeScriptCompile Include="config\webpack.vendor.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

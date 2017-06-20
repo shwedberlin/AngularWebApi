@@ -5,7 +5,8 @@
   "scripts": {
     "build:prod": "webpack --config config/webpack.prod.js --colors --progress",
     "build": "webpack --colors",
-    "build:vendor": "webpack --config config/webpack.vendor.ts --colors",
+    "build:vendor": "webpack --config webpack.splitted.vendor.js --colors",
+    "build:app": "webpack --config webpack.splitted.app.js --colors",
     "typings": "typings install"
   },
   "keywords": [],
@@ -26,7 +27,7 @@
     "jquery": "1.12.4",
     "jsnlog": "^2.24.0",
     "moment": "^2.18.1",
-    "rxjs": "^5.4.0",
+    "rxjs": "^5.4.1",
     "zone.js": "^0.8.12"
   },
   "devDependencies": {
@@ -42,9 +43,10 @@
     "less-loader": "^4.0.4",
     "raw-loader": "^0.5.1",
     "script-loader": "^0.7.0",
-    "style-loader": "^0.18.1",
+    "style-loader": "^0.18.2",
     "to-string-loader": "^1.1.5",
     "typescript": "~2.3.4",
+    "url-loader": "^0.5.9",
     "webpack": "^2.6.1",
     "webpack-merge": "^4.1.0"
   }

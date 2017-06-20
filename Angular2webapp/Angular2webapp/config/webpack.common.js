@@ -46,7 +46,8 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file-loader?name=assets/[name].[hash].[ext]&publicPath=/dist/'
+                //loader: 'file-loader?name=assets/[name].[hash].[ext]&publicPath=/dist/'
+                loader: 'url-loader?name=assets/[name].[hash].[ext]&publicPath=/dist/&limit=10000'
             },
             {
                 test: /\.css$/,
@@ -56,11 +57,6 @@ module.exports = {
                     use: 'css-loader?sourceMap'
                 })
             },
-            //{
-            //    test: /\.css$/,
-            //    include: helpers.root('app'),
-            //    loader: 'raw-loader'
-            //},
             {// vendor less
                 test: /\.less$/,
                 //exclude: helpers.root('app'),
