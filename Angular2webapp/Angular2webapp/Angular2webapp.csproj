@@ -114,6 +114,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\assets\bgberlin.jpg" />
+    <Content Include="app\assets\bgwiesbaden.jpg" />
     <Content Include="app\assets\proj.png" />
     <Content Include="app\assets\small.png" />
     <Content Include="app\variables.less" />

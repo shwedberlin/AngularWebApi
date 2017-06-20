@@ -1,4 +1,4 @@
-import 'zone.js'; //only neede here if using webpack.DllPlugin
+import 'zone.js'; //only needed here if using webpack.DllPlugin
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import 'bootstrap';
 

@@ -8,8 +8,10 @@
                 <input [(ngModel)]="captchaInput" />
             </div>
 
-            <button (click)="confirm()">Confirm</button>
-            <button (click)="decline()">Decline</button>
+            <div class="btn-group" role="group" aria-label="...">
+                <button class="btn btn-lg btn-primary" (click)="confirm()">Confirm</button>
+                <button class="btn btn-default" (click)="decline()">Decline</button>
+            </div>
         </div>
     </div>
 </div>

@@ -1,7 +1,19 @@
 ﻿@import 'variables.less';
 
-.maincontent {
-    background-color: @papercolor;
+/*body {
+    background-image: url("@{mainbg}");
+}*/
+
+#siteBG {
+    background: url("@{mainbg}") no-repeat center center fixed;
+    background-size: cover; /* Generic*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+    left: 0;
 }
 
 .class1 {
