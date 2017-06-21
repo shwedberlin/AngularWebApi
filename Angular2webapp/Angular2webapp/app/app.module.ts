@@ -45,6 +45,10 @@ export class AppModule {
         this.appStorage.setInstaceId(Guid.newGuid());
         this.logger.GetLogger(this.loggerName).info('App Modul initialized');        
 
+        this.testLogger();
+    }
+
+    private testLogger() {
         this.logger.GetLogger(this.loggerName).trace('App: Test LogLevel 1000');
         this.logger.GetLogger(this.loggerName).debug('App: Test LogLevel 2000');
         this.logger.GetLogger(this.loggerName).info('App: Test LogLevel 3000');
