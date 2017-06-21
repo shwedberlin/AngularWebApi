@@ -114,10 +114,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\assets\bg-top.png" />
     <Content Include="app\assets\bgberlin.jpg" />
     <Content Include="app\assets\bgwiesbaden.jpg" />
     <Content Include="app\assets\proj.png" />
     <Content Include="app\assets\small.png" />
+    <Content Include="app\core\alert\alert.component.html" />
+    <Content Include="app\core\alert\alert.component.less">
+      <DependentUpon>alert.component.html</DependentUpon>
+    </Content>
+    <Content Include="app\core\alert\alert.element.component.html" />
+    <Content Include="app\core\alert\alert.element.component.less">
+      <DependentUpon>alert.element.component.html</DependentUpon>
+    </Content>
     <Content Include="app\variables.less" />
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
@@ -208,9 +217,16 @@
     <TypeScriptCompile Include="app\core\action-menu\action-menu.component.ts">
       <DependentUpon>action-menu.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\alert.provider.service.ts" />
     <TypeScriptCompile Include="app\core\affirmation.provider.service.ts" />
     <TypeScriptCompile Include="app\core\affirmation\affirmation.component.ts">
       <DependentUpon>affirmation.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\alert\alert.element.component.ts">
+      <DependentUpon>alert.element.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\alert\alert.component.ts">
+      <DependentUpon>alert.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\core\app.storage.ts" />
     <TypeScriptCompile Include="app\core\logger.service.ts" />

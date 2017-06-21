@@ -2,12 +2,17 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+// Components
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AffirmationComponent } from './affirmation/affirmation.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertElementComponent } from './alert/alert.element.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+//Services
 import { ApiService } from './api.service';
 import { AffirmationProviderService } from './affirmation.provider.service';
+import { AlertProviderService } from './alert.provider.service';
 import { TestService } from './test.service';
 import { UserService } from './user.service';
 import { LoggerService } from './logger.service';
@@ -22,13 +27,16 @@ import { AppStorage } from './app.storage';
         HeaderComponent,
         PageNotFoundComponent,
         WelcomeComponent,
-        AffirmationComponent
+        AffirmationComponent,
+        AlertComponent
     ],
     declarations: [
         HeaderComponent,
         PageNotFoundComponent,
         WelcomeComponent,
-        AffirmationComponent
+        AffirmationComponent,
+        AlertComponent,
+        AlertElementComponent
     ],
     providers: [
         ApiService,
@@ -36,7 +44,8 @@ import { AppStorage } from './app.storage';
         UserService,
         LoggerService,
         AppStorage,
-        AffirmationProviderService
+        AffirmationProviderService,
+        AlertProviderService
     ]
 })
 export class CoreModule { }

@@ -1,0 +1,13 @@
+﻿<div class="alert" [ngClass]="'alert'+alertStyle" role="alert">
+    <div class="row">
+        <div class="col-xs-1">
+            <strong>{{alert.title}}</strong>
+        </div>
+        <div class="col-xs-10">
+            {{alert.message}}
+        </div>
+        <div class="col-xs-1">
+            <button class="btn btn-xs" [ngClass]="'btn'+alertStyle" (click)="alertClosing.next(alert)"><span class='glyphicon glyphicon-remove'></span></button>
+        </div>
+    </div>
+</div>

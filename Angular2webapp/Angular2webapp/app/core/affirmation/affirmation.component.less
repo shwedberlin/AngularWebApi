@@ -7,12 +7,27 @@
     position: absolute;
     top: 0;
     left: 0;
-}
-#affirmationDialog {
-    background: @papercolor;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 25%;
-    left: 25%;
+    align-content: center;
+
+    .centered {
+        top: 20%;
+        position: relative;
+        width: 600px;
+        margin: auto;
+    }
+
+    #affirmationDialog {
+        /*background: @papercolor;
+        padding: 10px;*/
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+
+    .fixed-body {
+        min-height: 200px;
+        min-width: 400px;
+    }
 }

@@ -3,6 +3,8 @@
 import { ApiService } from '../core/api.service'; // BIG Q: Why importing Service explicit if it is already imported and provided by CoreModule? 
 import { UserService, User } from '../core/user.service';
 import { LoggerService } from '../core/logger.service';
+import { AlertProviderService, AlertType } from '../core/alert.provider.service';
+
 
 @Component({
     templateUrl: './home-site.component.html'
@@ -15,7 +17,7 @@ export class HomeSiteComponent {
     timestamp = (new Date()).toString();
     public currUser: User = new User('undef','undef');
 
-    constructor(apiService: ApiService, private userService: UserService, private logger: LoggerService) {
+    constructor(apiService: ApiService, private userService: UserService, private logger: LoggerService, private alerProvider: AlertProviderService) {
         apiService.get('/Dummier/Get').subscribe(result => {
             this.ctrlData = <DummyData[]>result;
         });
@@ -25,6 +27,26 @@ export class HomeSiteComponent {
         });
 
         this.logger.GetLogger(this.loggerName).info("HomeSiteComponent");
+    }
+
+    alertSuccess(message: string) {
+        this.alertBase(AlertType.Success, message);
+    }
+
+    alertInfo(message: string) {
+        this.alertBase(AlertType.Information, message);
+    }
+
+    alertWarning(message: string) {
+        this.alertBase(AlertType.Warning, message);
+    }
+
+    alertError(message: string) {
+        this.alertBase(AlertType.Error, message);
+    }
+
+    private alertBase(type: AlertType, message: string) {
+        this.alerProvider.alert(type, message);
     }
 }
 

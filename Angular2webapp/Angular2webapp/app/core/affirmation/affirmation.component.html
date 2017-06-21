@@ -1,16 +1,21 @@
 ﻿<div *ngIf="currentAffirmation" id="overlay">
-    <div id="affirmationDialog">
-        <div id="AffirmContent">
-            <h1>{{ currentAffirmation.title }}</h1>
+    <div class="panel panel-primary centered" >
+        <div class="panel-heading">{{ currentAffirmation.title }}</div>
+        <div class="panel-body fixed-body">
             <p>{{ currentAffirmation.message }}</p>
             <div *ngIf="currentAffirmation.withCaptcha" style="background:#b3b7ff;">
                 <p>Enter "{{captchaProof}}" here</p>
                 <input [(ngModel)]="captchaInput" />
             </div>
-
-            <div class="btn-group" role="group" aria-label="...">
-                <button class="btn btn-lg btn-primary" (click)="confirm()">Confirm</button>
-                <button class="btn btn-default" (click)="decline()">Decline</button>
+        </div>
+        <div class="panel-footer">
+            <div class="row text-center">
+                <div class="col-xs-4 col-xs-offset-8">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button class="btn btn-primary" (click)="confirm()">Confirm</button>
+                        <button class="btn btn-default" (click)="decline()">Decline</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

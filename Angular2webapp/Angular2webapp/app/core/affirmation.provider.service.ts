@@ -12,6 +12,7 @@ export class AffirmationProviderService {
 
     affirm(message: string, useCaptcha: boolean = false): Promise<AffirmationResult> {
         let affirmationObject: Affirmation = new Affirmation();
+        affirmationObject.title = "Affirm this!";
         affirmationObject.message = message;
         affirmationObject.withCaptcha = useCaptcha;
 

@@ -1,9 +1,5 @@
 ﻿@import 'variables.less';
 
-/*body {
-    background-image: url("@{mainbg}");
-}*/
-
 #siteBG {
     background: url("@{mainbg}") no-repeat center center fixed;
     background-size: cover; /* Generic*/
@@ -14,6 +10,15 @@
     z-index: -1;
     top: 0;
     left: 0;
+
+    #leftBGImg {
+        background: url("@{topleftbg}") no-repeat;
+        width: 20px;
+        height: 180px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+    }
 }
 
 .class1 {
