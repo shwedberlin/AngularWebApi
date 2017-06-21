@@ -1,4 +1,6 @@
 # AngularWebApi
+[![codebeat badge](https://codebeat.co/badges/0df53315-004e-4adb-a4ca-4a153077ef15)](https://codebeat.co/projects/github-com-shwedberlin-angularwebapi-master)
+
 Angular (v4) FrontEnd + .Net WebApi BackEnd
 ## Features
 - Latest Angular version (4)
