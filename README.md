@@ -35,3 +35,4 @@ Splitted webpack configuration to vendor (with polyfills) and app code using Dll
 - Index.html base href and some RouterModule fixes. 
 - Serverside logging optimized. Common.Logging used instead of NLog directly. NLog Configuration splitted as example to client and server logs. RequestId transferred to server in header.
 - Switched to .less styles, splitted to app & vendor styles, overriding some bootstrap colors
+- Added some pictures and overriden some bootstrap .less variables
