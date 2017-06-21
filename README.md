@@ -3,7 +3,10 @@ Angular (v4) FrontEnd + .Net WebApi BackEnd
 ## Features
 - Latest Angular version (4)
 - Webpack build, 2 configurations - chunks and splitting
-- Angular style guide conform (Core and Shared modules)
+- Angular style guide conform
+    - Core and shared modules
+    - Services and pipes
+    - Affirmation and Alert(soon) Service/Components
 - Bootstrap (with overriden .less variables)
 - Less stylesheets
 - IE + IIS compatible + Windows Authentication
@@ -27,7 +30,7 @@ Connection to WCF tested outside this repo - it works.
 
 # Upcoming Features:
 
-- 
+- Alert Service + Component
 - 
 
 
