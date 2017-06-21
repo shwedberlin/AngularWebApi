@@ -1,5 +1,13 @@
 # AngularWebApi
 Angular (v4) FrontEnd + .Net WebApi BackEnd
+## Features
+- Latest Angular version (4)
+- Webpack build, 2 configurations - chunks and splitting
+- Angular style guide conform (Core and Shared modules)
+- Bootstrap (with overriden .less variables)
+- Less stylesheets
+- IE + IIS compatible + Windows Authentication
+- Client to Server side logging
 
 Based on: https://github.com/Burgyn/Angular2VisualStudioTemplate
 
@@ -13,26 +21,13 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 
 Splitted webpack configuration to vendor (with polyfills) and app code using DllPlugin. Added watch mode to app bundle. Changed mapping tool to 'eval-cheap-module-source-map'. SpeedUp: from 22sec to 12sec + 7sec w/o need to manually build app bundle. (Former config is still there, but references in index.html were changed - polyfills are now part of vendor). Use npm run build:vendor, then npm run build:app.
 
+Connection to WCF tested outside this repo - it works.
+
+
+
 # Upcoming Features:
 
-- ~~Optimize Webpack: automate builds, speedup, AoT(?)~~
-- (Connect to existing WCF)
-- ~~Add angular + WebApi routing dealing fine with browser F5/Back~~
-- ~~Upgrade to Angular4 (4.1.3)~~
-- ~~Switched to webpack from systemjs~~
-- ~~Add WebApi dummy Controller for data-fetching~~
-- ~~Add Bootstrap + jQuery~~
-- ~~Add angular modules, components, services, pipes~~
-- ~~Server side Logging~~
-- ~~Implement Windows Authentification with AD~~
-- ~~Add RequestId to WebApi calls~~
-- ~~Switched from css to less styles, overriding some botstrap styles~~
+- 
+- 
 
-# Last fixes:
- 
-- Bootstrap assets referencing in webpack corrected
-- Added shared (shared components, pipes) and core (services and singletons) modules
-- Index.html base href and some RouterModule fixes. 
-- Serverside logging optimized. Common.Logging used instead of NLog directly. NLog Configuration splitted as example to client and server logs. RequestId transferred to server in header.
-- Switched to .less styles, splitted to app & vendor styles, overriding some bootstrap colors
-- Added some pictures and overriden some bootstrap .less variables
+
