@@ -1,4 +1,5 @@
 # AngularWebApi
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6313d19f1f844f2789d909b9807a04c7)](https://www.codacy.com/app/shwed.berlin/AngularWebApi?utm_source=github.com&utm_medium=referral&utm_content=shwedberlin/AngularWebApi&utm_campaign=badger)
 [![codebeat badge](https://codebeat.co/badges/0df53315-004e-4adb-a4ca-4a153077ef15)](https://codebeat.co/projects/github-com-shwedberlin-angularwebapi-master)
 
 Angular (v4) FrontEnd + .Net WebApi BackEnd
