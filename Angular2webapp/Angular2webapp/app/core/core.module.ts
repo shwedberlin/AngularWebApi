@@ -9,6 +9,7 @@ import { AffirmationComponent } from './affirmation/affirmation.component';
 import { ClientmenuComponent } from './client-menu/client-menu.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertElementComponent } from './alert/alert.element.component';
+import { ClientComponent } from './client-menu/client.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 //Services
 import { ApiService } from './api.service';
@@ -39,7 +40,8 @@ import { AppStorage } from './app.storage';
         WelcomeComponent,
         AffirmationComponent,
         AlertComponent,
-        AlertElementComponent
+        AlertElementComponent,
+        ClientComponent
     ],
     providers: [
         ApiService,

@@ -19,3 +19,4 @@ import 'jquery';
 import 'jsnlog';
 import 'moment';
 import './vendor.less';
+import 'sly/dist/sly.js'

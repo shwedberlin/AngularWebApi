@@ -12,11 +12,12 @@ namespace Angular2webapp.Controllers
         // GET: api/Client
         public IEnumerable<ClientData> GetAll()
         {
-            return Enumerable.Range(1, 6).Select(index => new ClientData
+            var rnd = new Random();
+            return Enumerable.Range(1, 56).Select(index => new ClientData
             {
                 id = DateTime.Now.Second * DateTime.Now.Minute,
                 nr = index,
-                shortName = "C_"+DateTime.Now.Second,
+                shortName = "C_"+ rnd.Next(0,99),
                 longName = DateTime.Now.AddDays(index).ToString("d")
             });
         }

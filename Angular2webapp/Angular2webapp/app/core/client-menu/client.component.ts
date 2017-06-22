@@ -1,4 +1,6 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, Input, Output, EventEmitter } from '@angular/core';
+
+import { Client } from './client.model';
 
 @Component({
     selector: 'client',
@@ -6,9 +8,10 @@
     styleUrls: ['./client.component.less']
 })
 export class ClientComponent {
-    name: string;
+    @Input() client: Client;
+    @Input() isSelected: boolean;
+    @Output() clientSelected: EventEmitter<Client> = new EventEmitter();
 
     constructor() {
-        this.name = 'Sam';
     }
 }

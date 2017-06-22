@@ -1,3 +1,7 @@
-﻿<div>
-    <p>{{name}}</p>
+﻿<div class="client" [ngClass]="{'selected': isSelected}" (click)="clientSelected.next(client)">
+    <!--<button (click)="clientSelected.next(client)">-->
+    <p>{{client.shortName}}</p>
+    <!--</button>-->
+
+   
 </div>

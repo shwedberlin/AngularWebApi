@@ -128,6 +128,9 @@
       <DependentUpon>alert.element.component.html</DependentUpon>
     </Content>
     <Content Include="app\core\client-menu\client-menu.component.html" />
+    <Content Include="app\core\client-menu\client-menu.component.less">
+      <DependentUpon>client-menu.component.html</DependentUpon>
+    </Content>
     <Content Include="app\core\client-menu\client.component.html" />
     <Content Include="app\core\client-menu\client.component.less">
       <DependentUpon>client.component.html</DependentUpon>
@@ -147,11 +150,15 @@
     <Content Include="app\shared\tree\tree.component.html" />
     <Content Include="config\helpers.js" />
     <Content Include="config\webpack.app.js" />
-    <Content Include="config\webpack.vendor.js" />
     <Content Include="config\webpack.common.js" />
     <Content Include="config\webpack.prod.js" />
+    <Content Include="config\webpack.vendor.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
+    <Content Include="Loader.min.css">
+      <DependentUpon>Loader.css</DependentUpon>
+    </Content>
+    <Content Include="Loader.css" />
     <Content Include="Scripts\jsnlog.js" />
     <Content Include="Scripts\jsnlog.min.js" />
     <Content Include="Scripts\readme.txt" />

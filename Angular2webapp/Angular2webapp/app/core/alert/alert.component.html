@@ -2,11 +2,7 @@
     <div class="panel panel-primary centered">
         <div class="panel-heading">Alert header</div>
         <div class="panel-body fixed-body">
-            <ul class="list-group">
-                <li *ngFor="let alert of alertList">
-                    <alert-element [alert]="alert" (alertClosing)="removeAlert($event)"></alert-element>
-                </li>
-            </ul>
+            <alert-element *ngFor="let alert of alertList" [alert]="alert" (alertClosing)="removeAlert($event)"></alert-element>
         </div>
         <div class="panel-footer">
             <div class="row text-center">

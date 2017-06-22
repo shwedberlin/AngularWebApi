@@ -28,6 +28,7 @@
     "jsnlog": "^2.24.0",
     "moment": "^2.18.1",
     "rxjs": "^5.4.1",
+    "sly": "github:darsain/sly",
     "zone.js": "^0.8.12"
   },
   "devDependencies": {

@@ -45,7 +45,7 @@ export class AppModule {
         this.appStorage.setInstaceId(Guid.newGuid());
         this.logger.GetLogger(this.loggerName).info('App Modul initialized');        
 
-        this.testLogger();
+        //this.testLogger();
     }
 
     private testLogger() {

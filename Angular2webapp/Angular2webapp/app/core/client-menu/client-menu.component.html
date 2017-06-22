@@ -1,10 +1,41 @@
-﻿<nav id="autocollapse" class="navbar navbar-default" role="navigation">
+﻿<!--<nav id="autocollapse" class="navbar navbar-default" role="navigation" [ngClass]="{'collapsed': clientList.length>20}">
     <div class="navbar-header">
-        <p class="navbar-brand">Client menu</p>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#clientNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <p class="navbar-brand">Client</p>
     </div>
-    <ul class="nav navbar-nav">
-        <li *ngFor="let client of clientList">
-                <span class='glyphicon glyphicon-user'></span> {{client.shortName}}
+    <div class="collapse navbar-collapse" id="clientNavbar">
+            <ul class="nav navbar-nav">
+                <li *ngFor="let client of clientList">
+                    <client [client]="client" (clientSelected)="selectClient($event)" [isSelected]="selectedClient === client"></client>
+                </li>
+            </ul>
+    </div>
+</nav>-->
+
+<div class="slyframe">
+    <ul class="slyslidee">
+        <li *ngFor="let client of clientList" #renderedClients>
+            <client [client]="client" (clientSelected)="selectClient($event)" [isSelected]="selectedClient === client"></client>
         </li>
     </ul>
-</nav>
+</div>
+
+
+<!--<div>
+    <div class="slywrapper">
+        <ul class="slylist">
+            <li *ngFor="let client of clientList">
+                <client [client]="client" (clientSelected)="selectClient($event)" [isSelected]="selectedClient === client"></client>
+            </li>
+        </ul>
+    </div>
+    <div class="scrollbar">
+        <div class="handle">
+            <div class="mousearea"></div>
+        </div>
+    </div>
+</div>-->

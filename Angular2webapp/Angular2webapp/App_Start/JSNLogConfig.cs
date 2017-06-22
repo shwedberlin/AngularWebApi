@@ -1,6 +1,5 @@
 using System;
 using System.Web.Routing;
-//using System.Web.Mvc;
 
 [assembly: WebActivatorEx.PostApplicationStartMethod(
     typeof(Angular2webapp.App_Start.JSNLogConfig), "PostStart")]
