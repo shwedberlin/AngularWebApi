@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AffirmationComponent } from './affirmation/affirmation.component';
+import { ClientmenuComponent } from './client-menu/client-menu.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertElementComponent } from './alert/alert.element.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -26,6 +27,7 @@ import { AppStorage } from './app.storage';
     exports: [
         HeaderComponent,
         PageNotFoundComponent,
+        ClientmenuComponent,
         WelcomeComponent,
         AffirmationComponent,
         AlertComponent
@@ -33,6 +35,7 @@ import { AppStorage } from './app.storage';
     declarations: [
         HeaderComponent,
         PageNotFoundComponent,
+        ClientmenuComponent,
         WelcomeComponent,
         AffirmationComponent,
         AlertComponent,

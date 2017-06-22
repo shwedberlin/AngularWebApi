@@ -1,0 +1,10 @@
+﻿<nav id="autocollapse" class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <p class="navbar-brand">Client menu</p>
+    </div>
+    <ul class="nav navbar-nav">
+        <li *ngFor="let client of clientList">
+                <span class='glyphicon glyphicon-user'></span> {{client.shortName}}
+        </li>
+    </ul>
+</nav>

@@ -127,6 +127,11 @@
     <Content Include="app\core\alert\alert.element.component.less">
       <DependentUpon>alert.element.component.html</DependentUpon>
     </Content>
+    <Content Include="app\core\client-menu\client-menu.component.html" />
+    <Content Include="app\core\client-menu\client.component.html" />
+    <Content Include="app\core\client-menu\client.component.less">
+      <DependentUpon>client.component.html</DependentUpon>
+    </Content>
     <Content Include="app\variables.less" />
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
@@ -161,6 +166,7 @@
   <ItemGroup>
     <Compile Include="App_Start\JSNLogConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DummierController.cs" />
     <Compile Include="Controllers\DummyController.cs" />
     <Compile Include="Global.asax.cs">
@@ -229,6 +235,14 @@
       <DependentUpon>alert.component.html</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\core\app.storage.ts" />
+    <TypeScriptCompile Include="app\core\client-menu\client-menu.component.ts">
+      <DependentUpon>client-menu.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\client-menu\client.component.ts">
+      <DependentUpon>client.component.html</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\client-menu\client.model.ts" />
+    <TypeScriptCompile Include="app\core\client-menu\client.service.ts" />
     <TypeScriptCompile Include="app\core\logger.service.ts" />
     <TypeScriptCompile Include="app\core\api.service.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />

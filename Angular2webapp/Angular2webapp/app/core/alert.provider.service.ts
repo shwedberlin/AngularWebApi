@@ -11,28 +11,8 @@ export class AlertProviderService {
     alert$ = this._alert.asObservable();
 
     alert(type: AlertType, message: string, ) {
-        let alertObject: Alert = new Alert();
-        alertObject.type = type;
-        alertObject.title = type.toString();
-        alertObject.message = message;
-        alertObject.timeoutSeconds = 10;
-
-        switch (type) {
-            case AlertType.Success:
-            case AlertType.Information:
-                alertObject.timeoutSeconds = 3;
-                break;
-            case AlertType.Warning:
-                alertObject.timeoutSeconds = 6;
-                break;
-            case AlertType.Error:
-                alertObject.timeoutSeconds = 60;
-                break;
-            default:
-                alertObject.timeoutSeconds = 60;
-                break;
-        }
-
+        let alertObject: Alert = new Alert(type, type.toString(), message);
+        
         this._alert.next(alertObject); // add new ALertObject to Observable Subject        
     }
 }
@@ -43,6 +23,26 @@ export class Alert {
     title: string;
     message: string;
     timeoutSeconds: number;
+
+    constructor(type: AlertType, title: string, message: string) {
+        this.type = type;
+        this.title = title;
+        this.message = message;
+
+        switch (type) {
+            case AlertType.Success:
+            case AlertType.Information:
+                this.timeoutSeconds = 3;
+                break;
+            case AlertType.Warning:
+                this.timeoutSeconds = 6;
+                break;
+            case AlertType.Error:
+            default:
+                this.timeoutSeconds = 60;
+                break;
+        }
+    }
 }
 
 export enum AlertType {

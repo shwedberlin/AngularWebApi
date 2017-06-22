@@ -1,1 +1,1 @@
-﻿module.exports = require('./config/webpack.vendor.js');
+﻿module.exports = require("./config/webpack.vendor.js");

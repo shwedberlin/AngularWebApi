@@ -1,1 +1,1 @@
-﻿module.exports = require('./config/webpack.app.js');
+﻿module.exports = require("./config/webpack.app.js");

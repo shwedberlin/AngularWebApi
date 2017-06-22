@@ -1,27 +1,27 @@
-﻿var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
-const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
+﻿var webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var helpers = require("./helpers");
+const CheckerPlugin = require("awesome-typescript-loader").CheckerPlugin;
 
-const extractLESS = new ExtractTextPlugin('app.less.css');
+const extractLESS = new ExtractTextPlugin("app.less.css");
 
 module.exports = {
     entry: {
-        app: './app/main.ts'
+        app: "./app/main.ts"
     },
 
     output: {
-        path: helpers.root('dist'),
-        publicPath: '/',
-        filename: '[name].js'
+        path: helpers.root("dist"),
+        publicPath: "/",
+        filename: "[name].js"
     },
 
     watch: true,
 
-    devtool: 'eval-cheap-module-source-map',
+    devtool: "eval-cheap-module-source-map",
 
     resolve: {
-        extensions: ['.ts', '.js', '.less']
+        extensions: [".ts", ".js", ".less"]
     },
 
     module: {
@@ -30,20 +30,20 @@ module.exports = {
                 test: /\.ts$/,
                 use: [
                     {
-                        loader: 'awesome-typescript-loader',
+                        loader: "awesome-typescript-loader",
                         options: {
-                            configFileName: helpers.root('', 'tsconfig.json')
+                            configFileName: helpers.root("tsconfig.json")
                         }
                     },
                     {
-                        loader: 'angular2-template-loader'
+                        loader: "angular2-template-loader"
                     }
                 ]
             },
             {
                 test: /\.html$/,
                 use: [{
-                    loader: 'html-loader',
+                    loader: "html-loader",
                     options: {
                         minimize: false,
                         removeComments: false,
@@ -53,13 +53,13 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'url-loader?name=assets/[name].[hash].[ext]&publicPath=/dist/&limit=10000'
+                loader: "url-loader?name=assets/[name].[hash].[ext]&publicPath=/dist/&limit=10000"
             },
             {// app less
                 test: /\.less$/,
-                include: helpers.root('app'),
-                exclude: helpers.root('app', 'vendor'),
-                use: ['to-string-loader'].concat(extractLESS.extract(['css-loader', 'less-loader']))
+                include: helpers.root("app"),
+                exclude: helpers.root("app", "vendor"),
+                use: ["to-string-loader"].concat(extractLESS.extract(["css-loader", "less-loader"]))
             }
         ]
     },
@@ -68,12 +68,12 @@ module.exports = {
         extractLESS,
         new CheckerPlugin(),       
         new webpack.DllReferencePlugin({
-            context: '.',
-            manifest: require('../dist/vendor-manifest.json')
+            context: ".",
+            manifest: require("../dist/vendor-manifest.json")
         }),
         new webpack.SourceMapDevToolPlugin({
-            filename: '[file].map', // Remove this line if you prefer inline source maps
-            moduleFilenameTemplate: helpers.root('dist', '[resourcePath]') // Point sourcemap entries to the original file locations on disk
+            filename: "[file].map", // Remove this line if you prefer inline source maps
+            moduleFilenameTemplate: helpers.root("dist", "[resourcePath]") // Point sourcemap entries to the original file locations on disk
         })
     ]
 };
