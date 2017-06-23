@@ -9,7 +9,7 @@ Angular (v4) FrontEnd + .Net WebApi BackEnd
 - Angular style guide conform
     - Core and shared modules
     - Services and pipes
-    - Affirmation and Alert(soon) Service/Components
+    - Affirmation and Alert Service/Components
 - Bootstrap (with overriden .less variables)
 - Less stylesheets
 - IE + IIS compatible + Windows Authentication
@@ -29,11 +29,16 @@ Splitted webpack configuration to vendor (with polyfills) and app code using Dll
 
 Connection to WCF tested outside this repo - it works.
 
+# Last fixes
 
+- Added simple "App Loader" animation (css) before Angular app loads. 
+- Added new script to package.json: npm run profile. Generates stats.json for analysing with webpack-bundle-analyzer
+- After this analysis: 
+    - moved @angular/forms to vendor bundle
+    - excluded some locales from momentjs, saves ~400kb! Webpack plugin: webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/)
 
 # Upcoming Features:
 
-- Alert Service + Component
-- 
-
-
+- Simple App Error page (if Angular fails)
+- Alert timeouts
+- Logger names as Enums (both server and client side)

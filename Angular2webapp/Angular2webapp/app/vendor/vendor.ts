@@ -6,6 +6,7 @@ import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
+import "@angular/forms";
 import '@angular/http';
 import '@angular/router';
 
@@ -17,6 +18,6 @@ import 'rxjs';
 import 'bootstrap';
 import 'jquery';
 import 'jsnlog';
-import 'moment';
+import 'moment'; //exclude some locales
 import './vendor.less';
 import 'sly/dist/sly.js'

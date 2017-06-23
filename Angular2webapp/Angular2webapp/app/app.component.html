@@ -18,6 +18,17 @@
 
         <div class="row class1">
             <p class="class2">App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
+            <p></p>
+            <p class="class2">
+                Moment: {{momenttest}}
+            </p>
+            <p class="class2">
+                Locale: {{momentlocale}}
+            </p>
+            <div>
+                <p>Locales:</p>
+                <p class="class2" *ngFor="let loc of momentlocales">{{loc}}</p>
+            </div>
         </div>
 
                    

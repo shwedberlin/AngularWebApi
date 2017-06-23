@@ -64,13 +64,14 @@ module.exports = {
     plugins: [
         vendorLESS,
         extractLESS,
-        new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery", JL: "jsnlog", Sly: "sly" }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
+        new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery", JL: "jsnlog", sly: "sly", moment: "moment" }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
         // Workaround for angular/angular#11580 for angular v4
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core(\\|\/)@angular/,
             helpers.root("./app"), // location of your src
             {} // a map of your routes
         ),
+        new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/), //install only 'en' & 'de' locales with momentjs --> saves about 500kb!
 
         new webpack.optimize.CommonsChunkPlugin({
             //order is important: 
