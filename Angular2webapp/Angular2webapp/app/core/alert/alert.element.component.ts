@@ -1,4 +1,5 @@
 ﻿import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 
 import { Alert, AlertType } from '../alert.provider.service';
 
@@ -36,5 +37,8 @@ export class AlertElementComponent {
                 this.alertStyle = '-info';
                 break;
         }
+
+        let timer = Observable.timer(this.alert.timeoutSeconds * 1000); //convert to ms
+        timer.subscribe(() => this.alertClosing.next(this.alert));
     }
 }
