@@ -1,15 +1,12 @@
-﻿<div *ngIf="alertList?.length > 0" >
-    <div class="panel panel-primary centered">
-        <div class="panel-heading">Alert header</div>
+﻿<div *ngIf="alertList?.length > 0">
+    <div class="panel panel-primary alert-panel">
+        <div class="panel-heading" (click)="pauseAlerts()">
+            Alerts
+            <span *ngIf="isPaused">(paused)</span>
+            <button *ngIf="isPaused" class="btn btn-primary btn-xs pull-right" (click)="closeAllAlerts()"><span class='glyphicon glyphicon-remove'></span></button>
+        </div>
         <div class="panel-body fixed-body">
             <alert-element *ngFor="let alert of alertList" [alert]="alert" (alertClosing)="removeAlert($event)"></alert-element>
-        </div>
-        <div class="panel-footer">
-            <div class="row text-center">
-                <div class="col-xs-4 col-xs-offset-8">
-                    <p>Alert footer</p>
-                </div>
-            </div>
         </div>
     </div>
 </div>

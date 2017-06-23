@@ -31,7 +31,7 @@ Connection to WCF tested outside this repo - it works.
 
 # Last fixes
 
-- Alert timeouts
+- Alert timeouts + pause
 - Upgraded to Angular 4.2.x
 - Added simple "App Loader" animation (css) before Angular app loads. 
 - Added new script to `package.json`: npm run profile. Generates stats.json for analysing with `webpack-bundle-analyzer`
@@ -42,5 +42,4 @@ Connection to WCF tested outside this repo - it works.
 # Upcoming Features:
 
 - Simple App Error page (if Angular fails)
-- Alert pause
 - Logger names as Enums (both server and client side)

@@ -9,9 +9,11 @@ import { AlertProviderService, Alert, AlertType } from '../alert.provider.servic
 })
 export class AlertComponent {
     public alertList: Alert[];
+    public isPaused: boolean;
 
     constructor(private provider: AlertProviderService) {
         this.alertList = new Array();
+        this.isPaused = false;
         provider.alert$.subscribe(
             alertObject => {
                 this.alertList.push(alertObject);
@@ -20,9 +22,20 @@ export class AlertComponent {
     }
 
     removeAlert(value: Alert) {
-        var index = this.alertList.indexOf(value, 0);
-        if (index > -1) {
-            this.alertList.splice(index, 1);
+        if (!this.isPaused) {
+            var index = this.alertList.indexOf(value, 0);
+            if (index > -1) {
+                this.alertList.splice(index, 1);
+            }
         }
+    }
+
+    pauseAlerts() {
+        this.isPaused = true;
+    }
+
+    closeAllAlerts() {
+        this.isPaused = false;
+        this.alertList.splice(0, this.alertList.length);
     }
 }
