@@ -32,7 +32,7 @@ Connection to WCF tested outside this repo - it works.
 # Last fixes
 
 - Added simple "App Loader" animation (css) before Angular app loads. 
-- Added new script to package.json: npm run profile. Generates stats.json for analysing with webpack-bundle-analyzer
+- Added new script to `package.json`: npm run profile. Generates stats.json for analysing with `webpack-bundle-analyzer`
 - After this analysis: 
     - moved @angular/forms to vendor bundle
     - excluded some locales from momentjs, saves ~400kb! Webpack plugin: `webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/)`
