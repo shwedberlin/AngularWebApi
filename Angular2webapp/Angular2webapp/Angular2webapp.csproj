@@ -54,9 +54,6 @@
     <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Common.Logging.NLog20, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Common.Logging.NLog20.3.3.1\lib\net40\Common.Logging.NLog20.dll</HintPath>
-    </Reference>
     <Reference Include="Common.Logging.NLog41, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
       <HintPath>..\packages\Common.Logging.NLog41.3.3.1\lib\net40\Common.Logging.NLog41.dll</HintPath>
     </Reference>
@@ -162,7 +159,6 @@
     <Content Include="Scripts\jsnlog.js" />
     <Content Include="Scripts\jsnlog.min.js" />
     <Content Include="Scripts\readme.txt" />
-    <Content Include="styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -171,14 +167,18 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\JSNLogConfig.cs" />
+    <Compile Include="Core\NLogConfigurator.cs" />
+    <Compile Include="App_Start\LoggerConfiguration.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DummierController.cs" />
     <Compile Include="Controllers\DummyController.cs" />
+    <Compile Include="Core\ConfigurationReader.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Configuration.cs" />
+    <Compile Include="Models\ConfiguredLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,18 +186,12 @@
     <Content Include="package.json" />
     <Content Include="tsconfig.json" />
     <Content Include="config\webpack.dev.js" />
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="app\core\affirmation\affirmation.component.less">
       <DependentUpon>affirmation.component.html</DependentUpon>
     </Content>
     <Content Include="app\vendor\vendor.less" />
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Scripts\jsnlog.js.map" />
+    <Content Include="config.development.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -216,6 +209,7 @@
     <TypeScriptCompile Include="app\app.component.ts">
       <DependentUpon>app.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="app\app.config.ts" />
     <TypeScriptCompile Include="app\app.module.ts" />
     <TypeScriptCompile Include="app\app.routing.module.ts">
       <SubType>Code</SubType>

@@ -18,7 +18,7 @@ export class ClientmenuComponent {
     selectedClient: Client;
     private slyMenu: any;
     private currSlyItemsCount: number = 0;
-    @ViewChildren('renderedClients') things: QueryList<any>;
+    @ViewChildren('renderedClients') guiAddedClients: QueryList<any>;
 
     constructor(private service: ClientService, private alertProvider: AlertProviderService) {
         this.clientList = new Array();        
@@ -46,12 +46,15 @@ export class ClientmenuComponent {
     }
     
     ngAfterViewInit() {
-        this.things.changes.subscribe(t => {
+        //subscribe to all changes on <ul> items
+        this.guiAddedClients.changes.subscribe(t => {
             this.ngForRendred();
         })
     }
 
     ngForRendred() {
+        //reload sly menu after changes on <ul> elements
+        //causes recalculations on slidee
         this.slyMenu.reload();
         console.log("ngForRendred() clientList: " + this.clientList.length + ", lsy.items: " + this.slyMenu.items.length);
         console.log("ngForRendred() sizes: (slidee start: " + this.slyMenu.pos.start + ", end: " + this.slyMenu.pos.end + ", current: " + this.slyMenu.pos.cur + ")");

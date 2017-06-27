@@ -5,7 +5,7 @@ export class AppStorage {
     private instanceId: string;
 
     constructor() {
-        
+        console.info("App storage constructor called");
     }
 
     setInstaceId(instanceId: string) {

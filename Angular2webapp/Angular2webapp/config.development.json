@@ -1,0 +1,25 @@
+﻿{
+  "loggers": [
+    {
+      "name": "ANGLR",
+      "shit": "someshit",
+      "level": "VERBOSE"
+    },
+    {
+      "name": "NG_App",
+      "level": "INFO"
+    },
+    {
+      "name": "NG_Home",
+      "level": "VERBOSE"
+    },
+    {
+      "name": "NG_Area1",
+      "level": "VERBOSE"
+    },
+    {
+      "name": "API_Logger",
+      "level": "VERBOSE"
+    }
+  ]
+}

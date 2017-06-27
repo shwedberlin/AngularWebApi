@@ -12,6 +12,7 @@ namespace Angular2webapp
 
             JavascriptLogging.OnLogging += LoggingHandler;
 
+            //This fails - Server side logger not configured yet
             Common.Logging.LogManager.GetLogger("ApiLogger").Info("Server side started");
         }
     

@@ -13,7 +13,7 @@ Angular (v4) FrontEnd + .Net WebApi BackEnd
 - Bootstrap (with overriden .less variables)
 - Less stylesheets
 - IE + IIS compatible + Windows Authentication
-- Client to Server side logging
+- Client to Server side logging with server side logger configuration (configuration in code + levels in .json)
 
 Based on: https://github.com/Burgyn/Angular2VisualStudioTemplate
 
@@ -38,6 +38,8 @@ Connection to WCF tested outside this repo - it works.
 - After this analysis: 
     - moved @angular/forms to vendor bundle
     - excluded some locales from momentjs, saves ~400kb! Webpack plugin: `webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/)`
+- Read logger configuration from server before app load
+- Moved Logger configuration from .xml to code (for JSNlog, Common.Logging & NLog)
 
 # Upcoming Features:
 
