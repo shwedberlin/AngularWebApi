@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Angular2webapp.Core
 {
-    public class NLogConfigurator
+    public static class NLogConfigurator
     {
         public static void Configure()
         {
@@ -15,7 +15,7 @@ namespace Angular2webapp.Core
 
             if (null != appConfiguration)
             {
-                var logLevel = LogLevel.Trace;
+                LogLevel logLevel;
                 foreach (var logger in appConfiguration.Loggers)
                 {
                     switch (logger.Level)

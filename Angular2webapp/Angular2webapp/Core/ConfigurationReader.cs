@@ -1,14 +1,11 @@
 ﻿using Angular2webapp.Models;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 
 namespace Angular2webapp.Core
 {
-    public class ConfigurationReader
+    public static class ConfigurationReader
     {
         //TODO: Validate json file against json schema
         //MIT Licensed Validator could be used: https://github.com/RSuter/NJsonSchema
