@@ -24,18 +24,16 @@ export class LoggerService {
     }
 
     Initialize() {
-        this.internalLogger = this.GetLogger(this.internalName);     
+        this.internalLogger = this.GetLogger(this.internalName);
     }
 
     //remove logger from array if exists.
     //next time this logger will be configured again
     ResetLogger(name: string): boolean {
         var logger = this.configuredLoggers.indexOf(name);
-        if (logger > -1) {
-            if (this.internalLogger) {
-                this.internalLogger.info("Logger [" + name + "] resetted.");
-            }            
+        if (logger > -1) {                    
             this.configuredLoggers.splice(logger, 1);
+            this.WriteInternalLog("Logger [" + name + "] resetted.");    
             return true;
         }
         return false;
@@ -58,17 +56,8 @@ export class LoggerService {
     // Loggers configured on server will be configured with both: ajax- and console appenders
     // Others only with console appender
     private ConfigureLogger(name: string) {
+        var configuredLogger: any = this.GetServerConfiguration(name);
 
-        var allLoggers = this.config.getConfig("loggers");
-        var configuredLogger: any;
-        if (allLoggers) {            
-            for (let logger of allLoggers) {
-                if (logger.name === name) {
-                    configuredLogger = logger;
-                    break;
-                }
-            }
-        }
         if (configuredLogger) {
             this.ajaxAppender.setOptions({ "level": this.ConvertLogLevel(configuredLogger.level) });
             JL(name).setOptions({ "level": JL.getAllLevel(), "appenders": [this.ajaxAppender, this.consoleAppender] });
@@ -78,11 +67,24 @@ export class LoggerService {
         }
 
         JL.setOptions({ "requestId": this.appStorage.getInstanceId() });
-        if (this.internalLogger) {
-            this.internalLogger.info("New logger ["+name+"] configured.");
-        }
+        this.WriteInternalLog("New logger [" + name + "] configured.");        
 
         this.configuredLoggers.push(name);
+    }
+
+    private GetServerConfiguration(loggerName: string): any {
+        var allLoggers = this.config.getConfig("loggers");
+        if (allLoggers) {
+            for (let logger of allLoggers) {
+                if (logger.name === loggerName) {
+                    return logger;
+                }
+            }
+            this.WriteInternalLog("No server configuration for [" + loggerName + "] found.");
+        } else {
+            this.WriteInternalLog("No logger configuration from server found.");
+        }
+        return null;
     }
 
     private ConvertLogLevel(configuredLevel: string): number {
@@ -109,5 +111,11 @@ export class LoggerService {
         }
 
         return returnLevel;
+    }
+
+    private WriteInternalLog(logMessage: string) {
+        if (this.internalLogger) {
+            this.internalLogger.info(logMessage);
+        }
     }
 }
