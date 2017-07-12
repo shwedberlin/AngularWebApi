@@ -4,15 +4,31 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { ApiService } from './api.service';
+import { LoggerService } from './logger.service';
 
 @Injectable()
 export class UserService {
- 
-    constructor(private apiService: ApiService) {
+    private currUser: User;
+    private loggerName: string = "NG_UserSrvc";
+
+    constructor(private apiService: ApiService, private logger: LoggerService) {
     }
 
     getUser(): Observable<User> {
-        return this.apiService.get('/Dummier/GetAuthenticate');
+        if (this.currUser) {
+            this.logger.GetLogger(this.loggerName).info("Returning earlier authenticated User.");
+            return Observable.of(this.currUser);
+        }
+
+        this.logger.GetLogger(this.loggerName).info("User is not authenticated yet. Run api authentication.");
+        var serviceObservable = this.apiService.get('/Dummier/GetAuthenticate');
+        serviceObservable.subscribe(result => {
+            this.currUser = result as User;            
+        });
+
+        // 2x subcribe() -> sends 2x api request :(
+        //return Observable.of(this.currUser);
+        return serviceObservable;
     }
 }
 

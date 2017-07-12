@@ -1,4 +1,11 @@
-﻿//export const enum LoggerName {
+﻿/**
+    String Enums (also as const)
+    First since Typescript 2.4 available
+    Possibly not fully supported in VS yet
+    Warkaround as namespace with const 
+**/
+
+//export const enum LoggerName {
 //    NG_LoggerSrvc = "NG_LoggerSrvc",
 //    NG_Client = "NG_Client"
 //}

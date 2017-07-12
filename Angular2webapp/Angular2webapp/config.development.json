@@ -14,6 +14,10 @@
       "level": "VERBOSE"
     },
     {
+      "name": "NG_UserSrvc",
+      "level": "VERBOSE"
+    },
+    {
       "name": "NG_Area1",
       "level": "VERBOSE"
     },

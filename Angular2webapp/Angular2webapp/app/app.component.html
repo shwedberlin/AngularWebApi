@@ -8,30 +8,56 @@
             <client-menu></client-menu>
         </div>
 
-        <div class="row">
-            <abc-actionmenu></abc-actionmenu>
-        </div>
-        
-        <div class="row">
-            <router-outlet></router-outlet>
-        </div>
+        <div *ngIf="currUser">
+            <div class="row">
+                <abc-actionmenu></abc-actionmenu>
+            </div>
 
-        <div class="row class1">
-            <p class="class2">App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
-            <p></p>
-            <p class="class2">
-                Moment: {{momenttest}}
-            </p>
-            <p class="class2">
-                Locale: {{momentlocale}}
-            </p>
-            <div>
-                <p>Locales:</p>
-                <p class="class2" *ngFor="let loc of momentlocales">{{loc}}</p>
+            <div class="row">
+                <router-outlet></router-outlet>
+            </div>
+
+            <div class="row class1">
+                <p class="class2">App timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
+                <p></p>
+                <p class="class2">
+                    Moment: {{momenttest}}
+                </p>
+                <p class="class2">
+                    Locale: {{momentlocale}}
+                </p>
+                <div>
+                    <p>Locales:</p>
+                    <p class="class2" *ngFor="let loc of momentlocales">{{loc}}</p>
+                </div>
             </div>
         </div>
 
-                   
+        <div class="row authenticating" *ngIf="!currUser">
+            <div class="loading-line">
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+                <span class="loading-bit"></span>
+            </div>
+            <div class="loading-text">
+                Authenticating user...
+            </div>
+
+        </div>
+
     </div>
 </div>
 <affirm-component></affirm-component>

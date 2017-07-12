@@ -74,6 +74,10 @@ namespace Angular2webapp.Core
             config.AddTarget(defaultFileTarget);
 
             // Set Complex Layouts
+            // Client side logs are async and thatswhy not ordered
+            // But each log has right timestamp
+            // Logfile content can be ordered manually,
+            // thatswhy header should contain -0-, -1- and so on to be ordered at the top as initially
             var headerLayoutBuilder = new StringBuilder();
             headerLayoutBuilder.Append("-0-".PadRight(120, '-')).Append("${newline}");
             headerLayoutBuilder.Append("-1- System:".PadRight(15)).Append("${machinename}${newline}");

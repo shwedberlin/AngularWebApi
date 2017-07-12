@@ -151,14 +151,12 @@
     <Content Include="config\webpack.prod.js" />
     <Content Include="config\webpack.vendor.js" />
     <Content Include="Global.asax" />
+    <Content Include="401.2.html" />
     <Content Include="index.html" />
     <Content Include="Loader.min.css">
       <DependentUpon>Loader.css</DependentUpon>
     </Content>
     <Content Include="Loader.css" />
-    <Content Include="Scripts\jsnlog.js" />
-    <Content Include="Scripts\jsnlog.min.js" />
-    <Content Include="Scripts\readme.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -190,7 +188,6 @@
       <DependentUpon>affirmation.component.html</DependentUpon>
     </Content>
     <Content Include="app\vendor\vendor.less" />
-    <Content Include="Scripts\jsnlog.js.map" />
     <Content Include="config.development.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

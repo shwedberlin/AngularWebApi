@@ -51,6 +51,12 @@ namespace Angular2webapp.Controllers
         // GET: api/Dummier/Authenticate
         public UserData GetAuthenticate()
         {
+            // Simulate 10 sec delay
+            var waitTime = DateTime.Now.AddSeconds(10);
+            while (DateTime.Now < waitTime)
+            {
+                //noop
+            }
             var re = Request;
             var headers = re.Headers;
 

@@ -28,8 +28,6 @@ namespace Angular2webapp.Controllers
             public int nr { get; set; }
             public string shortName { get; set; }
             public string longName { get; set; }
-
         }
-
     }
 }
