@@ -19,7 +19,7 @@ Based on: https://github.com/Burgyn/Angular2VisualStudioTemplate
 
 Tested in IE11 (with core-js shim): no errors neither in Browser Console nor in VS2017 Console. Also tested with local IIS (Project switched back to use IISExpress)
 
-Several Modules added: Shared, Core Module with services, pipes and components. Angular routing is configured with IIS Express Url Rewrite rules: dealing fine with browser refresh/back, 404 Page, in-app and url routing. Local IIS not tested yet - URL Rewrite module required. 
+Several Modules added: Shared, Core Module with services, pipes and components. Angular routing is configured with IIS Express Url Rewrite rules: dealing fine with browser refresh/back, 404 Page, in-app and url routing.
 
 Windows Authentication added to web.config. (For IISExpress: changes in applicationhost.config needed)
 
