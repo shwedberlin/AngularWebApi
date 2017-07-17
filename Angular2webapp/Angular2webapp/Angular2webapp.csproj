@@ -191,6 +191,7 @@
     <Content Include="config.development.json" />
     <Content Include="README.md" />
     <Content Include="app\core\action-menu\action-menu.component.md" />
+    <Content Include=".codebeatignore" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
