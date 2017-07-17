@@ -9,7 +9,8 @@
     "build:app": "webpack --config webpack.splitted.app.js --colors",
     "typings": "typings install",
     "profile": "webpack --profile --json > stats.json",
-    "doc": "compodoc -p tsconfig.json -n \"Angular2WebApi Documentation\""
+    "doc": "compodoc -p tsconfig.json -n \"Angular2WebApi Documentation\"",
+    "typedoc": "typedoc --out docs/"
   },
   "keywords": [],
   "author": "",
@@ -49,6 +50,8 @@
     "script-loader": "^0.7.0",
     "style-loader": "^0.18.2",
     "to-string-loader": "^1.1.5",
+    "typedoc": "^0.7.1",
+    "typedoc-webpack-plugin": "^1.1.4",
     "typescript": "~2.4.1",
     "url-loader": "^0.5.9",
     "webpack": "^2.7.0",

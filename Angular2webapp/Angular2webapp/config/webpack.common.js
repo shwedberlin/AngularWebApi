@@ -1,5 +1,6 @@
 ﻿var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var TypedocWebpackPlugin = require('typedoc-webpack-plugin');
 var helpers = require("./helpers");
 
 const extractLESS = new ExtractTextPlugin("app.less.css");
@@ -64,6 +65,15 @@ module.exports = {
     plugins: [
         vendorLESS,
         extractLESS,
+        // not working from webpack, use script instead
+        //new TypedocWebpackPlugin({
+        //    out: './docs',
+        //    exclude: '**/node_modules/**/*.*',
+        //    experimentalDecorators: true,
+        //    mode: 'file',
+        //    json: './docs.json',
+        //    excludeExternals: true
+        //}, './app'),
         new webpack.ProvidePlugin({ $: "jquery", jQuery: "jquery", JL: "jsnlog", sly: "sly", moment: "moment" }), // Maps these identifiers to the jQuery package (because Bootstrap expects it to be a global variable)
         // Workaround for angular/angular#11580 for angular v4
         new webpack.ContextReplacementPlugin(
