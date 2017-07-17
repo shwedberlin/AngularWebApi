@@ -1,7 +1,6 @@
 ﻿import { Component } from '@angular/core';
 
 /**
- *
  * ## Action menu component ##
  */
 @Component({

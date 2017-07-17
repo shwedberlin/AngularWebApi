@@ -555,7 +555,7 @@
                             </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">app/core/app.storage.ts:5</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">app/core/app.storage.ts:8</a></div>
                                         </td>
                                     </tr>
             
@@ -584,7 +584,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">app/core/app.storage.ts:11</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">app/core/app.storage.ts:21</a></div>
                                         </td>
                                     </tr>
             
@@ -592,9 +592,25 @@
                                 <td class="col-md-4">
             
                                         <div class="io-description">
+                                                <b>Parameters :</b>
+                                                <ul class="jsdoc-params">
+                                                        <li>
+                                                            <div>
+                                                                <b>instanceId</b>
+                                                            </div>
+                                                            <div>
+                                                                
+                                                            </div>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                        <div class="io-description">
                                             <b>Returns : </b>    <code>void</code>
             
                                         </div>
+                                            <div class="io-description">
+                                                
+                                            </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -615,7 +631,7 @@
             
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">app/core/app.storage.ts:15</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">app/core/app.storage.ts:28</a></div>
                                         </td>
                                     </tr>
             
@@ -658,7 +674,7 @@
                                 </tr>
                                     <tr>
                                         <td class="col-md-4">
-                                            <div class="io-line">Defined in <a href="" data-line="5" class="link-to-prism">app/core/app.storage.ts:5</a></div>
+                                            <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">app/core/app.storage.ts:8</a></div>
                                         </td>
                                     </tr>
                         </tbody>
@@ -670,18 +686,31 @@
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 
+/**
+ * App storage service
+ */
 @Injectable()
 export class AppStorage {
     private instanceId: string;
 
+    /**
+     * Constructor
+     */
     constructor() {
         console.info(&quot;App storage constructor called&quot;);
     }
 
+    /**
+     * Set Instance Id
+     * @param instanceId
+     */
     setInstaceId(instanceId: string) {
         this.instanceId &#x3D; instanceId;
     }
 
+    /**
+     * Get Instance Id
+     */
     getInstanceId(): string {
         if (!this.instanceId) return &quot;- undef -&quot;;
         return this.instanceId;
