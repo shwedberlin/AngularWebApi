@@ -1,22 +1,29 @@
 ﻿import { Injectable, OnInit } from '@angular/core';
-
 import { JL } from 'jsnlog';
-
 import { AppStorage } from './app.storage';
 import { AppConfig } from '../app.config';
 
-
+/**
+  * Logger Service
+  */
 @Injectable()
 export class LoggerService {
     private defaultName: string = "NG_Client";
     private internalName: string = "NG_LoggerSrvc";
     private internalLogger: JL.JSNLogLogger;
-
-    //JL Logger appenders
+    
+    /**
+     * ajax Logger appender
+     */
     private ajaxAppender = JL.createAjaxAppender('ajaxAppender');
+    /**
+     * console Logger appender
+     */
     private consoleAppender = JL.createConsoleAppender('consoleAppender');
 
-    //array of configured logger names
+    /**
+      * Array of configured logger names
+      */
     private configuredLoggers: string[];
 
     constructor(private config: AppConfig, private appStorage: AppStorage) {
@@ -27,9 +34,14 @@ export class LoggerService {
         this.internalLogger = this.GetLogger(this.internalName);
     }
 
-    //remove logger from array if exists.
-    //next time this logger will be configured again
-    ResetLogger(name: string): boolean {
+    /**
+     * Removes Logger from array if exists.
+     *
+     * Next time this loger will be used it will be configured new
+     * @param {string} name Logger name
+     * @returns {boolean} If given logger was configured earlier
+     */
+    public ResetLogger(name: string): boolean {
         var logger = this.configuredLoggers.indexOf(name);
         if (logger > -1) {                    
             this.configuredLoggers.splice(logger, 1);
@@ -39,7 +51,11 @@ export class LoggerService {
         return false;
     }
 
-    //returns logger object
+    /**
+     * Returns Logger instance
+     * @param  {string} name Logger name
+     * @returns {JL.JSNLogLogger} Logger instance
+     */
     GetLogger(name?: string): JL.JSNLogLogger {
         if (name === undefined) {
             name = this.defaultName;

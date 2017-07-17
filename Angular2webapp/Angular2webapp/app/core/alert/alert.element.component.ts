@@ -9,11 +9,10 @@ import { Alert, AlertType } from '../alert.provider.service';
     styleUrls: ['./alert.element.component.less']
 })
 export class AlertElementComponent {
-    alertStyle: string;
-
     @Input() alert: Alert;
     @Output() alertClosing: EventEmitter<Alert> = new EventEmitter();
 
+    alertStyle: string;
 
     constructor() {
         this.alertStyle = 'alert-info';        
@@ -38,7 +37,7 @@ export class AlertElementComponent {
                 break;
         }
 
-        let timer = Observable.timer(this.alert.timeoutSeconds * 1000); //convert to ms
+        let timer = Observable.timer(this.alert.timeoutSeconds * 1000); /**convert to ms*/
         timer.subscribe(() => this.alertClosing.next(this.alert));
     }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "angular-quickstart",
+  "name": "angular2webapp",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation for visual studio 2017 & WebApi",
   "scripts": {
@@ -8,7 +8,8 @@
     "build:vendor": "webpack --config webpack.splitted.vendor.js --colors",
     "build:app": "webpack --config webpack.splitted.app.js --colors",
     "typings": "typings install",
-    "profile": "webpack --profile --json > stats.json"
+    "profile": "webpack --profile --json > stats.json",
+    "doc": "compodoc -p tsconfig.json -n \"Angular2WebApi Documentation\""
   },
   "keywords": [],
   "author": "",

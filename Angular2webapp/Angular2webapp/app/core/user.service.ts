@@ -17,11 +17,13 @@ export class UserService {
     getUser(): Observable<User> {
         if (this.currUser) {
             this.logger.GetLogger(this.loggerName).info("Returning earlier authenticated User.");
-            return Observable.of(this.currUser);
+            var existingObservable = Observable.of(this.currUser);            
+            return existingObservable;
         }
 
         this.logger.GetLogger(this.loggerName).info("User is not authenticated yet. Run api authentication.");
         var serviceObservable = this.apiService.get('/Dummier/GetAuthenticate');
+
         serviceObservable.subscribe(result => {
             this.currUser = result as User;            
         });

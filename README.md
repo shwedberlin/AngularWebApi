@@ -40,6 +40,7 @@ Connection to WCF tested outside this repo - it works.
     - excluded some locales from momentjs, saves ~400kb! Webpack plugin: `webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/)`
 - Read logger configuration from server before app load
 - Moved Logger configuration from .xml to code (for JSNlog, Common.Logging & NLog)
+- Added [compodoc](https://github.com/compodoc/compodoc) to generate documentation, but it's not fully working - comments ignored (and no documentation coverage), no routes graph. (Usage: .npm run doc)
 
 # Upcoming Features:
 

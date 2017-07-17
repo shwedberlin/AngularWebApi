@@ -22,6 +22,9 @@ export class UncaughtExceptionHandler implements ErrorHandler {
     }
 }
 
+/**
+ * The bootstrapper module
+ */
 @NgModule({
     declarations: [ AppComponent, ActionMenuComponent ],
     bootstrap: [AppComponent],
@@ -44,5 +47,3 @@ export class AppModule {
         console.info("App constructor called");
     }
 }
-
-

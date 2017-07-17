@@ -1,5 +1,8 @@
 ﻿import { Component } from '@angular/core';
 
+/**
+ * Pure html "PageNotFound" Component
+ */
 @Component({
     template: `
                 <h1>404</h1>

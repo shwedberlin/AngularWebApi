@@ -5,9 +5,12 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { AppStorage } from './app.storage';
-//TODO maybe add JwtService later
-//import { JwtService } from './jwt.service';
 
+/**
+ * Service for untyped communications with api
+ *
+ * Only get implemented at the moment
+ */
 @Injectable()
 export class ApiService {
     private apiUrl: string;

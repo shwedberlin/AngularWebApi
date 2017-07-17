@@ -189,6 +189,8 @@
     </Content>
     <Content Include="app\vendor\vendor.less" />
     <Content Include="config.development.json" />
+    <Content Include="README.md" />
+    <Content Include="app\core\action-menu\action-menu.component.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
