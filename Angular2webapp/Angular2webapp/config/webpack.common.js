@@ -1,6 +1,6 @@
 ﻿var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var TypedocWebpackPlugin = require('typedoc-webpack-plugin');
+var TypedocWebpackPlugin = require("typedoc-webpack-plugin");
 var helpers = require("./helpers");
 
 const extractLESS = new ExtractTextPlugin("app.less.css");
