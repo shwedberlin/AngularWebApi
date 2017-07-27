@@ -32,7 +32,7 @@ Connection to WCF tested outside this repo - it works.
 # Last fixes
 
 - Alert timeouts + pause
-- Upgraded to Angular 4.2.x
+- Upgraded to Angular 4.3.x & webpack 3.4.x
 - Added simple "App Loader" animation (css) before Angular app loads. 
 - Added new script to `package.json`: npm run profile. Generates stats.json for analysing with `webpack-bundle-analyzer`
 - After this analysis: 
