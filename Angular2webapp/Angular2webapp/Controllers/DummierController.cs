@@ -52,7 +52,7 @@ namespace Angular2webapp.Controllers
         public UserData GetAuthenticate()
         {
             // Simulate 10 sec delay
-            var waitTime = DateTime.Now.AddSeconds(10);
+            var waitTime = DateTime.Now.AddSeconds(1);
             while (DateTime.Now < waitTime)
             {
                 //noop

@@ -13,6 +13,7 @@ import { ClientComponent } from './client-menu/client.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 //Services
 import { ApiService } from './api.service';
+import { RemoteApiService } from './remoteapi.service';
 import { AffirmationProviderService } from './affirmation.provider.service';
 import { AlertProviderService } from './alert.provider.service';
 import { TestService } from './test.service';
@@ -25,7 +26,7 @@ import { AppConfig } from '../app.config';
 @NgModule({
     imports: [
         CommonModule, // we use ngFor & ngIf
-        FormsModule//,  // we use ngModel
+        FormsModule  // we use ngModel
     ],
     exports: [
         HeaderComponent,
@@ -47,6 +48,7 @@ import { AppConfig } from '../app.config';
     ],
     providers: [
         ApiService,
+        RemoteApiService,
         TestService,
         UserService,
         LoggerService,
@@ -71,8 +73,7 @@ export class CoreModule {
         console.info("Core constructor called");
     }
 
-    static forRoot(): ModuleWithProviders {
-        console.info("Core forRoot() called");
+    static forRoot(): ModuleWithProviders {        
         return {
             ngModule: CoreModule
         };

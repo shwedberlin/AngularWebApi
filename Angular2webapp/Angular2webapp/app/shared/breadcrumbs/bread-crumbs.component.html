@@ -1,0 +1,8 @@
+﻿<div >
+    <ol class="breadcrumb" *ngIf="breadCrumbs">
+        <li class="breadcrumb-item" [class.active]="activeCrumb == crumb" *ngFor="let crumb of breadCrumbs">
+            <a *ngIf="activeCrumb != crumb" (click)="selectCrumb(crumb)">{{crumb.name}}</a>
+            <span *ngIf="activeCrumb == crumb">{{crumb.name}}</span>
+        </li>
+    </ol>
+</div>

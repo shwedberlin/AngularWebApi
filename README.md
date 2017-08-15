@@ -31,6 +31,11 @@ Connection to WCF tested outside this repo - it works.
 
 # Last fixes
 
+- Some 3rd part components added: 
+  - [angular-tree-component](https://github.com/500tech/angular-tree-component)
+  - [swimlane/ngx-datatable](https://github.com/swimlane/ngx-datatable): with serverside sorting and paging
+- Added service to remote api (not yet part of this repo) and some models for it. Still in testphase.
+- BreadCrumbs Component
 - Alert timeouts + pause
 - Upgraded to Angular 4.3.x & webpack 3.4.x
 - Added simple "App Loader" animation (css) before Angular app loads. 

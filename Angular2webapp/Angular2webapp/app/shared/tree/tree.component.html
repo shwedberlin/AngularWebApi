@@ -9,4 +9,7 @@
             <a (click)="selectedChange.next(element)">{{element.name}}</a>
         </li>
     </ul>
+    <div class="panel panel-default" style="padding:5px;">
+        <tree-root [nodes]="nodesArr"></tree-root>
+    </div>    
 </div>

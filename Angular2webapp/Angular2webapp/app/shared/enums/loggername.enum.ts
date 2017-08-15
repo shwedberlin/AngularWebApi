@@ -20,3 +20,12 @@ export namespace LOGGER_NAMES {
     export const NG_LOGGERSRVC = "NG_LOGGERSRVC";
     export const NG_CLIENT = "NG_CLIENT";
 }
+
+export namespace ADResource {
+    export enum TypeEnum {
+        MyFirstValue = <any>'MyFirstValue',
+        MySecondValue = <any>'MySecondValue',
+        MyThirdValue = <any>'MyThirdValue',
+        AndSoOn = <any>'AndSoOn'
+    }
+}

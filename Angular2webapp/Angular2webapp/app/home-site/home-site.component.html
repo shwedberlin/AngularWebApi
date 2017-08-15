@@ -11,21 +11,63 @@
     <h3>{{title}}</h3>
     <p>Component timestamp: {{timestamp | datex:'HH:mm:ss'}}</p>
 </div>
-<p *ngIf="!ctrlData"><em>Fetching WebApi...</em></p>
-<table class='table' *ngIf="ctrlData">
-    <thead>
-        <tr>
-            <th>Client</th>
-            <th>Server</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let dummydata of ctrlData">
-            <td>{{ dummydata.clientData }}</td>
-            <td>{{ dummydata.serverData }}</td>
-        </tr>
-    </tbody>
-</table>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">        
+        <h3 *ngIf="currPath" class="panel-title">{{currPath}}</h3>
+        <h3 *ngIf="!currPath" class="panel-title">Root</h3>
+        <bread-crumbs #StrBreadCrumb (selectedChange)="breadCrumbNavigate($event)"></bread-crumbs>
+    </div>
+    <ngx-datatable class="hpc striped" #myTable
+                   [rows]="rows"
+                   [columns]="columns"
+                   [columnMode]="'force'"
+                   [headerHeight]="50"
+                   [footerHeight]="50"
+                   [rowHeight]="'auto'"
+                   [selected]="selectedrow"
+                   [selectionType]="'single'"
+                   (select)='onSelect($event)'
+                   [loadingIndicator]="loadingIndicator"
+                   [externalPaging]="true"
+                   [externalSorting]="true"
+                   (sort)="onSort($event)"
+                   [count]="page.TotalElements"
+                   [offset]="page.PageNumber"
+                   [limit]="page.PageSize"
+                   (page)='onPaging($event)'>
+        <!--<ngx-datatable-footer>
+            <ng-template ngx-datatable-footer-template
+                         let-curPage="curPage"
+                         let-offset="offset"
+                         let-pageSize="pageSize"
+                         let-rowCount="rowCount"
+                         let-selectedCount="selectedCount">
+                <div class="page-count">
+                                     
+                </div>
+                <datatable-pager [pagerLeftArrowIcon]="'datatable-icon-left'"
+                                 [pagerRightArrowIcon]="'datatable-icon-right'"
+                                 [pagerPreviousIcon]="'datatable-icon-prev'"
+                                 [pagerNextIcon]="'datatable-icon-skip'"
+                                 [page]="curPage"
+                                 [size]="pageSize"
+                                 [count]="rowCount"
+                                 [hidden]="!((rowCount / pageSize) > 1)"
+                                 (change)="myTable.onFooterPage($event)">
+                </datatable-pager>
+            </ng-template>           
+        </ngx-datatable-footer>-->
+    </ngx-datatable>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">File upload</h3>
+    </div>
+    <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+</div>
+
 
 <div class="panel panel-primary">
     <div class="panel-heading">

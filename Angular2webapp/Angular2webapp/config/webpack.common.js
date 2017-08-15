@@ -1,6 +1,6 @@
 ﻿var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var TypedocWebpackPlugin = require("typedoc-webpack-plugin");
+//var TypedocWebpackPlugin = require("typedoc-webpack-plugin");
 var helpers = require("./helpers");
 
 const extractLESS = new ExtractTextPlugin("app.less.css");
@@ -82,13 +82,16 @@ module.exports = {
             {} // a map of your routes
         ),
         new webpack.ContextReplacementPlugin(/moment[\\\/]locale$/, /^\.\/(en|de)$/), //install only 'en' & 'de' locales with momentjs --> saves about 500kb!
-
+        //new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+        //    mangle: {
+        //        keep_fnames: true
+        //    }
         new webpack.optimize.CommonsChunkPlugin({
             //order is important: 
             //The CommonsChunkPlugin identifies the hierarchy among three chunks: app -> vendor -> polyfills. 
             //Where Webpack finds that app has shared dependencies with vendor, it removes them from app. 
             //It would remove polyfills from vendor if they shared dependencies, which they don't.
             name: ["app", "vendor", "polyfills"]
-        }),
+        })
     ]
 };

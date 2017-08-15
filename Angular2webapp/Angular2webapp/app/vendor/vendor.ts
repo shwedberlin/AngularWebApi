@@ -20,4 +20,6 @@ import 'jquery';
 import 'jsnlog';
 import 'moment'; //exclude some locales
 import './vendor.less';
-import 'sly/dist/sly.js'
+import 'sly/dist/sly.js';
+import 'angular-tree-component';
+import '@swimlane/ngx-datatable';

@@ -79,6 +79,9 @@
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -132,6 +135,13 @@
     <Content Include="app\core\client-menu\client.component.less">
       <DependentUpon>client.component.html</DependentUpon>
     </Content>
+    <Content Include="app\shared\breadcrumbs\bread-crumbs.component.html" />
+    <Content Include="app\shared\breadcrumbs\bread-crumbs.component.less">
+      <DependentUpon>bread-crumbs.component.html</DependentUpon>
+    </Content>
+    <Content Include="app\shared\tree\tree.component.less">
+      <DependentUpon>tree.component.html</DependentUpon>
+    </Content>
     <Content Include="app\variables.less" />
     <Content Include="app\app.component.html" />
     <Content Include="app\core\action-menu\action-menu.component.html" />
@@ -165,6 +175,7 @@
     <Content Include="webpack.config.js" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="Core\NLogConfigurator.cs" />
     <Compile Include="App_Start\LoggerConfiguration.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -191,6 +202,7 @@
     <Content Include="config.development.json" />
     <Content Include="README.md" />
     <Content Include="app\core\action-menu\action-menu.component.md" />
+    <None Include="app\vendor\ngx-datatable.custom.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -234,6 +246,7 @@
     <TypeScriptCompile Include="app\core\alert\alert.component.ts">
       <DependentUpon>alert.component.html</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="app\core\remoteapi.service.ts" />
     <TypeScriptCompile Include="app\core\app.storage.ts" />
     <TypeScriptCompile Include="app\core\client-menu\client-menu.component.ts">
       <DependentUpon>client-menu.component.html</DependentUpon>
@@ -265,7 +278,15 @@
       <DependentUpon>home-site.module.ts</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="app\main.ts" />
+    <TypeScriptCompile Include="app\model\adResource.ts" />
+    <TypeScriptCompile Include="app\model\breadcrumb.ts" />
+    <TypeScriptCompile Include="app\model\models.ts" />
+    <TypeScriptCompile Include="app\model\page.ts" />
+    <TypeScriptCompile Include="app\model\paged-data.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />
+    <TypeScriptCompile Include="app\shared\breadcrumbs\bread-crumbs.component.ts">
+      <DependentUpon>bread-crumbs.component.html</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="app\shared\datex.pipe.ts" />
     <TypeScriptCompile Include="app\shared\enums\loggername.enum.ts" />
     <TypeScriptCompile Include="app\shared\member\member.component.ts">
