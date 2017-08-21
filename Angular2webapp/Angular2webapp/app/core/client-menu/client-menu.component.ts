@@ -1,8 +1,9 @@
 ﻿import { Component, OnInit, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
-import { ClientService } from './client.service';
+import { RemoteApiService } from '../../core/remoteapi.service';
 import { AlertProviderService, AlertType } from '../alert.provider.service';
-import { Client } from './client.model';
+
+import * as models from '../../model/models';
 
 declare var $: any;
 declare var Sly: any;
@@ -10,17 +11,17 @@ declare var Sly: any;
 @Component({
     selector: 'client-menu',
     templateUrl: './client-menu.component.html',
-    styleUrls: ['./client-menu.component.less'],
-    providers: [ClientService]
+    styleUrls: ['./client-menu.component.less']//,
+    //providers: [ClientService]
 })
 export class ClientmenuComponent {
-    clientList: Client[];
-    selectedClient: Client;
+    clientList: models.HauptOEinheit[];
+    selectedClient: models.HauptOEinheit;
     private slyMenu: any;
     private currSlyItemsCount: number = 0;
     @ViewChildren('renderedClients') guiAddedClients: QueryList<any>;
 
-    constructor(private service: ClientService, private alertProvider: AlertProviderService) {
+    constructor(private service: RemoteApiService, private alertProvider: AlertProviderService) {
         this.clientList = new Array();        
     }
 
@@ -38,8 +39,8 @@ export class ClientmenuComponent {
         });
         this.slyMenu.init();
 
-        this.service.getAllClients().subscribe(result => {
-            this.clientList = result as Client[];
+        this.service.getAllHOEs().subscribe(result => {
+            this.clientList = result as models.HauptOEinheit[];
             console.log("Slymenu() clientList: " + this.clientList.length);
             console.log("Slymenu() after got clients: (slidee start: " + this.slyMenu.pos.start + ", end: " + this.slyMenu.pos.end + ", current: " + this.slyMenu.pos.cur + ")");
         });
@@ -60,8 +61,8 @@ export class ClientmenuComponent {
         console.log("ngForRendred() sizes: (slidee start: " + this.slyMenu.pos.start + ", end: " + this.slyMenu.pos.end + ", current: " + this.slyMenu.pos.cur + ")");
     }
 
-    selectClient(client: Client) {
+    selectClient(client: models.HauptOEinheit) {
         this.selectedClient = client;
-        this.alertProvider.alert(AlertType.Success, "Client selected: " + client.shortName);
+        this.alertProvider.alert(AlertType.Success, "Client selected: " + client.ShortName);
     }
 }

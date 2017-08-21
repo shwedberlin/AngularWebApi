@@ -9,5 +9,5 @@ export class Page {
     //The total number of pages
     TotalPages: number = 0;
     //The current page number
-    PageNumber: number = 1;
+    PageNumber: number = 0;
 }

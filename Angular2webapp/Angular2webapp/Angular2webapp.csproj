@@ -179,9 +179,7 @@
     <Compile Include="Core\NLogConfigurator.cs" />
     <Compile Include="App_Start\LoggerConfiguration.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DummierController.cs" />
-    <Compile Include="Controllers\DummyController.cs" />
     <Compile Include="Core\ConfigurationReader.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -254,8 +252,6 @@
     <TypeScriptCompile Include="app\core\client-menu\client.component.ts">
       <DependentUpon>client.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="app\core\client-menu\client.model.ts" />
-    <TypeScriptCompile Include="app\core\client-menu\client.service.ts" />
     <TypeScriptCompile Include="app\core\logger.service.ts" />
     <TypeScriptCompile Include="app\core\api.service.ts" />
     <TypeScriptCompile Include="app\core\core.module.ts" />
@@ -280,7 +276,9 @@
     <TypeScriptCompile Include="app\main.ts" />
     <TypeScriptCompile Include="app\model\adResource.ts" />
     <TypeScriptCompile Include="app\model\breadcrumb.ts" />
+    <TypeScriptCompile Include="app\model\hauptoeinheit.ts" />
     <TypeScriptCompile Include="app\model\models.ts" />
+    <TypeScriptCompile Include="app\model\oeinheit.ts" />
     <TypeScriptCompile Include="app\model\page.ts" />
     <TypeScriptCompile Include="app\model\paged-data.ts" />
     <TypeScriptCompile Include="app\polyfills.ts" />

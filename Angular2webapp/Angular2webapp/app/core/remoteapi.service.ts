@@ -39,6 +39,26 @@ export class RemoteApiService {
             .map((res: Response) => res.json());
     }
 
+    public getAllHOEs(): Observable<models.HauptOEinheit> {
+        let path = this.apiUrl + "/HOE/GetHOEs";
+        let queryParameters = new URLSearchParams();
+        let requestOptions: RequestOptionsArgs = new RequestOptions({
+            method: RequestMethod.Get,
+            headers: this.setHeaders(),
+            search: queryParameters,
+            withCredentials: true
+        });
+
+        return this.http.request(path, requestOptions)
+            .map((response: Response) => {
+                if (response.status === 204) {
+                    return undefined;
+                } else {
+                    return response.json() || {};
+                }
+            });
+    }
+
     public aDGetPage(page: models.Page, adPath: string, sort: string): Observable<models.PagedData<models.ADResource>> {
         let path = this.apiUrl + "/AD/Get";
         let queryParameters = new URLSearchParams();

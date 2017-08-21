@@ -90,6 +90,7 @@ export class HomeSiteComponent {
     onSort(sortEvent: any) {
         let sort = sortEvent.sorts[0];
         this.sortExpression = sort.prop;
+        this.page.PageNumber = 0;
         if (sort.dir === "desc") {
             this.sortExpression = "-" + this.sortExpression;
         }

@@ -36,7 +36,7 @@
                    [offset]="page.PageNumber"
                    [limit]="page.PageSize"
                    (page)='onPaging($event)'>
-        <!--<ngx-datatable-footer>
+        <ngx-datatable-footer>
             <ng-template ngx-datatable-footer-template
                          let-curPage="curPage"
                          let-offset="offset"
@@ -57,7 +57,7 @@
                                  (change)="myTable.onFooterPage($event)">
                 </datatable-pager>
             </ng-template>           
-        </ngx-datatable-footer>-->
+        </ngx-datatable-footer>
     </ngx-datatable>
 </div>
 
