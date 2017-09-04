@@ -27,8 +27,6 @@ Added server side logging from cleint side with RequestId (NLog + JSNLog). Addin
 
 Splitted webpack configuration to vendor (with polyfills) and app code using DllPlugin. Added watch mode to app bundle. Changed mapping tool to 'eval-cheap-module-source-map'. SpeedUp: from 22sec to 12sec + 7sec w/o need to manually build app bundle. (Former config is still there, but references in index.html were changed - polyfills are now part of vendor). Use npm run build:vendor, then npm run build:app.
 
-Connection to WCF tested outside this repo - it works.
-
 # Last fixes
 
 - Some 3rd part components added: 
@@ -37,6 +35,7 @@ Connection to WCF tested outside this repo - it works.
 - Added service to remote api (not yet part of this repo) and some models for it. Still in testphase.
 - BreadCrumbs Component
 - Alert timeouts + pause
+- If Remote Api not accessible -> redirect to specific page (Now `PageNotFoundComponent`, shozuld be smth. like `DataServiceNotFoundComponent`)
 - Upgraded to Angular 4.3.x & webpack 3.4.x
 - Added simple "App Loader" animation (css) before Angular app loads. 
 - Added new script to `package.json`: npm run profile. Generates stats.json for analysing with `webpack-bundle-analyzer`

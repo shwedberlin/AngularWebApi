@@ -24,6 +24,10 @@
     {
       "name": "API_Logger",
       "level": "VERBOSE"
+    },
+    {
+      "name": "NG_ApiService",
+      "level":  "VERBOSE"
     }
   ]
 }

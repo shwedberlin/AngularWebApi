@@ -1,19 +1,23 @@
 ﻿import { Injectable } from '@angular/core';
 import { Headers, Http, Response, URLSearchParams } from '@angular/http';
 import { RequestMethod, RequestOptions, RequestOptionsArgs } from '@angular/http';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { AppStorage } from './app.storage';
+import { LoggerService } from '../core/logger.service';
+import { AlertProviderService, AlertType } from '../core/alert.provider.service';
 import * as models from '../model/models';
 
 @Injectable()
 export class RemoteApiService {
     private apiUrl: string;
     private requestId: string;
+    private loggerName: string = "NG_ApiService";
 
-    constructor(private http: Http, private appStorgage: AppStorage) {
+    constructor(private http: Http, private appStorgage: AppStorage, private router: Router, private logger: LoggerService, private alerProvider: AlertProviderService) {
         this.apiUrl = "http://localhost:3278/api";
         this.requestId = appStorgage.getInstanceId();
     }
@@ -56,7 +60,8 @@ export class RemoteApiService {
                 } else {
                     return response.json() || {};
                 }
-            });
+            })
+            .catch(this.catchErrors());
     }
 
     public aDGetPage(page: models.Page, adPath: string, sort: string): Observable<models.PagedData<models.ADResource>> {
@@ -88,7 +93,8 @@ export class RemoteApiService {
                     pagedResult.page = JSON.parse(response.headers.get('X-Pagination'));
                     return pagedResult;
                 }
-            });
+            })
+            .catch(this.catchErrors());
     }
 
     public aDGet(): Observable<Array<models.ADResource>> {
@@ -123,5 +129,28 @@ export class RemoteApiService {
         return this.http.post(`${this.apiUrl}${path}`, formData)
             .map(res => res.json())
             .catch(error => Observable.throw(error));
+    }
+
+    private catchErrors() {
+        return (res: Response) => {
+            //          {
+            //                type: 3, //ResponseType.Error
+            //                status: 0, // problem connecting endpoint
+            //          }
+            if (res.status === 0 && res.type === 3) {
+                let message = "Api nicht erreichbar";
+                this.logger.GetLogger(this.loggerName).error(message);
+                this.alerProvider.alert(AlertType.Error, message);
+                this.router.navigate(['/noservice']);
+            }
+            else if (res.status === 0 && res.type === 4) {
+                let message = "Api falsch konfiguriert";
+                this.logger.GetLogger(this.loggerName).error(message);
+                this.alerProvider.alert(AlertType.Error, message);
+                this.router.navigate(['/noservice']);
+            }
+            //this.router.navigate(['/noservice']); 
+            return Observable.throw(res);
+        };
     }
 }

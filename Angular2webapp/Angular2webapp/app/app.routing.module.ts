@@ -19,6 +19,7 @@ export const routes: Routes = [
     { path: 'home', loadChildren: () => HomeSiteModule },   /**Feature Modul with own Routing*/
     { path: 'area1', loadChildren: () => Area1SiteModule }, /**Feature Modul with own Routing*/
     { path: '', redirectTo: 'home', pathMatch: 'full' },    /**Empty Route*/
+    { path: 'noservice', component: PageNotFoundComponent },/**"EndPointNotFound" Route*/
     { path: '**', component: PageNotFoundComponent }        /**"404" Route*/
 ];
 
